@@ -23,6 +23,12 @@ h1 {
 }
 
 .nocha {
+    font-weight: bold;
+    color: #ff5733; /* Different color for "No" and "Cha" */
+}
+
+
+.nocha-2 {
     font-family: 'Aladin', cursive;
     font-size: 1.2em;
     color: #6a1b9a;
