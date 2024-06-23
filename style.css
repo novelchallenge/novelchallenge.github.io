@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #6a1b9a;
+    font-family: 'Aladin', cursive;
+    font-size: 2.5em;
+}
+
+.nocha {
+    font-weight: bold;
+    color: #ff5733; /* Different color for "No" and "Cha" */
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.intro p {
+    margin: 0 0 10px;
+}
+
+.intro a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.intro a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #6a1b9a;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.filter-container {
+    text-align: left;
+}
+
+.filter-container h2, .filter-container p {
+    margin: 0 0 10px;
+}
+
+.model-selection {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.clear-button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.clear-button:hover {
+    background-color: #5e1387;
+}

@@ -1,0 +1,154 @@
+{
+    "pairs": [
+      {
+        "id": 1,
+        "results": {
+          "model1": "correct",
+          "model2": "incorrect",
+          "model3": "no_prediction",
+          "model4": "correct",
+          "model5": "incorrect",
+          "model6": "correct",
+          "model7": "no_prediction",
+          "model8": "correct",
+          "model9": "correct",
+          "model10": "incorrect"
+        }
+      },
+      {
+        "id": 2,
+        "results": {
+          "model1": "incorrect",
+          "model2": "correct",
+          "model3": "correct",
+          "model4": "correct",
+          "model5": "correct",
+          "model6": "no_prediction",
+          "model7": "incorrect",
+          "model8": "correct",
+          "model9": "incorrect",
+          "model10": "correct"
+        }
+      },
+      {
+        "id": 3,
+        "results": {
+          "model1": "no_prediction",
+          "model2": "correct",
+          "model3": "incorrect",
+          "model4": "incorrect",
+          "model5": "correct",
+          "model6": "correct",
+          "model7": "correct",
+          "model8": "incorrect",
+          "model9": "no_prediction",
+          "model10": "correct"
+        }
+      },
+      {
+        "id": 4,
+        "results": {
+          "model1": "correct",
+          "model2": "no_prediction",
+          "model3": "correct",
+          "model4": "correct",
+          "model5": "incorrect",
+          "model6": "incorrect",
+          "model7": "correct",
+          "model8": "correct",
+          "model9": "correct",
+          "model10": "incorrect"
+        }
+      },
+      {
+        "id": 5,
+        "results": {
+          "model1": "incorrect",
+          "model2": "correct",
+          "model3": "no_prediction",
+          "model4": "correct",
+          "model5": "correct",
+          "model6": "incorrect",
+          "model7": "incorrect",
+          "model8": "correct",
+          "model9": "correct",
+          "model10": "no_prediction"
+        }
+      },
+      {
+        "id": 6,
+        "results": {
+          "model1": "correct",
+          "model2": "correct",
+          "model3": "correct",
+          "model4": "no_prediction",
+          "model5": "incorrect",
+          "model6": "correct",
+          "model7": "correct",
+          "model8": "incorrect",
+          "model9": "incorrect",
+          "model10": "correct"
+        }
+      },
+      {
+        "id": 7,
+        "results": {
+          "model1": "no_prediction",
+          "model2": "incorrect",
+          "model3": "correct",
+          "model4": "correct",
+          "model5": "no_prediction",
+          "model6": "correct",
+          "model7": "incorrect",
+          "model8": "correct",
+          "model9": "correct",
+          "model10": "incorrect"
+        }
+      },
+      {
+        "id": 8,
+        "results": {
+          "model1": "correct",
+          "model2": "correct",
+          "model3": "incorrect",
+          "model4": "incorrect",
+          "model5": "correct",
+          "model6": "correct",
+          "model7": "no_prediction",
+          "model8": "correct",
+          "model9": "incorrect",
+          "model10": "correct"
+        }
+      },
+      {
+        "id": 9,
+        "results": {
+          "model1": "incorrect",
+          "model2": "correct",
+          "model3": "correct",
+          "model4": "correct",
+          "model5": "incorrect",
+          "model6": "correct",
+          "model7": "correct",
+          "model8": "incorrect",
+          "model9": "no_prediction",
+          "model10": "correct"
+        }
+      },
+      {
+        "id": 10,
+        "results": {
+          "model1": "correct",
+          "model2": "correct",
+          "model3": "incorrect",
+          "model4": "correct",
+          "model5": "incorrect",
+          "model6": "correct",
+          "model7": "correct",
+          "model8": "no_prediction",
+          "model9": "correct",
+          "model10": "incorrect"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Leaderboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models</h1>
+        
+        <div class="intro">
+            <p>Welcome to the Model Leaderboard! This leaderboard allows you to compare the performance of different models on our dataset of true/false questions. You can select multiple models from the dropdown below to see their accuracy based on the common set of attempted questions.</p>
+            <p>Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the models and the dataset.</p>
+            <p>Example of our dataset:</p>
+            <pre><code>
+{
+  "claim 1"
+  "claim 2"
+  "book"
+  etc
+}
+            </code></pre>
+            <p>Find the code on <a href="https://github.com/your-repository" target="_blank">GitHub</a>.</p>
+        </div>
+        
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Correct</th>
+                    <th>Attempted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <div class="filter-container">
+            <h2>Compare Models on Common Questions</h2>
+            <p>Select models to see their performance on questions that all selected models have attempted. This allows for a fair comparison.</p>
+            <select id="model-selection" class="model-selection" multiple="multiple">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
