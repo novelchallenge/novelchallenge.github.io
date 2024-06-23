@@ -62,7 +62,11 @@ function populateLeaderboard(results, models) {
         if (currentSortKey === 'model') {
             valueA = a.toLowerCase();
             valueB = b.toLowerCase();
+        } else {
+            valueA = parseFloat(valueA);
+            valueB = parseFloat(valueB);
         }
+
         if (valueA < valueB) return currentSortDirection === 'asc' ? -1 : 1;
         if (valueA > valueB) return currentSortDirection === 'asc' ? 1 : -1;
         return 0;
@@ -152,7 +156,7 @@ function sortTable(key) {
         currentSortDirection = currentSortDirection === 'asc' ? 'desc' : 'asc';
     } else {
         currentSortKey = key;
-        currentSortDirection = 'desc';
+        currentSortDirection = 'desc'; // Start with highest first
     }
     const results = preprocessData(filteredModels);
     populateLeaderboard(results, filteredModels);

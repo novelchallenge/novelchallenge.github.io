@@ -23,8 +23,9 @@ h1 {
 }
 
 .nocha {
-    font-weight: bold;
-    color: #ff5733;
+    font-family: 'Aladin', cursive;
+    font-size: 1.2em;
+    color: #6a1b9a;
 }
 
 .intro {
