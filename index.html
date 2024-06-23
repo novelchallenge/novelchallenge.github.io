@@ -13,19 +13,14 @@
         <h1>A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models</h1>
         
         <div class="intro">
-            <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! <span class="nocha-2">Nocha</span>  tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character. Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
+            <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character. Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
                 The model must verify both claims in a pair to be awarded 1 point. We report the accuracy (%) along with the counts of correct answers and total attempts. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of pairs attempted by these models.</p>
-                <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-paper.com" target="_blank">paper</a> for more details about the task.</p>
-            <p>Example of our dataset:</p>
-            <pre><code>
-{
-  "claim 1"
-  "claim 2"
-  "book"
-  etc
-}
-            </code></pre>
-            <p style="text-align: center;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+            <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
+            <!-- <p>Example of our dataset:</p> -->
+            <!-- Embedding the SVG image -->
+            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
+            <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+        </div>
         
         <table id="leaderboard">
             <thead id="table-headers">
@@ -49,45 +44,42 @@
             </select>
             <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
         </div>
-    </div>
-    <div class="prompt">
-        <h2><i class="fas fa-cogs"></i> Prompt</h2>
-        <pre class="robotic-text">
+        <div class="prompt">
+            <h2><i class="fas fa-cogs"></i> Prompt</h2>
+            <pre class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
-    
-Answer TRUE if the statement is true in its entirety based on the context provided.
-Answer FALSE if any part of the statement is false based on the context provided.
-    
-            &lt;context&gt; {book text} &lt;/context&gt;
-    
-            &lt;statement&gt; {claim} &lt;/statement&gt;
-    
-&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
-    
-First provide an explanation of your decision-making process in at most one paragraph, and then provide your final answer. Use the following format:
-    
-        &lt;explanation&gt; YOUR EXPLANATION &lt;/explanation&gt;
-                &lt;answer&gt; YOUR ANSWER &lt;/answer&gt;
-        </pre>
-    </div>
-    <div class="prompt">
-        <h2><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
-        <pre class="robotic-text">
-You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
-    
-Answer TRUE if the statement is true in its entirety based on the context provided.
-Answer FALSE if any part of the statement is false based on the context provided.
-    
-                &lt;context&gt; {book text} &lt;/context&gt;
-    
-                &lt;statement&gt; {claim} &lt;/statement&gt;
-    
-&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
-        </pre>
-    </div>
-</div>
-        
 
+Answer TRUE if the statement is true in its entirety based on the context provided.
+Answer FALSE if any part of the statement is false based on the context provided.
+
+<center>&lt;context&gt; {book text} &lt;/context&gt;</center>
+
+<center>&lt;statement&gt; {claim} &lt;/statement&gt;</center>
+
+&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
+
+First provide an explanation of your decision-making process in at most one paragraph, and then provide your final answer. Use the following format:
+
+<center>&lt;explanation&gt; YOUR EXPLANATION &lt;/explanation&gt;</center>
+<center>&lt;answer&gt; YOUR ANSWER &lt;/answer&gt;</center>
+            </pre>
+        </div>
+        <div class="prompt">
+            <h2><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
+            <pre class="robotic-text">
+You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
+
+Answer TRUE if the statement is true in its entirety based on the context provided.
+Answer FALSE if any part of the statement is false based on the context provided.
+
+<center>&lt;context&gt; {book text} &lt;/context&gt;</center>
+
+<center>&lt;statement&gt; {claim} &lt;/statement&gt;</center>
+
+&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
+            </pre>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="script.js"></script>

@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
@@ -48,6 +48,12 @@ h1 {
 
 .intro a:hover {
     text-decoration: underline;
+}
+
+.intro iframe {
+    margin: 20px 0;
+    display: block;
+    height: 600px;
 }
 
 table {
