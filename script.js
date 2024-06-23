@@ -1,7 +1,7 @@
 let data;
 let currentSortKey = 'accuracy';
 let currentSortDirection = 'desc';
-let filteredModels = []; // New variable to track filtered models
+let filteredModels = [];
 
 // Fetch the JSON data
 fetch('data.json')
@@ -10,7 +10,8 @@ fetch('data.json')
         data = json;
         initializeLeaderboard();
         populateModelSelection();
-    });
+    })
+    .catch(error => console.error('Error fetching data:', error));
 
 // Initialize the leaderboard with the default view
 function initializeLeaderboard() {
@@ -23,8 +24,9 @@ function initializeLeaderboard() {
 // Preprocess the data to calculate correct and attempted counts
 function preprocessData(models, filteredQuestions = null) {
     const results = {};
+
     for (const model of models) {
-        results[model] = { correct: 0, attempted: 0 };
+        results[model] = { correct: 0, attempted: 0, accuracy: 0 };
     }
 
     const questions = filteredQuestions || data.pairs;
@@ -39,57 +41,60 @@ function preprocessData(models, filteredQuestions = null) {
             }
         }
     }
+
+    // Calculate accuracy
+    for (const model of models) {
+        results[model].accuracy = results[model].attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
+    }
+
     return results;
 }
 
 // Populate the leaderboard table
-function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirection = 'desc') {
-    models.sort((a, b) => {
-        let valueA, valueB;
-        if (sortKey === 'accuracy') {
-            valueA = results[a].attempted ? (results[a].correct / results[a].attempted) : 0;
-            valueB = results[b].attempted ? (results[b].correct / results[b].attempted) : 0;
-        } else if (sortKey === 'model') {
-            valueA = a.toLowerCase();
-            valueB = b.toLowerCase();
-        } else {
-            valueA = results[a][sortKey];
-            valueB = results[b][sortKey];
-        }
-        if (valueA < valueB) return sortDirection === 'asc' ? -1 : 1;
-        if (valueA > valueB) return sortDirection === 'asc' ? 1 : -1;
-        return 0;
-    });
-
+function populateLeaderboard(results, models) {
     const tbody = document.getElementById('leaderboard').getElementsByTagName('tbody')[0];
     tbody.innerHTML = ''; // Clear previous rows
+
+    models.sort((a, b) => {
+        let valueA = results[a][currentSortKey];
+        let valueB = results[b][currentSortKey];
+
+        if (currentSortKey === 'model') {
+            valueA = a.toLowerCase();
+            valueB = b.toLowerCase();
+        }
+        if (valueA < valueB) return currentSortDirection === 'asc' ? -1 : 1;
+        if (valueA > valueB) return currentSortDirection === 'asc' ? 1 : -1;
+        return 0;
+    });
 
     for (const model of models) {
         if (!filteredModels.includes(model)) continue; // Skip models not in filteredModels
         const data = results[model];
-        const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${model}</td>
-            <td>${accuracy}%</td>
+            <td>${data.accuracy}%</td>
             <td>${data.correct}</td>
             <td>${data.attempted}</td>
         `;
         tbody.appendChild(row);
     }
 
-    updateSortingArrows(sortKey, sortDirection);
+    updateSortingArrows();
 }
 
 // Update the sorting arrows
-function updateSortingArrows(sortKey, sortDirection) {
+function updateSortingArrows() {
     const headers = ['model', 'accuracy', 'correct', 'attempted'];
     headers.forEach(header => {
         const arrow = document.getElementById(`${header}-arrow`);
-        if (header === sortKey) {
-            arrow.innerHTML = sortDirection === 'asc' ? '\u25B2' : '\u25BC'; // Up or down arrow
-        } else {
-            arrow.innerHTML = ''; // Clear arrow if not the current sort key
+        if (arrow) {
+            if (header === currentSortKey) {
+                arrow.innerHTML = currentSortDirection === 'asc' ? '\u25B2' : '\u25BC';
+            } else {
+                arrow.innerHTML = '';
+            }
         }
     });
 }
@@ -149,6 +154,6 @@ function sortTable(key) {
         currentSortKey = key;
         currentSortDirection = 'desc';
     }
-    const results = preprocessData(filteredModels); // Use filteredModels for sorting
-    populateLeaderboard(results, filteredModels, currentSortKey, currentSortDirection);
+    const results = preprocessData(filteredModels);
+    populateLeaderboard(results, filteredModels);
 }

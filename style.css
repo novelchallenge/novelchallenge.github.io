@@ -24,7 +24,7 @@ h1 {
 
 .nocha {
     font-weight: bold;
-    color: #ff5733; /* Different color for "No" and "Cha" */
+    color: #ff5733;
 }
 
 .intro {
@@ -42,6 +42,121 @@ h1 {
 
 .intro a:hover {
     text-decoration: underline;
+}
+
+.no-center {
+    text-align: left;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #6a1b9a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #5e1387;
+}
+
+.navbar a.active {
+    background-color: #4b0f76;
+}
+
+.example {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.example p {
+    margin-bottom: 10px;
+}
+
+.example-code {
+    background-color: #f4f4f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+.example pre {
+    margin: 0;
+}
+
+.prompt {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.prompt h2 {
+    margin-bottom: 10px;
+    color: #6a1b9a;
+    font-size: 1.5em;
+}
+
+.robotic-text {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    white-space: pre-wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.team-member img:hover {
+    transform: scale(1.05);
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
 }
 
 table {
@@ -96,16 +211,14 @@ table tr:hover {
     background-color: #5e1387;
 }
 
-
-
 .sort-arrow {
     font-size: 0.8em;
     margin-left: 5px;
-    visibility: hidden; /* Hide arrows by default */
+    visibility: hidden;
 }
 
 .sortable:hover .sort-arrow {
-    visibility: visible; /* Show arrows on hover */
+    visibility: visible;
 }
 
 .asc .sort-arrow {
@@ -113,7 +226,7 @@ table tr:hover {
 }
 
 .asc .sort-arrow::before {
-    content: "\u25B2"; /* Up arrow */
+    content: "\u25B2";
 }
 
 .desc .sort-arrow {
@@ -121,5 +234,74 @@ table tr:hover {
 }
 
 .desc .sort-arrow::before {
-    content: "\u25BC"; /* Down arrow */
+    content: "\u25BC";
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .navbar a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .example-code {
+        padding: 15px;
+    }
+
+    .robotic-text {
+        padding: 15px;
+    }
+
+    .team-member {
+        margin: 10px;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .clear-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .example-code {
+        padding: 10px;
+    }
+
+    .robotic-text {
+        padding: 10px;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .clear-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+

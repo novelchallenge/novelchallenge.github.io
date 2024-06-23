@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard - Nocha</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </nav>
+        <h1>Leaderboard</h1>
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+        <div class="filter-container">
+            <h2>Compare Models on Common Questions</h2>
+            <p>Select models to see their performance on questions that all selected models have attempted. This allows for a fair comparison.</p>
+            <select id="model-selection" class="model-selection" multiple="multiple">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+            <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

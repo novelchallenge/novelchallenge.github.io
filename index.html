@@ -1,56 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Model Leaderboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <title>Home - Nocha</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </nav>
         <h1>A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models</h1>
-        
         <div class="intro">
-            <p>Welcome to the Model Leaderboard! This leaderboard allows you to compare the performance of different models on our dataset of true/false questions. You can select multiple models from the dropdown below to see their accuracy based on the common set of attempted questions.</p>
-            <p>Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the models and the dataset.</p>
-            <p>Example of our dataset:</p>
-            <pre><code>
+            <p class="no-center">Welcome to the Nocha Leaderboard! Nocha enables you to compare the performance of various models on our dataset of true/false claim pairs about fictional books. Visit the <a href="leaderboard.html">Leaderboard</a> tab to see how well long-context models verify claims about books with extensive text.</p>
+            <p class="no-center">For more details about the task, check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a>.</p>
+            <div class="example">
+                <p><strong>Example of our dataset:</strong></p>
+                <div class="example-code">
+                    <pre><code>
 {
-  "claim 1"
-  "claim 2"
-  "book"
-  etc
+  "claim":,
+  "book_title":,
+  "index":,
+  "type": True,
+  "genre":,
+  "year":,
+  "scope":,
+  "length":,
+  "length_group":
 }
-            </code></pre>
-            <p>Find the code on <a href="https://github.com/your-repository" target="_blank">GitHub</a>.</p>
-        </div>
-        
-        <table id="leaderboard">
-            <thead>
-                <tr>
-                    <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated by JavaScript -->
-            </tbody>
-        </table>
-        
-        <div class="filter-container">
-            <h2>Compare Models on Common Questions</h2>
-            <p>Select models to see their performance on questions that all selected models have attempted. This allows for a fair comparison.</p>
-            <select id="model-selection" class="model-selection" multiple="multiple">
-                <!-- Options will be populated by JavaScript -->
-            </select>
-            <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
+{
+  "claim":,
+  "book_title":,
+  "index":,
+  "type": False,
+  "genre":,
+  "year":,
+  "scope":,
+  "length":,
+  "length_group":
+}
+                    </code></pre>
+                </div>
+            </div>
+            <p><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+            <div class="prompt">
+                <h2><i class="fas fa-cogs"></i> Prompt</h2>
+                <pre class="robotic-text">
+You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
+
+Answer TRUE if the statement is true in its entirety based on the context provided.
+Answer FALSE if any part of the statement is false based on the context provided.
+
+                &lt;context&gt; {book text} &lt;/context&gt;
+
+                &lt;statement&gt; {claim} &lt;/statement&gt;
+
+&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
+
+First provide an explanation of your decision-making process in at most one paragraph, and then provide your final answer. Use the following format:
+
+            &lt;explanation&gt; YOUR EXPLANATION &lt;/explanation&gt;
+                    &lt;answer&gt; YOUR ANSWER &lt;/answer&gt;
+                </pre>
+            </div>
+            <div class="prompt">
+                <h2><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
+                <pre class="robotic-text">
+You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
+
+Answer TRUE if the statement is true in its entirety based on the context provided.
+Answer FALSE if any part of the statement is false based on the context provided.
+
+                    &lt;context&gt; {book text} &lt;/context&gt;
+
+                    &lt;statement&gt; {claim} &lt;/statement&gt;
+
+&lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
+                </pre>
+            </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
