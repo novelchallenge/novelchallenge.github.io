@@ -95,3 +95,31 @@ table tr:hover {
 .clear-button:hover {
     background-color: #5e1387;
 }
+
+
+
+.sort-arrow {
+    font-size: 0.8em;
+    margin-left: 5px;
+    visibility: hidden; /* Hide arrows by default */
+}
+
+.sortable:hover .sort-arrow {
+    visibility: visible; /* Show arrows on hover */
+}
+
+.asc .sort-arrow {
+    visibility: visible;
+}
+
+.asc .sort-arrow::before {
+    content: "\u25B2"; /* Up arrow */
+}
+
+.desc .sort-arrow {
+    visibility: visible;
+}
+
+.desc .sort-arrow::before {
+    content: "\u25BC"; /* Down arrow */
+}

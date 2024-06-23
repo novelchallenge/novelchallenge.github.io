@@ -29,10 +29,10 @@
         <table id="leaderboard">
             <thead>
                 <tr>
-                    <th>Model</th>
-                    <th>Accuracy</th>
-                    <th>Correct</th>
-                    <th>Attempted</th>
+                    <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
                 </tr>
             </thead>
             <tbody>
