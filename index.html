@@ -13,13 +13,12 @@
         <h1>A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models</h1>
         
         <div class="intro">
-            <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character. Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
-                The model must verify both claims in a pair to be awarded 1 point. We report the accuracy (%) along with the counts of correct answers and total attempts. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of pairs attempted by these models.</p>
-            <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
+            <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of claims attempted by these models.</p>
+            <!-- <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p> -->
             <!-- <p>Example of our dataset:</p> -->
             <!-- Embedding the SVG image -->
-            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
-            <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+            <!-- <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;"> -->
+            <!-- <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p> -->
         </div>
         
         <table id="leaderboard">
@@ -44,8 +43,19 @@
             </select>
             <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
         </div>
+        <div class="intro">
+            <h1>About</h1>
+            <p>Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character (see the example below). Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
+                The model must verify both claims in a pair to be awarded 1 point. We report the accuracy (%) along with the counts of correct answers and total attempts. Below you will find the prompts employed to test the models. Results obtained with the "simplified" prompt are marked as "simple" in the table above.</p>
+            <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
+            <!-- <p>Example of our dataset:</p> -->
+            <!-- Embedding the SVG image -->
+            <h1>Example</h1>
+            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
+            <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+        </div>
         <div class="prompt">
-            <h2><i class="fas fa-cogs"></i> Prompt</h2>
+            <h1><i class="fas fa-cogs"></i> Prompt</h1>
             <pre class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
@@ -65,7 +75,7 @@ First provide an explanation of your decision-making process in at most one para
             </pre>
         </div>
         <div class="prompt">
-            <h2><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
+            <h1><i class="fas fa-cogs"></i> Prompt (Simple)</h1>
             <pre class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
