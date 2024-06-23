@@ -107,7 +107,7 @@ function populateModelSelection() {
     });
 
     $('#model-selection').select2({
-        placeholder: 'Select models for comparison',
+        placeholder: 'Select models to see their performance on common set of claims for comparison',
         allowClear: true
     }).on('change', filterModels);
 }
