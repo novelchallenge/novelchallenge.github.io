@@ -6,19 +6,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- Local FontAwesome CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet"> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models</h1>
+        <h1>
+            <img src="genie_lamp.png" alt="Genie Lamp" style="vertical-align: middle; margin-right: 10px; width: 50px; height: auto;">
+            A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models
+        </h1>
         
         <div class="intro">
             <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of claims attempted by these models.</p>
-            <!-- <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p> -->
-            <!-- <p>Example of our dataset:</p> -->
-            <!-- Embedding the SVG image -->
-            <!-- <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;"> -->
-            <!-- <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p> -->
         </div>
         
         <table id="leaderboard">
@@ -36,27 +35,31 @@
         </table>
         
         <div class="filter-container">
-            <!-- <h2>Compare Models on Common Questions</h2> -->
             <p>Select models to see their performance on claim pairs that all selected models have attempted. This allows for a fair comparison.</p>
             <select id="model-selection" class="model-selection" multiple="multiple">
                 <!-- Options will be populated by JavaScript -->
             </select>
             <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
         </div>
+
         <div class="intro">
-            <h1>About</h1>
+            <h2>About</h2>
             <p>Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character (see the example below). Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
                 The model must verify both claims in a pair to be awarded 1 point. We report the accuracy (%) along with the counts of correct answers and total attempts. Below you will find the prompts employed to test the models. Results obtained with the "simplified" prompt are marked as "simple" in the table above.</p>
-            <p><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
-            <!-- <p>Example of our dataset:</p> -->
-            <!-- Embedding the SVG image -->
-            <h1>Example</h1>
-            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
+            <p style="text-align: center; margin-top: 10px;"><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
             <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
+            <h2>Example</h2>
+            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
+            <div class="evaluation-section">
+                <!-- <h1>Evaluation</h1> -->
+                <img src="assets/evaluation.svg" alt="Evaluation" style="width:100%; height:auto;">
+            </div>
+            <br>
         </div>
+
         <div class="prompt">
-            <h1><i class="fas fa-cogs"></i> Prompt</h1>
-            <pre class="robotic-text">
+            <h2 class="prompt-header" onclick="togglePrompt('prompt-text')"><i class="fas fa-cogs"></i> Prompt</h2>
+            <pre id="prompt-text" class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
 Answer TRUE if the statement is true in its entirety based on the context provided.
@@ -74,9 +77,10 @@ First provide an explanation of your decision-making process in at most one para
 <center>&lt;answer&gt; YOUR ANSWER &lt;/answer&gt;</center>
             </pre>
         </div>
+
         <div class="prompt">
-            <h1><i class="fas fa-cogs"></i> Prompt (Simple)</h1>
-            <pre class="robotic-text">
+            <h2 class="prompt-header" onclick="togglePrompt('prompt-simple-text')"><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
+            <pre id="prompt-simple-text" class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
 Answer TRUE if the statement is true in its entirety based on the context provided.
@@ -89,9 +93,82 @@ Answer FALSE if any part of the statement is false based on the context provided
 &lt;question&gt; Based on the context provided, is the above statement TRUE or FALSE? &lt;/question&gt;
             </pre>
         </div>
+
+        <div class="team">
+            <h2 class="team-header" onclick="toggleTeam('team-section')"><i class="fas fa-users"></i> Team</h2>
+            <div id="team-section" class="team-section">
+                <div class="team-member">
+                    <a href="https://marzenakrp.github.io/" target="_blank">
+                        <img src="assets/marzena.jpeg" alt="Marzena Karpinska 1" class="team-img">
+                        <p>Marzena Karpinska</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://katherinethai.github.io/" target="_blank">
+                        <img src="assets/katherine.png" alt="Katherine Thai" class="team-img">
+                        <p>Katherine Thai</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://mungg.github.io/" target="_blank">
+                        <img src="assets/yekyung.jpeg" alt="Yekyung Kim" class="team-img">
+                        <p>Yekyung Kim</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://lilakk.github.io/" target="_blank">
+                        <img src="assets/yapei.jpeg" alt="Yapei Chang" class="team-img">
+                        <p>Yapei Chang</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://kyleclo.com/" target="_blank">
+                        <img src="assets/kyle.jpeg" alt="Kyle Lo" class="team-img">
+                        <p>Kyle Lo</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://tagoyal.github.io/" target="_blank">
+                        <img src="assets/tanya.jpeg" alt="Tanya Goyal" class="team-img">
+                        <p>Tanya Goyal</p>
+                    </a>
+                </div>
+                <div class="team-member">
+                    <a href="https://people.cs.umass.edu/~miyyer/" target="_blank">
+                        <img src="assets/mohit.jpeg" alt="Mohit Iyyer" class="team-img">
+                        <p>Mohit Iyyer</p>
+                    </a>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        function togglePrompt(id) {
+            var promptText = document.getElementById(id);
+            if (promptText.style.display === "none") {
+                promptText.style.display = "block";
+            } else {
+                promptText.style.display = "none";
+            }
+        }
+
+        function toggleTeam(id) {
+            var teamSection = document.getElementById(id);
+            if (teamSection.style.display === "none") {
+                teamSection.style.display = "block";
+            } else {
+                teamSection.style.display = "none";
+            }
+        }
+
+        // Initially hide the prompt texts and team section
+        document.getElementById('prompt-text').style.display = 'none';
+        document.getElementById('prompt-simple-text').style.display = 'none';
+        document.getElementById('team-section').style.display = 'none';
+    </script>
 </body>
 </html>
