@@ -159,6 +159,8 @@ function showAllModels() {
 
     const filteredResults = preprocessData(allModels, filteredQuestions);
     populateLeaderboard(filteredResults, allModels);
+
+    $('#model-selection').val(allModels).trigger('change'); // Populate model selection
 }
 
 // Handle checkboxes
@@ -175,7 +177,10 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
         );
         const filteredResults = preprocessData(closedSourceModels, filteredQuestions);
         populateLeaderboard(filteredResults, closedSourceModels);
+
+        $('#model-selection').val(closedSourceModels).trigger('change'); // Populate model selection
     } else {
+        $('#model-selection').val(null).trigger('change'); // Clear model selection
         initializeLeaderboard();
     }
 });
@@ -194,7 +199,10 @@ document.getElementById('open-source-checkbox').addEventListener('change', funct
         );
         const filteredResults = preprocessData(openSourceModels, filteredQuestions);
         populateLeaderboard(filteredResults, openSourceModels);
+
+        $('#model-selection').val(openSourceModels).trigger('change'); // Populate model selection
     } else {
+        $('#model-selection').val(null).trigger('change'); // Clear model selection
         initializeLeaderboard();
     }
 });
@@ -205,6 +213,7 @@ document.getElementById('all-models-checkbox').addEventListener('change', functi
         document.getElementById('open-source-checkbox').checked = false;
         showAllModels();
     } else {
+        $('#model-selection').val(null).trigger('change'); // Clear model selection
         initializeLeaderboard();
     }
 });

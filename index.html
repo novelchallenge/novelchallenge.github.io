@@ -18,21 +18,7 @@
         <div class="intro">
             <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of claims attempted by these models.</p>
         </div>
-        
-        <table id="leaderboard">
-            <thead id="table-headers">
-                <tr>
-                    <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated by JavaScript -->
-            </tbody>
-        </table>
-        
+
         <div class="filter-container">
             <p>Select models to see their performance on claim pairs that all selected models have attempted. This allows for a fair comparison.</p>
             <div class="checkbox-container">
@@ -52,6 +38,22 @@
             
             <button onclick="clearFilters()" class="clear-button">clear all filters</button>
         </div>
+        
+        <table id="leaderboard">
+            <thead id="table-headers">
+                <tr>
+                    <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        
         
         
         <div class="intro">
