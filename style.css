@@ -165,6 +165,15 @@ table tr:hover {
     margin-bottom: 10px;
     color: #6a1b9a;
     font-size: 2.0em;
+    cursor: pointer;
+}
+
+.prompt h2:hover, .team-header:hover {
+    color: #b34beb;
+}
+
+.prompt h2, .team-header {
+    cursor: pointer;
 }
 
 .robotic-text {
