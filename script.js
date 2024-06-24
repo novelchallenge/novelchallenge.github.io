@@ -115,31 +115,99 @@ function populateModelSelection() {
 // Filter the results based on selected models
 function filterModels() {
     const selectedModels = $('#model-selection').val();
+    const allModelsCheckbox = document.getElementById('all-models-checkbox').checked;
 
-    if (!selectedModels || selectedModels.length === 0) {
+    if (allModelsCheckbox) {
+        document.getElementById('closed-source-checkbox').checked = false;
+        document.getElementById('open-source-checkbox').checked = false;
+        showAllModels();
+    } else if (!selectedModels || selectedModels.length === 0) {
         initializeLeaderboard();
-        return;
+    } else {
+        filteredModels = selectedModels; // Update the filteredModels
+
+        let filteredQuestions = data.pairs;
+
+        if (selectedModels.length > 1) {
+            filteredQuestions = data.pairs.filter(question =>
+                selectedModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+            );
+        }
+
+        const filteredResults = preprocessData(selectedModels, filteredQuestions);
+        populateLeaderboard(filteredResults, selectedModels);
     }
-
-    filteredModels = selectedModels; // Update the filteredModels
-
-    let filteredQuestions = data.pairs;
-
-    if (selectedModels.length > 1) {
-        filteredQuestions = data.pairs.filter(question => 
-            selectedModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
-        );
-    }
-
-    const filteredResults = preprocessData(selectedModels, filteredQuestions);
-    populateLeaderboard(filteredResults, selectedModels);
 }
 
 // Clear all filters and show raw accuracy
 function clearFilters() {
     $('#model-selection').val(null).trigger('change');
+    document.getElementById('all-models-checkbox').checked = false;
+    document.getElementById('closed-source-checkbox').checked = false;
+    document.getElementById('open-source-checkbox').checked = false;
     initializeLeaderboard();
 }
+
+// Show all models based on common set
+function showAllModels() {
+    const allModels = Object.keys(data.pairs[0].results);
+    filteredModels = allModels;
+
+    let filteredQuestions = data.pairs.filter(question =>
+        allModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+    );
+
+    const filteredResults = preprocessData(allModels, filteredQuestions);
+    populateLeaderboard(filteredResults, allModels);
+}
+
+// Handle checkboxes
+document.getElementById('closed-source-checkbox').addEventListener('change', function () {
+    if (this.checked) {
+        document.getElementById('open-source-checkbox').checked = false;
+        document.getElementById('all-models-checkbox').checked = false;
+        const closedSourceModels = [
+            'GPT-4o', 'GPT-4-Turbo', 'Claude-3-Opus', 'Claude-3.5-Sonnet', 'Gemini Pro 1.5', 'Gemini Flash 1.5'
+        ];
+        filteredModels = closedSourceModels;
+        const filteredQuestions = data.pairs.filter(question =>
+            closedSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+        );
+        const filteredResults = preprocessData(closedSourceModels, filteredQuestions);
+        populateLeaderboard(filteredResults, closedSourceModels);
+    } else {
+        initializeLeaderboard();
+    }
+});
+
+document.getElementById('open-source-checkbox').addEventListener('change', function () {
+    if (this.checked) {
+        document.getElementById('closed-source-checkbox').checked = false;
+        document.getElementById('all-models-checkbox').checked = false;
+        const openSourceModels = [
+            'Command R+', 'Command R+ (simple)', 'Command R', 'Command R (simple)',
+            'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M'
+        ];
+        filteredModels = openSourceModels;
+        const filteredQuestions = data.pairs.filter(question =>
+            openSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+        );
+        const filteredResults = preprocessData(openSourceModels, filteredQuestions);
+        populateLeaderboard(filteredResults, openSourceModels);
+    } else {
+        initializeLeaderboard();
+    }
+});
+
+document.getElementById('all-models-checkbox').addEventListener('change', function () {
+    if (this.checked) {
+        document.getElementById('closed-source-checkbox').checked = false;
+        document.getElementById('open-source-checkbox').checked = false;
+        showAllModels();
+    } else {
+        initializeLeaderboard();
+    }
+});
 
 // Sort table by column
 function sortTable(key) {

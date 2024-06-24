@@ -35,12 +35,23 @@
         
         <div class="filter-container">
             <p>Select models to see their performance on claim pairs that all selected models have attempted. This allows for a fair comparison.</p>
+            <div class="checkbox-container">
+                <label class="filter-label">
+                    <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> common set all
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> common set (closed-source)
+                </label>
+                <label class="filter-label">
+                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> common set (open-weights)
+                </label>
+            </div>
             <select id="model-selection" class="model-selection" multiple="multiple">
                 <!-- Options will be populated by JavaScript -->
             </select>
-            <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
+            <button onclick="clearFilters()" class="clear-button">clear all filters</button>
         </div>
-
+        
         <div class="intro">
             <h2>About</h2>
             <p>Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character (see the example below). Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
@@ -49,10 +60,6 @@
             <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
             <h2>Example</h2>
             <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
-            <!-- <div class="evaluation-section"> -->
-                <!-- <h1>Evaluation</h1> -->
-                <!-- <img src="assets/evaluation.svg" alt="Evaluation" style="width:100%; height:auto;"> -->
-            <!-- </div> -->
         </div>
 
         <div class="prompt">
@@ -95,48 +102,7 @@ Answer FALSE if any part of the statement is false based on the context provided
         <div class="team">
             <h2 class="team-header" onclick="toggleTeam('team-section')"><i class="fas fa-users"></i> Team</h2>
             <div id="team-section" class="team-section">
-                <div class="team-member">
-                    <a href="https://marzenakrp.github.io/" target="_blank">
-                        <img src="assets/marzena.jpeg" alt="Marzena Karpinska 1" class="team-img">
-                        <p>Marzena Karpinska</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://katherinethai.github.io/" target="_blank">
-                        <img src="assets/katherine.png" alt="Katherine Thai" class="team-img">
-                        <p>Katherine Thai</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://mungg.github.io/" target="_blank">
-                        <img src="assets/yekyung.jpeg" alt="Yekyung Kim" class="team-img">
-                        <p>Yekyung Kim</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://lilakk.github.io/" target="_blank">
-                        <img src="assets/yapei.jpeg" alt="Yapei Chang" class="team-img">
-                        <p>Yapei Chang</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://kyleclo.com/" target="_blank">
-                        <img src="assets/kyle.jpeg" alt="Kyle Lo" class="team-img">
-                        <p>Kyle Lo</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://tagoyal.github.io/" target="_blank">
-                        <img src="assets/tanya.jpeg" alt="Tanya Goyal" class="team-img">
-                        <p>Tanya Goyal</p>
-                    </a>
-                </div>
-                <div class="team-member">
-                    <a href="https://people.cs.umass.edu/~miyyer/" target="_blank">
-                        <img src="assets/mohit.jpeg" alt="Mohit Iyyer" class="team-img">
-                        <p>Mohit Iyyer</p>
-                    </a>
-                </div>
+                
                 <!-- Add more team members as needed -->
             </div>
         </div>
@@ -160,6 +126,16 @@ Answer FALSE if any part of the statement is false based on the context provided
                 teamSection.style.display = "block";
             } else {
                 teamSection.style.display = "none";
+            }
+        }
+
+        function toggleClosedSource() {
+            const checkbox = document.getElementById('closed-source-checkbox');
+            const closedSourceModels = ["GPT-4o", "GPT-4-Turbo", "Claude-3-Opus", "Claude-3.5-Sonnet", "Gemini Pro 1.5", "Gemini Flash 1.5"];
+            if (checkbox.checked) {
+                $('#model-selection').val(closedSourceModels).trigger('change');
+            } else {
+                $('#model-selection').val(null).trigger('change');
             }
         }
 

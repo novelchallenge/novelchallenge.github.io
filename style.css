@@ -92,8 +92,21 @@ table tr:hover {
     text-align: left;
 }
 
-.filter-container h2, .filter-container p {
-    margin: 0 0 10px;
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.filter-label i {
+    margin-right: 5px;
 }
 
 .model-selection {
@@ -105,14 +118,16 @@ table tr:hover {
     background-color: #6a1b9a;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .clear-button:hover {
     background-color: #5e1387;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .sort-arrow {
@@ -211,8 +226,8 @@ table tr:hover {
     }
 
     .clear-button {
-        font-size: 14px;
-        padding: 8px 15px;
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
     h1 {
