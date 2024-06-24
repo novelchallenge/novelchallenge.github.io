@@ -37,20 +37,20 @@
             <p>Select models to see their performance on claim pairs that all selected models have attempted. This allows for a fair comparison.</p>
             <div class="checkbox-container">
                 <label class="filter-label">
-                    <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common all
+                    <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common set (all)
                 </label>
                 <label class="filter-label">
-                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Closed-Source Models
+                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Common set (closed-source)
                 </label>
                 <label class="filter-label">
-                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Open-Source Models
+                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weights)
                 </label>
             </div>
             <select id="model-selection" class="model-selection" multiple="multiple">
                 <!-- Options will be populated by JavaScript -->
             </select>
             
-            <button onclick="clearFilters()" class="clear-button">Clear All Filters</button>
+            <button onclick="clearFilters()" class="clear-button">clear all filters</button>
         </div>
         
         
