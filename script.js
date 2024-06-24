@@ -110,6 +110,13 @@ function populateModelSelection() {
     $('#model-selection').select2({
         placeholder: 'Select models to see their performance on common set of claims for comparison',
         allowClear: true
+    }).on('select2:unselecting', function() {
+        $(this).data('unselecting', true);
+    }).on('select2:opening', function(e) {
+        if ($(this).data('unselecting')) {
+            $(this).removeData('unselecting');
+            e.preventDefault();
+        }
     }).on('change', function () {
         if (!isUpdating) {
             filterModels();
