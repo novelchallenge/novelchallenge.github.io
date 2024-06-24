@@ -2,6 +2,7 @@ let data;
 let currentSortKey = 'accuracy';
 let currentSortDirection = 'desc';
 let filteredModels = []; // New variable to track filtered models
+let isUpdating = false; // Guard to prevent infinite loops
 
 // Fetch the JSON data
 fetch('data.json')
@@ -109,20 +110,19 @@ function populateModelSelection() {
     $('#model-selection').select2({
         placeholder: 'Select models to see their performance on common set of claims for comparison',
         allowClear: true
-    }).on('change', filterModels);
+    }).on('change', function () {
+        if (!isUpdating) {
+            filterModels();
+        }
+    });
 }
 
 // Filter the results based on selected models
 function filterModels() {
     const selectedModels = $('#model-selection').val();
-    const allModelsCheckbox = document.getElementById('all-models-checkbox').checked;
 
-    if (allModelsCheckbox) {
-        document.getElementById('closed-source-checkbox').checked = false;
-        document.getElementById('open-source-checkbox').checked = false;
-        showAllModels();
-    } else if (!selectedModels || selectedModels.length === 0) {
-        initializeLeaderboard();
+    if (!selectedModels || selectedModels.length === 0) {
+        clearFilters();
     } else {
         filteredModels = selectedModels; // Update the filteredModels
 
@@ -136,16 +136,27 @@ function filterModels() {
 
         const filteredResults = preprocessData(selectedModels, filteredQuestions);
         populateLeaderboard(filteredResults, selectedModels);
+
+        // Uncheck checkboxes if manual filtering is applied
+        if (!isUpdating) {
+            document.getElementById('all-models-checkbox').checked = false;
+            document.getElementById('closed-source-checkbox').checked = false;
+            document.getElementById('open-source-checkbox').checked = false;
+        }
     }
 }
 
 // Clear all filters and show raw accuracy
 function clearFilters() {
-    $('#model-selection').val(null).trigger('change');
-    document.getElementById('all-models-checkbox').checked = false;
-    document.getElementById('closed-source-checkbox').checked = false;
-    document.getElementById('open-source-checkbox').checked = false;
-    initializeLeaderboard();
+    if (!isUpdating) {
+        isUpdating = true; // Set guard
+        $('#model-selection').val(null).trigger('change');
+        document.getElementById('all-models-checkbox').checked = false;
+        document.getElementById('closed-source-checkbox').checked = false;
+        document.getElementById('open-source-checkbox').checked = false;
+        isUpdating = false; // Unset guard
+        initializeLeaderboard();
+    }
 }
 
 // Show all models based on common set
@@ -158,9 +169,12 @@ function showAllModels() {
     );
 
     const filteredResults = preprocessData(allModels, filteredQuestions);
-    populateLeaderboard(filteredResults, allModels);
 
+    isUpdating = true; // Set guard
     $('#model-selection').val(allModels).trigger('change'); // Populate model selection
+    isUpdating = false; // Unset guard
+
+    populateLeaderboard(filteredResults, allModels);
 }
 
 // Handle checkboxes
@@ -176,12 +190,14 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
             closedSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
         );
         const filteredResults = preprocessData(closedSourceModels, filteredQuestions);
-        populateLeaderboard(filteredResults, closedSourceModels);
 
+        isUpdating = true; // Set guard
         $('#model-selection').val(closedSourceModels).trigger('change'); // Populate model selection
+        isUpdating = false; // Unset guard
+
+        populateLeaderboard(filteredResults, closedSourceModels);
     } else {
-        $('#model-selection').val(null).trigger('change'); // Clear model selection
-        initializeLeaderboard();
+        clearFilters();
     }
 });
 
@@ -198,12 +214,14 @@ document.getElementById('open-source-checkbox').addEventListener('change', funct
             openSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
         );
         const filteredResults = preprocessData(openSourceModels, filteredQuestions);
-        populateLeaderboard(filteredResults, openSourceModels);
 
+        isUpdating = true; // Set guard
         $('#model-selection').val(openSourceModels).trigger('change'); // Populate model selection
+        isUpdating = false; // Unset guard
+
+        populateLeaderboard(filteredResults, openSourceModels);
     } else {
-        $('#model-selection').val(null).trigger('change'); // Clear model selection
-        initializeLeaderboard();
+        clearFilters();
     }
 });
 
@@ -213,8 +231,7 @@ document.getElementById('all-models-checkbox').addEventListener('change', functi
         document.getElementById('open-source-checkbox').checked = false;
         showAllModels();
     } else {
-        $('#model-selection').val(null).trigger('change'); // Clear model selection
-        initializeLeaderboard();
+        clearFilters();
     }
 });
 

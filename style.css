@@ -92,6 +92,12 @@ table tr:hover {
     text-align: left;
 }
 
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space between elements */
+}
+
 .checkbox-container {
     display: flex;
     flex-wrap: wrap;
@@ -115,19 +121,20 @@ table tr:hover {
 }
 
 .clear-button {
-    background-color: #6a1b9a;
-    color: white;
+    background-color: #ff5733;
+    color: rgb(255, 255, 255);
     border: none;
-    padding: 8px 15px;
+    padding: 6px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .clear-button:hover {
-    background-color: #5e1387;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #d92902;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .sort-arrow {

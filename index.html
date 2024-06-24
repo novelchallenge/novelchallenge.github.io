@@ -32,11 +32,13 @@
                     <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weights)
                 </label>
             </div>
-            <select id="model-selection" class="model-selection" multiple="multiple">
-                <!-- Options will be populated by JavaScript -->
-            </select>
+            <div class="filter-controls">
+                <select id="model-selection" class="model-selection" multiple="multiple">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <button onclick="clearFilters()" class="clear-button">clear all filters</button>
+            </div>
             
-            <button onclick="clearFilters()" class="clear-button">clear all filters</button>
         </div>
         
         <table id="leaderboard">
