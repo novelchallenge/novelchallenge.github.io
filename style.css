@@ -232,6 +232,7 @@ table tr:hover {
 
     table th, table td {
         padding: 8px;
+        font-size: 14px; /* Smaller font size for table cells */
     }
 
     .clear-button {
@@ -240,10 +241,22 @@ table tr:hover {
     }
 
     h1 {
-        font-size: 2em;
+        font-size: 1.5em; /* Smaller font size for h1 */
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1em; /* Smaller font size for h2 */
+    }
+
+    .intro p {
+        font-size: 14px; /* Smaller font size for paragraphs */
+    }
+
+    .prompt h2 {
+        font-size: 1.2em; /* Smaller font size for prompt headers */
+    }
+
+    .robotic-text {
+        font-size: 12px; /* Smaller font size for robotic text */
     }
 }
