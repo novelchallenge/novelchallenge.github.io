@@ -198,7 +198,7 @@ table tr:hover {
     width: 150px;
     height: 150px;
     transition: transform 0.3s;
-    box-shadow: 0 0 10px rgba(166, 10, 153, 0.5);
+    box-shadow: 0 0 10px rgba(72, 2, 112, 0.5);
 }
 
 .team-img:hover {
