@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontawesome/css/all.css"> <!-- Local FontAwesome CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -16,11 +18,17 @@
         </h1>
         
         <div class="intro">
-            <p>Welcome to <span class="nocha-2">Nocha</span> Leaderboard! Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. Since models differ in how much text they can process, the total number of pairs (attempts) processed by each model will vary. You can select models below to show the accuracies for a common set of claims attempted by these models.</p>
+            <p><span class="nocha">NoCha</span> measures how well <b>long-context language models</b> can verify claims written about fictional books. Check out our <a href="">paper</a> and <a href="">GitHub repo</a> for more details.<br><br>
+            Our dataset consists of 1001 <i>narrative minimal pairs</i> written about recently-published novels, where one claim is true and the other is false. Given the book text and a claim, a model is instructed to verify whether the claim is true or false. They only get credit for a pair if they are able to correctly label both the true and false claim.<br>
         </div>
 
+        <div class="caution-flag">
+            The <span class="nocha">NoCha</span> dataset will <u>not</u> be publicly released to prevent data contamination. We include a small data sample from public domain books in our GitHub repo. Our team commits to updating the leaderboard with new models and updating the dataset with new books. Please contact EMAIL if you want your model to appear on the leaderboard (API credits are certainly welcome!) 
+        </div>
+        <br>
+
         <div class="filter-container">
-            <p>Select models to see their performance on claim pairs that all selected models have attempted. This allows for a fair comparison.</p>
+                While the default leaderboard view ranks models by their accuracy on attempted pairs, each model only attempts pairs for which the book fits within the context window and also pass content filters. The controls below allow you to fairly compare selected models on a <i>common set</i> of attempted pairs.<br><br> 
             <div class="checkbox-container">
                 <label class="filter-label">
                     <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common set (all)

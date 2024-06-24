@@ -1,9 +1,10 @@
 body {
-    font-family: Georgia, serif;
+    font-family: 'Georgia', serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
+    font-size: 1.0em;
 }
 
 .container {
@@ -18,14 +19,14 @@ body {
 h1 {
     text-align: center;
     color: #6a1b9a;
-    font-family: 'Aladin', cursive;
-    font-size: 2.5em;
+    font-family: 'Scheherazade', serif;
+    font-size: 2.0em;
 }
 
 h2 {
     text-align: center;
     color: #6a1b9a;
-    font-family: 'Aladin', cursive;
+    font-family: 'Scheherazade', serif;
     font-size: 2.0em;
 }
 
@@ -90,6 +91,12 @@ table tr:hover {
 
 .filter-container {
     text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .filter-controls {
@@ -266,4 +273,14 @@ table tr:hover {
     .robotic-text {
         font-size: 12px; /* Smaller font size for robotic text */
     }
+}
+
+.caution-flag {
+    border: 2px solid #ffcc00; /* Yellow border to indicate caution */
+    border-radius: 8px;
+    background-color: #fff9c4; /* Light yellow background */
+    padding: 3px;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+    color: #333;
 }
