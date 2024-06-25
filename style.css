@@ -19,24 +19,25 @@ body {
 h1 {
     text-align: center;
     color: #6a1b9a;
-    font-family: 'Scheherazade', serif;
+    font-family: 'Cinzel Decorative', cursive;
     font-size: 2.0em;
 }
 
 h2 {
     text-align: left;
     color: #6a1b9a;
-    font-family: 'Scheherazade', serif;
+    /* font-family: 'Cinzel Decorative', cursive; */
     font-size: 2.0em;
 }
 
 .nocha {
+    font-family: 'Cinzel Decorative', cursive;
     font-weight: bold;
     color: #ff5733; /* Different color for "No" and "Cha" */
 }
 
 .nocha-2 {
-    font-family: 'Aladin', cursive;
+    font-family: 'Cinzel Decorative', cursive;
     font-size: 1.2em;
     color: #6a1b9a;
 }
@@ -262,9 +263,17 @@ table tr:hover {
         font-size: 1.2em;
     }
 
+    .filter-container {
+        font-size: 8px; 
+    }
+
+
     .intro p,
-    .filter-container,
-    .caution-flag,
+    .caution-flag {
+        font-size: 10px; 
+    }
+
+
     #leaderboard {
         font-size: 12px; 
     }
@@ -289,8 +298,8 @@ table tr:hover {
 
 
 .caution-flag {
-    border: 2px solid #ff7700;
-    border-radius: 5px;
+    border: 1px solid #ff7700;
+    border-radius: 8px;
     background-color: #ffffff; 
     padding: 15px;
     margin-bottom: 20px;
