@@ -263,7 +263,7 @@ table tr:hover {
     }
 
     .intro p {
-        font-size: 12px; /* Smaller font size for paragraphs */
+        font-size: 10px; /* Smaller font size for paragraphs */
     }
 
     .prompt h2 {
@@ -275,7 +275,11 @@ table tr:hover {
     }
 
     .caution-flag {
-        font-size: 12px; /* Smaller font size for caution flag text */
+        font-size: 10px; /* Smaller font size for caution flag text */
+    }
+    
+    .caution-flag a i {
+        margin-right: 1px; 
     }
 }
 
