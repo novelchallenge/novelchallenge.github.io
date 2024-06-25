@@ -246,7 +246,7 @@ table tr:hover {
 
     table th, table td {
         padding: 8px;
-        font-size: 12px; /* Smaller font size for table cells */
+        font-size: 12px; 
     }
 
     .clear-button {
@@ -255,33 +255,38 @@ table tr:hover {
     }
 
     h1 {
-        font-size: 1.5em; /* Smaller font size for h1 */
+        font-size: 1.5em; 
     }
 
     h2 {
-        font-size: 1em; /* Smaller font size for h2 */
+        font-size: 1.2em;
     }
 
-    .intro p {
-        font-size: 10px; /* Smaller font size for paragraphs */
+    .intro p,
+    .filter-container,
+    .caution-flag,
+    #leaderboard {
+        font-size: 12px; 
     }
 
     .prompt h2 {
-        font-size: 1.2em; /* Smaller font size for prompt headers */
+        font-size: 1.2em; 
     }
 
     .robotic-text {
-        font-size: 12px; /* Smaller font size for robotic text */
+        font-size: 12px; 
     }
 
-    .caution-flag {
-        font-size: 10px; /* Smaller font size for caution flag text */
-    }
-    
     .caution-flag a i {
-        margin-right: 1px; 
+        margin-right: 1px;
+    }
+
+    .caution-flag a {
+        text-decoration: none; 
+        color:  #6a1b9a; 
     }
 }
+
 
 .caution-flag {
     border: 2px solid #ff7700;
