@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 950px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
@@ -283,11 +283,11 @@ table tr:hover {
 }
 
 .example-content {
-    display: none; /* Hidden by default */
+    display: none; 
     background-color: #e0e0e0;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(203, 147, 237, 0.2);
     text-align: left;
     font-size: 1em;
 }
