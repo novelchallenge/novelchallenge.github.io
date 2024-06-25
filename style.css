@@ -1,10 +1,11 @@
+/* Base styles */
 body {
     font-family: 'Georgia', serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
-    font-size: 1.0em;
+    font-size: 16px; /* Default font size */
 }
 
 .container {
@@ -20,14 +21,14 @@ h1 {
     text-align: center;
     color: #6a1b9a;
     font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.0em;
+    font-size: 2.5em; /* Bigger than h2 */
 }
 
 h2 {
     text-align: left;
+    font-family: 'Alegreya', cursive;
     color: #6a1b9a;
-    /* font-family: 'Cinzel Decorative', cursive; */
-    font-size: 2.0em;
+    font-size: 2em; /* Smaller than h1 */
 }
 
 .nocha {
@@ -48,6 +49,7 @@ h2 {
 
 .intro p {
     margin: 0 0 10px;
+    font-size: 1em; /* Same as the base font size */
 }
 
 .intro a {
@@ -75,6 +77,7 @@ table th, table td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
+    font-size: 1em; /* Match table text size to the body text size */
 }
 
 table th {
@@ -98,6 +101,7 @@ table tr:hover {
     background-color: #f9f9f9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    font-size: 1em; /* Match filter container text size to the body text size */
 }
 
 .filter-controls {
@@ -111,12 +115,13 @@ table tr:hover {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
+    font-size: 1em; /* Match checkbox text size to the body text size */
 }
 
 .filter-label {
     display: flex;
     align-items: center;
-    font-size: 1.1em;
+    font-size: 1em; /* Match filter label text size to the body text size */
 }
 
 .filter-label i {
@@ -135,7 +140,7 @@ table tr:hover {
     padding: 6px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1em; /* Match clear button text size to the body text size */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     white-space: nowrap; /* Prevent text from wrapping */
 }
@@ -179,7 +184,7 @@ table tr:hover {
 .prompt h2 {
     margin-bottom: 10px;
     color: #6a1b9a;
-    font-size: 2.0em;
+    font-size: 2em;
     cursor: pointer;
 }
 
@@ -202,6 +207,7 @@ table tr:hover {
     white-space: pre-wrap;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1em; /* Match robotic text size to the body text size */
 }
 
 .team-section {
@@ -234,78 +240,15 @@ table tr:hover {
     font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px;
-        padding: 15px;
-    }
-
-    .team-member {
-        flex: 1 1 100%; /* Adjust to take up 100% of the container width on small screens */
-    }
-
-    table th, table td {
-        padding: 8px;
-        font-size: 12px; 
-    }
-
-    .clear-button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-
-    h1 {
-        font-size: 1.5em; 
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    .filter-container {
-        font-size: 8px; 
-    }
-
-
-    .intro p,
-    .caution-flag {
-        font-size: 10px; 
-    }
-
-
-    #leaderboard {
-        font-size: 12px; 
-    }
-
-    .prompt h2 {
-        font-size: 1.2em; 
-    }
-
-    .robotic-text {
-        font-size: 12px; 
-    }
-
-    .caution-flag a i {
-        margin-right: 1px;
-    }
-
-    .caution-flag a {
-        text-decoration: none; 
-        color:  #6a1b9a; 
-    }
-}
-
-
 .caution-flag {
     border: 1px solid #ff7700;
     border-radius: 8px;
     background-color: #ffffff; 
     padding: 15px;
     margin-bottom: 20px;
-    font-size: 0.9em;
+    font-size: 1em; /* Match caution flag text size to the body text size */
     color: #333;
-    box-shadow: 0 4px 8px rgba(183, 6, 45, 0.2); 
+    box-shadow: 0 4px 8px rgba(183, 6, 45, 0.1); 
 }
 
 .caution-flag a {
@@ -319,4 +262,45 @@ table tr:hover {
 
 .caution-flag a i {
     margin-right: 5px; 
+}
+
+
+
+.example {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.example-header {
+    margin-bottom: 10px;
+    color: #6a1b9a;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.example-header:hover {
+    color: #b34beb;
+}
+
+.example-content {
+    display: none; /* Hidden by default */
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 1em;
+}
+
+.example-content p {
+    margin: 10px 0;
+}
+
+.example-content a {
+    color: #6a1b9a;
+    text-decoration: none;
+}
+
+.example-content a:hover {
+    text-decoration: underline;
 }
