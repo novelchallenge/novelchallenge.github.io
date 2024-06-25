@@ -20,8 +20,8 @@ body {
 h1 {
     text-align: center;
     color: #6a1b9a;
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2em;
+    font-family: 'Cinzel Decorative';
+    font-size: 1.4em;
 }
 
 h2 {
@@ -59,6 +59,10 @@ h2 {
 
 .intro a:hover {
     text-decoration: underline;
+}
+
+.intro a i, .intro a .fab {
+    margin-right: 5px;
 }
 
 .intro iframe {
@@ -323,7 +327,7 @@ table tr:hover {
 
     table th, table td {
         padding: 8px;
-        font-size: 14px;
+        font-size: 1em; /* Increase font size for better readability */
     }
 
     .clear-button {
@@ -382,7 +386,7 @@ table tr:hover {
 
     table th, table td {
         padding: 8px;
-        font-size: 12px;
+        font-size: 1em; /* Increase font size for better readability */
     }
 
     .clear-button {

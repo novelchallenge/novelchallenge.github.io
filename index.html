@@ -17,9 +17,9 @@
             <img src="genie_lamp.png" alt="Genie Lamp" style="vertical-align: middle; margin-right: 2px; width: 50px; height: auto; position: relative; top: -10px">
             A <span class="nocha">No</span>vel <span class="nocha">Cha</span>llenge for long-context language models
         </h1>
-        
+        <hr><br>
         <div class="intro">
-            <p><span class="nocha">NoCha</span> measures how well <b>long-context language models</b> can verify claims written about fictional books. Check out our <a href="http://arxiv.org/abs/2406.16264"><i class="fas fa-file-alt"></i> paper</a> and <a href="https://github.com/marzenakrp/nocha/"><i class="fab fa-github"></i> GitHub repo</a> for more details.<br><br>
+            <p><span class="nocha">NoCha</span> measures how well <b>long-context language models</b> can verify claims written about fictional books. Check out our <a href="http://arxiv.org/abs/2406.16264"><i class="fas fa-file-alt"></i>paper</a> and <a href="https://github.com/marzenakrp/nocha/"><i class="fab fa-github"></i>GitHub repo</a> for more details.<br><br>
             <b>About the benchmark:</b> <span class="nocha">NoCha</span> contains 1001 <i>narrative minimal pairs</i> written about recently-published novels, where one claim is true and the other is false. Given the book text and a claim, a model is instructed to verify whether the claim is true or false. The model only gets credit for a pair if it correctly labels both the true and false claim.<br>
         </div>
 
@@ -30,10 +30,10 @@
                     <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common set (all)
                 </label>
                 <label class="filter-label">
-                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Common set (closed-source)
+                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Common set (closed LLMs)
                 </label>
                 <label class="filter-label">
-                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weights)
+                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weight)
                 </label>
             </div>
             <div class="filter-controls">
@@ -50,8 +50,8 @@
                 <tr>
                     <th class="sortable" onclick="sortTable('model')">Model <span class="sort-arrow" id="model-arrow"></span></th>
                     <th class="sortable" onclick="sortTable('accuracy')">Accuracy <span class="sort-arrow" id="accuracy-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('correct')">Correct <span class="sort-arrow" id="correct-arrow"></span></th>
-                    <th class="sortable" onclick="sortTable('attempted')">Attempted <span class="sort-arrow" id="attempted-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('correct')"> # Correct pairs<span class="sort-arrow" id="correct-arrow"></span></th>
+                    <th class="sortable" onclick="sortTable('attempted')"># Attempted pairs<span class="sort-arrow" id="attempted-arrow"></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -66,29 +66,21 @@
             The <span class="nocha">NoCha</span> dataset will <u>not</u> be publicly released to prevent data contamination. We include a small data sample from public domain books in our <a href="https://github.com/marzenakrp/nocha/"><i class="fab fa-github"></i>GitHub repo</a>. Our team commits to updating the leaderboard with new models and updating the dataset with new books. Please <a href="mailto:nochachallenge@gmail.com"><i class="fas fa-envelope"></i>contact us</a> if you want your model to appear on the leaderboard (API credits are certainly welcome!)
         </div>        
         <br>
-        
-        <!-- <div class="intro">
-            <h2>About</h2>
-            <p>Nocha tests the capabilities of <b>long-context models</b> to verify claims about fictional books. The test data consists of true/false <b>narrative minimal pairs</b> about the same event or character (see the example below). Each false claim differs from the true claim in its pair <i>only</i> by the inclusion of false information regarding the same event or entity.
-                The model must verify both claims in a pair to be awarded 1 point. We report the accuracy (%) along with the counts of correct answers and total attempts. Below you will find the prompts employed to test the models. Results obtained with the "simplified" prompt are marked as "simple" in the table above.</p>
-            <p style="text-align: center; margin-top: 10px;"><i class="fas fa-file-alt"></i> Check out our <a href="https://link-to-your-paper.com" target="_blank">paper</a> for more details about the task.</p>
-            <p style="text-align: center; margin-top: 10px;"><i class="fab fa-github"></i> Code and sample data available on <a href="https://github.com/marzenakrp/nocha/" target="_blank">GitHub</a>.</p>
-            <h2>Example</h2>
-            <img src="webexample.svg" alt="Example of Dataset" style="width:100%; height:auto;">
-        </div> -->
+    
 
         <div class="example">
-            <h2 class="example-header" onclick="toggleExample('example-text')"><i class="fas fa-book"></i> Example</h2>
+            <h2 class="example-header" onclick="toggleExample('example-text')"><i class="fas fa-book"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example pair</h2>
             <div id="example-text" class="example-content">
                 <p><b>Book:</b> <a href="https://www.goodreads.com/book/show/150247395-the-tainted-cup">"Tainted Cup"</a> by Robert Jackson</p>
                 <p><b>True claim:</b> Despite her skills as an Apoth, Nusis is unable to reverse engineer the type of portal opened by the reagents key found in Rona's wooden chest.</p>
                 <p><b>False claim:</b> By using her skills as an Apoth, Nusis is able to reverse engineer the type of portal opened by the reagents key found in Rona's wooden chest.</p>
+                <p><b>Human-written explanation from <span class="nocha">NoCha</span>:</b> The reagents key is in fact not a key at all but the cure for dappleglass poisoning, which explains why Nusis is unable to figure out what type of portal it opens.</p>
             </div>
         </div>
         
 
         <div class="prompt">
-            <h2 class="prompt-header" onclick="togglePrompt('prompt-text')"><i class="fas fa-cogs"></i> Prompt</h2>
+            <h2 class="prompt-header" onclick="togglePrompt('prompt-text')"><i class="fas fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;Main prompt (explain+answer)</h2>
             <pre id="prompt-text" class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
@@ -109,7 +101,7 @@ First provide an explanation of your decision-making process in at most one para
         </div>
 
         <div class="prompt">
-            <h2 class="prompt-header" onclick="togglePrompt('prompt-simple-text')"><i class="fas fa-cogs"></i> Prompt (Simple)</h2>
+            <h2 class="prompt-header" onclick="togglePrompt('prompt-simple-text')"><i class="fas fa-cogs"></i>&nbsp;&nbsp;&nbsp;&nbsp;Simple prompt (answer only)</h2> 
             <pre id="prompt-simple-text" class="robotic-text">
 You are provided with a context and a statement. Your task is to carefully read the context and then determine whether the statement is true or false.
 
@@ -125,7 +117,7 @@ Answer FALSE if any part of the statement is false based on the context provided
         </div>
 
         <div class="team">
-            <h2 class="team-header" onclick="toggleTeam('team-section')"><i class="fas fa-users"></i> Team</h2>
+            <h2 class="team-header" onclick="toggleTeam('team-section')"><i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;&nbsp;Team</h2>
             <div id="team-section" class="team-section">
                     <div class="team-member">
                         <a href="https://marzenakrp.github.io/" target="_blank">
