@@ -304,3 +304,128 @@ table tr:hover {
 .example-content a:hover {
     text-decoration: underline;
 }
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .team-member {
+        flex: 1 1 100%; 
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .clear-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .filter-container {
+        font-size: 12px;
+    }
+
+    .checkbox-container {
+        font-size: 12px;
+    }
+
+    .intro p,
+    .caution-flag {
+        font-size: 12px;
+    }
+
+    #leaderboard {
+        font-size: 14px;
+    }
+
+    .prompt h2,
+    .example-header {
+        font-size: 1.2em;
+    }
+
+    .robotic-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .team-member {
+        flex: 1 1 100%;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .clear-button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    h1 {
+        font-size: 1.2em; 
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .filter-container {
+        font-size: 10px;
+    }
+
+    .checkbox-container {
+        font-size: 10px;
+    }
+
+    .intro p,
+    .caution-flag {
+        font-size: 10px;
+    }
+
+    .robotic-text {
+        font-size: 12px;
+    }
+
+    .prompt h2,
+    .example-header {
+        font-size: 1em;
+    }
+
+    .caution-flag a i {
+        margin-right: 1px;
+    }
+
+    .caution-flag a {
+        text-decoration: none;
+        color: #6a1b9a;
+    }
+}
