@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     color: #6a1b9a;
     font-family: 'Scheherazade', serif;
     font-size: 2.0em;
@@ -91,7 +91,7 @@ table tr:hover {
 
 .filter-container {
     text-align: left;
-    border: 1px solid #ddd;
+    border: 1px solid #6a1b9a;
     border-radius: 8px;
     padding: 20px;
     background-color: #f9f9f9;
@@ -128,7 +128,7 @@ table tr:hover {
 }
 
 .clear-button {
-    background-color: #ff5733;
+    background-color: #e17624;
     color: rgb(255, 255, 255);
     border: none;
     padding: 6px 10px;
@@ -140,7 +140,7 @@ table tr:hover {
 }
 
 .clear-button:hover {
-    background-color: #d92902;
+    background-color: #c04909;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
