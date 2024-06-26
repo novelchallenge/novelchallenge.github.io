@@ -414,27 +414,125 @@ table tr:hover {
         font-size: 1em; /* Consistent font size for text elements */
     }
 
+    .select2-container--default .select2-search--inline .select2-search__field {
+        background: transparent;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+        -webkit-appearance: textfield;
+        width: calc(100% - 110px); 
+        box-sizing: border-box; 
+    }
+
     table th, table td {
         padding: 8px;
-        font-size: 1em; /* Match table text size to the body text size */
+        font-size: 1em; 
+    }
+
+    .filter-container {
+        font-size: 0.8em; 
+        padding: 4px 4px; 
     }
 
     .clear-button {
-        font-size: 1em; /* Increase font size for clear button */
-        padding: 8px 12px; /* Adjust padding for clear button */
+        font-size: 0.8em; 
+        padding: 4px 5px; 
     }
 
     .filter-label, 
     .filter-label i {
-        font-size: 1em; /* Ensure checkbox labels are readable */
+        font-size: 1em; 
     }
 
     .model-selection {
-        font-size: 1em; /* Ensure dropdown font size is consistent */
+        font-size: 1em;
     }
 
     .team-member {
-        flex: 1 1 100%; /* Adjust to take up 100% of the container width on small screens */
+        flex: 1 1 100%; 
+    }
+
+    #leaderboard {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .example-content p {
+        margin: 10px 0;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    body {
+        font-size: 15px; 
+    }
+
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.2em; 
+    }
+
+    .prompt h2,
+    .example-header  {
+        font-size: 1.2em; 
+    }
+
+    .intro p, 
+    .filter-container, 
+    .checkbox-container, 
+    .robotic-text, 
+    .caution-flag, 
+    .example-content {
+        font-size: 1em; 
+    }
+
+    .select2-container--default .select2-search--inline .select2-search__field {
+        background: transparent;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+        -webkit-appearance: textfield;
+        width: calc(100% - 110px); 
+        box-sizing: border-box; 
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 1em; 
+    }
+
+    .filter-container {
+        font-size: 0.8em; 
+        padding: 4px 4px; 
+    }
+
+    .clear-button {
+        font-size: 0.8em; 
+        padding: 4px 5px; 
+    }
+
+    .filter-label, 
+    .filter-label i {
+        font-size: 1em; 
+    }
+
+    .model-selection {
+        font-size: 1em; 
+    }
+
+    .team-member {
+        flex: 1 1 100%; 
     }
 
     #leaderboard {
