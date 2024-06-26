@@ -59,6 +59,7 @@ h2 {
 
 .intro a:hover {
     text-decoration: underline;
+    color: #b34beb;
 }
 
 .intro a i, .intro a .fab {
@@ -465,7 +466,7 @@ table tr:hover {
 }
 
 
-@media (max-width: 1280px) {
+@media (max-width: 1380px) {
     body {
         font-size: 15px; 
     }
@@ -507,6 +508,7 @@ table tr:hover {
         box-sizing: border-box; 
     }
 
+
     table th, table td {
         padding: 8px;
         font-size: 1em; 
@@ -540,6 +542,9 @@ table tr:hover {
         overflow-x: auto;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
+        width: 100%; 
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .example-content p {
