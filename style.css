@@ -314,122 +314,137 @@ table tr:hover {
 
 
 
-/* Responsive Design */
+
+/* Responsive Design for Mobile Phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; 
+    }
+
+    .container {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3em; 
+    }
+
+    h2 {
+        font-size: 1.2em; 
+    }
+
+    .intro p, 
+    .filter-container, 
+    .checkbox-container, 
+    .prompt h2, 
+    .robotic-text, 
+    .caution-flag, 
+    .example-header, 
+    .example-content {
+        font-size: 0.9em; /* Consistent font size for text elements */
+    }
+
+    table th, table td {
+        padding: 6px;
+        font-size: 0.9em; /* Match table text size to the body text size */
+    }
+
+    .clear-button {
+        font-size: 0.9em; /* Increase font size for clear button */
+        padding: 6px 8px; /* Adjust padding for clear button */
+    }
+
+    .filter-label, 
+    .filter-label i {
+        font-size: 0.9em; /* Ensure checkbox labels are readable */
+    }
+
+    .model-selection {
+        font-size: 0.9em; /* Ensure dropdown font size is consistent */
+    }
+
+    .team-member {
+        flex: 1 1 100%; /* Adjust to take up 100% of the container width on small screens */
+    }
+
+    #leaderboard {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .example-content p {
+        margin: 10px 0;
+    }
+}
+
+
+/* Responsive Design for Tablets */
 @media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Adjust base font size for tablets */
+    }
+
     .container {
         margin: 20px;
         padding: 15px;
     }
 
-    .team-member {
-        flex: 1 1 100%; 
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.2em; /* Adjust font size for h2 */
+    }
+
+    .prompt h2,
+    .example-header  {
+        font-size: 1.2em; /* Adjust font size for h2 */
+    }
+
+    .intro p, 
+    .filter-container, 
+    .checkbox-container, 
+    .robotic-text, 
+    .caution-flag, 
+    .example-content {
+        font-size: 1em; /* Consistent font size for text elements */
     }
 
     table th, table td {
         padding: 8px;
-        font-size: 1em; /* Increase font size for better readability */
+        font-size: 1em; /* Match table text size to the body text size */
     }
 
     .clear-button {
-        font-size: 14px;
-        padding: 8px 12px;
+        font-size: 1em; /* Increase font size for clear button */
+        padding: 8px 12px; /* Adjust padding for clear button */
     }
 
-    h1 {
-        font-size: 1.5em;
+    .filter-label, 
+    .filter-label i {
+        font-size: 1em; /* Ensure checkbox labels are readable */
     }
 
-    h2 {
-        font-size: 1.2em;
+    .model-selection {
+        font-size: 1em; /* Ensure dropdown font size is consistent */
     }
 
-    .filter-container {
-        font-size: 12px;
-    }
-
-    .checkbox-container {
-        font-size: 12px;
-    }
-
-    .intro p,
-    .caution-flag {
-        font-size: 12px;
+    .team-member {
+        flex: 1 1 100%; /* Adjust to take up 100% of the container width on small screens */
     }
 
     #leaderboard {
-        font-size: 14px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .prompt h2,
-    .example-header {
-        font-size: 1.2em;
-    }
-
-    .robotic-text {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    .team-member {
-        flex: 1 1 100%;
-    }
-
-    table th, table td {
-        padding: 8px;
-        font-size: 1em; /* Increase font size for better readability */
-    }
-
-    .clear-button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-
-    h1 {
-        font-size: 1.2em; 
-    }
-
-    h2 {
-        font-size: 1em;
-    }
-
-    .filter-container {
-        font-size: 10px;
-    }
-
-    .checkbox-container {
-        font-size: 10px;
-    }
-
-    .intro p,
-    .caution-flag {
-        font-size: 10px;
-    }
-
-    .robotic-text {
-        font-size: 12px;
-    }
-
-    .prompt h2,
-    .example-header {
-        font-size: 1em;
-    }
-
-    .caution-flag a i {
-        margin-right: 1px;
-    }
-
-    .caution-flag a {
-        text-decoration: none;
-        color: #6a1b9a;
+    .example-content p {
+        margin: 10px 0;
     }
 }
