@@ -420,7 +420,7 @@ table tr:hover {
         border: none;
         outline: 0;
         box-shadow: none;
-        -webkit-appearance: textfield;
+        /* -webkit-appearance: textfield; */
         width: calc(100% - 110px); 
         box-sizing: border-box; 
     }
@@ -503,7 +503,7 @@ table tr:hover {
         border: none;
         outline: 0;
         box-shadow: none;
-        -webkit-appearance: textfield;
+        /* -webkit-appearance: textfield; */
         width: calc(100% - 110px); 
         box-sizing: border-box; 
     }
