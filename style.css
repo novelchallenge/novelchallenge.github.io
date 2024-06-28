@@ -120,13 +120,13 @@ table tr:hover {
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
-    font-size: 1em; /* Match checkbox text size to the body text size */
+    font-size: 1em; /* match checkbox text size to the body text size */
 }
 
 .filter-label {
     display: flex;
     align-items: center;
-    font-size: 1em; /* Match filter label text size to the body text size */
+    font-size: 1em; /* match filter label text size to the body text size */
 }
 
 .filter-label i {
@@ -212,7 +212,7 @@ table tr:hover {
     white-space: pre-wrap;
     width: 100%;
     box-sizing: border-box;
-    font-size: 1em; /* Match robotic text size to the body text size */
+    font-size: 1em; /* match robotic text size to the body text size */
 }
 
 .team-section {
@@ -224,7 +224,7 @@ table tr:hover {
 .team-member {
     text-align: center;
     margin: 10px;
-    flex: 1 1 calc(50% - 20px); /* Adjusts to take up 50% of the container width minus margins */
+    flex: 1 1 calc(50% - 20px); /* adjusts to take up 50% of the container width minus margins */
     box-sizing: border-box;
 }
 
@@ -343,30 +343,30 @@ table tr:hover {
     .caution-flag, 
     .example-header, 
     .example-content {
-        font-size: 0.9em; /* Consistent font size for text elements */
+        font-size: 0.9em; 
     }
 
     table th, table td {
         padding: 6px;
-        font-size: 0.9em; /* Match table text size to the body text size */
+        font-size: 0.9em; 
     }
 
     .clear-button {
-        font-size: 0.9em; /* Increase font size for clear button */
-        padding: 6px 8px; /* Adjust padding for clear button */
+        font-size: 0.9em; 
+        padding: 6px 8px; 
     }
 
     .filter-label, 
     .filter-label i {
-        font-size: 0.9em; /* Ensure checkbox labels are readable */
+        font-size: 0.9em; 
     }
 
     .model-selection {
-        font-size: 0.9em; /* Ensure dropdown font size is consistent */
+        font-size: 0.9em; /* ensure dropdown font size is consistent */
     }
 
     .team-member {
-        flex: 1 1 100%; /* Adjust to take up 100% of the container width on small screens */
+        flex: 1 1 100%; 
     }
 
     #leaderboard {
@@ -398,12 +398,12 @@ table tr:hover {
     }
 
     h2 {
-        font-size: 1.2em; /* Adjust font size for h2 */
+        font-size: 1.2em;
     }
 
     .prompt h2,
     .example-header  {
-        font-size: 1.2em; /* Adjust font size for h2 */
+        font-size: 1.2em; 
     }
 
     .intro p, 
@@ -412,7 +412,7 @@ table tr:hover {
     .robotic-text, 
     .caution-flag, 
     .example-content {
-        font-size: 1em; /* Consistent font size for text elements */
+        font-size: 1em; 
     }
 
     .select2-container--default .select2-search--inline .select2-search__field {
