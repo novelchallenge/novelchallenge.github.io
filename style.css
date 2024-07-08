@@ -44,7 +44,8 @@ h2 {
 }
 
 #leaderboard a {
-    text-decoration: none; 
+    text-decoration: none;
+    font-weight: bold;
     color: #6a1b9a; 
 }
 
