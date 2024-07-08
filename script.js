@@ -4,6 +4,25 @@ let currentSortDirection = 'desc';
 let filteredModels = []; // New variable to track filtered models
 let isUpdating = false; // Guard to prevent infinite loops
 
+// Define URL mapping for models
+const modelLinks = {
+    'GPT-4o': 'https://platform.openai.com/docs/models/gpt-4o',
+    'GPT-4-Turbo': 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
+    'Claude-3-Opus': 'https://www.anthropic.com/news/claude-3-family',
+    'Claude-3.5-Sonnet': 'https://www.anthropic.com/news/claude-3-family',
+    'Gemini Pro 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-pro-001',
+    'Gemini Flash 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
+    'Command R+': 'https://docs.cohere.com/docs/command-r-plus',
+    'Command R+ (simple)': 'https://docs.cohere.com/docs/command-r-plus',
+    'Command R': 'https://docs.cohere.com/docs/command-r',
+    'Command R (simple)': 'https://docs.cohere.com/docs/command-r',
+    'LongLLaMA (simple)': 'https://huggingface.co/syzymon/long_llama_code_7b',
+    'Phi-3-Mini': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
+    'Phi-3-Mini (simple)': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
+    'Gemma-10M (simple)': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
+    'Gemma-10M': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M'
+};
+
 // Fetch the JSON data
 fetch('data.json')
     .then(response => response.json())
@@ -70,8 +89,9 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         const data = results[model];
         const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
         const row = document.createElement('tr');
+        const modelLink = modelLinks[model] || '#'; // Default to '#' if no link is defined
         row.innerHTML = `
-            <td>${model}</td>
+            <td><a href="${modelLink}" target="_blank">${model}</a></td>
             <td>${accuracy}%</td>
             <td>${data.correct}</td>
             <td>${data.attempted}</td>

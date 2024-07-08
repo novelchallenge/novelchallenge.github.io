@@ -43,6 +43,17 @@ h2 {
     color: #6a1b9a;
 }
 
+#leaderboard a {
+    text-decoration: none; 
+    color: #6a1b9a; 
+}
+
+#leaderboard a:hover {
+    text-decoration: none; 
+    color: #ca77fd; 
+}
+
+
 .intro {
     margin-bottom: 20px;
 }
