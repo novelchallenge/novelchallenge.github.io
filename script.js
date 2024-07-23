@@ -7,6 +7,7 @@ let isUpdating = false; // Guard to prevent infinite loops
 // Define URL mapping for models
 const modelLinks = {
     'GPT-4o': 'https://platform.openai.com/docs/models/gpt-4o',
+    'GPT-4o-Mini':'https://platform.openai.com/docs/models/gpt-4o-mini',
     'GPT-4-Turbo': 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
     'Claude-3-Opus': 'https://www.anthropic.com/news/claude-3-family',
     'Claude-3.5-Sonnet': 'https://www.anthropic.com/news/claude-3-family',
@@ -210,7 +211,7 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
         document.getElementById('open-source-checkbox').checked = false;
         document.getElementById('all-models-checkbox').checked = false;
         const closedSourceModels = [
-            'GPT-4o', 'GPT-4-Turbo', 'Claude-3-Opus', 'Claude-3.5-Sonnet', 'Gemini Pro 1.5', 'Gemini Flash 1.5'
+            'GPT-4o', 'GPT-4o-Mini', 'GPT-4-Turbo', 'Claude-3-Opus', 'Claude-3.5-Sonnet', 'Gemini Pro 1.5', 'Gemini Flash 1.5'
         ];
         filteredModels = closedSourceModels;
         const filteredQuestions = data.pairs.filter(question =>
