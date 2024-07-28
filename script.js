@@ -21,7 +21,8 @@ const modelLinks = {
     'Phi-3-Mini': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
     'Phi-3-Mini (simple)': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
     'Gemma-10M (simple)': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
-    'Gemma-10M': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M'
+    'Gemma-10M': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
+    'Mistral-Nemo': 'https://mistral.ai/news/mistral-nemo/'
 };
 
 // Fetch the JSON data
@@ -235,7 +236,7 @@ document.getElementById('open-source-checkbox').addEventListener('change', funct
         document.getElementById('all-models-checkbox').checked = false;
         const openSourceModels = [
             'Command R+', 'Command R+ (simple)', 'Command R', 'Command R (simple)',
-            'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M'
+            'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M', 'Mistral-Nemo'
         ];
         filteredModels = openSourceModels;
         const filteredQuestions = data.pairs.filter(question =>
