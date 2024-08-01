@@ -327,7 +327,6 @@ table tr:hover {
 
 
 
-
 /* Responsive Design for Mobile Phones */
 @media (max-width: 480px) {
     body {
@@ -563,3 +562,6 @@ table tr:hover {
         margin: 10px 0;
     }
 }
+
+
+
