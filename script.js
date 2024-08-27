@@ -4,7 +4,7 @@ let currentSortDirection = 'desc';
 let filteredModels = []; // New variable to track filtered models
 let isUpdating = false; // Guard to prevent infinite loops
 
-// URL mapping for models
+// URL mapping for models, update displayName in order to change naming in the table, please do NOT update keys! The able const you want to update! 
 const modelMetadata = {
     'GPT-4o 05/13': { 
         displayName: 'GPT-4o (2024-05-13)', 
