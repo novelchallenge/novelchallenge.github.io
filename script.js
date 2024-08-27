@@ -6,13 +6,19 @@ let isUpdating = false; // Guard to prevent infinite loops
 
 // Define URL mapping for models
 const modelLinks = {
-    'GPT-4o': 'https://platform.openai.com/docs/models/gpt-4o',
+    'GPT-4o 05/13': 'https://platform.openai.com/docs/models/gpt-4o',
+    'GPT-4o 08/06': 'https://platform.openai.com/docs/models/gpt-4o',
     'GPT-4o-Mini':'https://platform.openai.com/docs/models/gpt-4o-mini',
     'GPT-4-Turbo': 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
     'Claude-3-Opus': 'https://www.anthropic.com/news/claude-3-family',
     'Claude-3.5-Sonnet': 'https://www.anthropic.com/news/claude-3-family',
-    'Gemini Pro 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-pro-001',
+    'Gemini Pro 1.5 05/14': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
+    'Gemini Pro 1.5 08/01': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
     'Gemini Flash 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
+    'LLaMA 3.1 405B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct',
+    'LLaMA 3.1 70B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct',
+    'LLaMA 3.1 8B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct',
+    'Jamba 1.5 Large (Vertex API)':'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai',
     'Command R+': 'https://docs.cohere.com/docs/command-r-plus',
     'Command R+ (simple)': 'https://docs.cohere.com/docs/command-r-plus',
     'Command R': 'https://docs.cohere.com/docs/command-r',
@@ -22,7 +28,8 @@ const modelLinks = {
     'Phi-3-Mini (simple)': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
     'Gemma-10M (simple)': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
     'Gemma-10M': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
-    'Mistral-Nemo': 'https://mistral.ai/news/mistral-nemo/'
+    'Mistral-Nemo (Mistral API)': 'https://mistral.ai/news/mistral-nemo/',
+    'Mistral-Large 2 (Mistral API)':'https://mistral.ai/news/mistral-large-2407/'
 };
 
 // Fetch the JSON data
@@ -212,7 +219,8 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
         document.getElementById('open-source-checkbox').checked = false;
         document.getElementById('all-models-checkbox').checked = false;
         const closedSourceModels = [
-            'GPT-4o', 'GPT-4o-Mini', 'GPT-4-Turbo', 'Claude-3-Opus', 'Claude-3.5-Sonnet', 'Gemini Pro 1.5', 'Gemini Flash 1.5'
+            'GPT-4o 05/13', 'GPT-4o 08/06', 'GPT-4o-Mini', 'GPT-4-Turbo', 'Claude-3-Opus',
+            'Claude-3.5-Sonnet', 'Gemini Pro 1.5 05/14', 'Gemini Pro 1.5 08/01', 'Gemini Flash 1.5'
         ];
         filteredModels = closedSourceModels;
         const filteredQuestions = data.pairs.filter(question =>
@@ -235,8 +243,8 @@ document.getElementById('open-source-checkbox').addEventListener('change', funct
         document.getElementById('closed-source-checkbox').checked = false;
         document.getElementById('all-models-checkbox').checked = false;
         const openSourceModels = [
-            'Command R+', 'Command R+ (simple)', 'Command R', 'Command R (simple)',
-            'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M', 'Mistral-Nemo'
+            'LLaMA 3.1 405B (Fireworks API)', 'LLaMA 3.1 70B (Fireworks API)', 'LLaMA 3.1 8B (Fireworks API)', 'Jamba 1.5 Large (Vertex API)', 'Command R+', 'Command R+ (simple)', 'Command R', 
+            'Command R (simple)', 'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M', 'Mistral-Nemo (Mistral API)', 'Mistral-Large 2 (Mistral API)'
         ];
         filteredModels = openSourceModels;
         const filteredQuestions = data.pairs.filter(question =>
