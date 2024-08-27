@@ -220,7 +220,7 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
         document.getElementById('all-models-checkbox').checked = false;
         const closedSourceModels = [
             'GPT-4o 05/13', 'GPT-4o 08/06', 'GPT-4o-Mini', 'GPT-4-Turbo', 'Claude-3-Opus',
-            'Claude-3.5-Sonnet', 'Gemini Pro 1.5 05/14', 'Gemini Pro 1.5 08/01', 'Gemini Flash 1.5'
+            'Claude-3.5-Sonnet', 'Gemini Pro 1.5 05/14', 'Gemini Pro 1.5 exp 08/01', 'Gemini Flash 1.5'
         ];
         filteredModels = closedSourceModels;
         const filteredQuestions = data.pairs.filter(question =>
