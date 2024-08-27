@@ -4,32 +4,128 @@ let currentSortDirection = 'desc';
 let filteredModels = []; // New variable to track filtered models
 let isUpdating = false; // Guard to prevent infinite loops
 
-// Define URL mapping for models
-const modelLinks = {
-    'GPT-4o 05/13': 'https://platform.openai.com/docs/models/gpt-4o',
-    'GPT-4o 08/06': 'https://platform.openai.com/docs/models/gpt-4o',
-    'GPT-4o-Mini':'https://platform.openai.com/docs/models/gpt-4o-mini',
-    'GPT-4-Turbo': 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
-    'Claude-3-Opus': 'https://www.anthropic.com/news/claude-3-family',
-    'Claude-3.5-Sonnet': 'https://www.anthropic.com/news/claude-3-family',
-    'Gemini Pro 1.5 05/14': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
-    'Gemini Pro 1.5 exp 08/01': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
-    'Gemini Flash 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
-    'LLaMA 3.1 405B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct',
-    'LLaMA 3.1 70B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct',
-    'LLaMA 3.1 8B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct',
-    'Jamba 1.5 Large (Vertex API)':'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai',
-    'Command R+': 'https://docs.cohere.com/docs/command-r-plus',
-    'Command R+ (simple)': 'https://docs.cohere.com/docs/command-r-plus',
-    'Command R': 'https://docs.cohere.com/docs/command-r',
-    'Command R (simple)': 'https://docs.cohere.com/docs/command-r',
-    'LongLLaMA (simple)': 'https://huggingface.co/syzymon/long_llama_code_7b',
-    'Phi-3-Mini': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
-    'Phi-3-Mini (simple)': 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
-    'Gemma-10M (simple)': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
-    'Gemma-10M': 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
-    'Mistral-Nemo (Mistral API)': 'https://mistral.ai/news/mistral-nemo/',
-    'Mistral-Large 2 (Mistral API)':'https://mistral.ai/news/mistral-large-2407/'
+// URL mapping for models
+const modelMetadata = {
+    'GPT-4o 05/13': { 
+        displayName: 'GPT-4o (2024-05-13)', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models/gpt-4o' 
+    },
+    'GPT-4o 08/06': { 
+        displayName: 'GPT-4o (2024-08-06)', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models/gpt-4o' 
+    },
+    'GPT-4o-Mini': { 
+        displayName: 'GPT-4o-Mini (2024-07-18)', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models/gpt-4o-mini' 
+    },
+    'GPT-4-Turbo': { 
+        displayName: 'GPT-4-Turbo (2024-04-09)', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4' 
+    },
+    'Claude-3-Opus': { 
+        displayName: 'Claude-3-Opus (2024-02-29)', 
+        category: 'closed-source', 
+        url: 'https://www.anthropic.com/news/claude-3-family' 
+    },
+    'Claude-3.5-Sonnet': { 
+        displayName: 'Claude-3.5-Sonnet (2024-06-20)', 
+        category: 'closed-source', 
+        url: 'https://www.anthropic.com/news/claude-3-family'
+    },
+    'Gemini Pro 1.5 05/14': { 
+        displayName: 'Gemini Pro 1.5 (2024-05-14)', 
+        category: 'closed-source', 
+        url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
+    },
+    'Gemini Pro 1.5 08/01': { 
+        displayName: 'Gemini Pro 1.5 exp (2024-08-01)', 
+        category: 'closed-source', 
+        url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
+    },
+    'Gemini Flash 1.5': { 
+        displayName: 'Gemini Flash 1.5 (2024-05-14)', 
+        category: 'closed-source', 
+        url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001'
+    },
+    'LLaMA 3.1 405B (Fireworks API)': { 
+        displayName: 'LLaMA 3.1 405B (Fireworks API)', 
+        category: 'open-source', 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct' 
+    },
+    'LLaMA 3.1 70B (Fireworks API)': { 
+        displayName: 'LLaMA 3.1 70B (Fireworks API)', 
+        category: 'open-source', 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct' 
+    },
+    'LLaMA 3.1 8B (Fireworks API)': { 
+        displayName: 'LLaMA 3.1 8B (Fireworks API)', 
+        category: 'open-source', 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct' 
+    },
+    'Jamba 1.5 Large (Vertex API)': { 
+        displayName: 'Jamba 1.5 Large (Vertex API)', 
+        category: 'open-source', 
+        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai' 
+    },
+    'Command R+': { 
+        displayName: 'Command R+ (Cohere API)', 
+        category: 'open-source', 
+        url: 'https://docs.cohere.com/docs/command-r-plus' 
+    },
+    'Command R+ (simple)': { 
+        displayName: 'Command R+ (simple)', 
+        category: 'open-source', 
+        url: 'https://docs.cohere.com/docs/command-r-plus' 
+    },
+    'Command R': { 
+        displayName: 'Command R (Cohere API)', 
+        category: 'open-source', 
+        url: 'https://docs.cohere.com/docs/command-r' 
+    },
+    'Command R (simple)': { 
+        displayName: 'Command R (simple)', 
+        category: 'open-source', 
+        url: 'https://docs.cohere.com/docs/command-r' 
+    },
+    'LongLLaMA (simple)': { 
+        displayName: 'LongLLaMA (simple)', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/syzymon/long_llama_code_7b' 
+    },
+    'Phi-3-Mini': { 
+        displayName: 'Phi-3-Mini', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct' 
+    },
+    'Phi-3-Mini (simple)': { 
+        displayName: 'Phi-3-Mini (simple)', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct' 
+    },
+    'Gemma-10M (simple)': { 
+        displayName: 'Gemma-10M (simple)', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M' 
+    },
+    'Gemma-10M': { 
+        displayName: 'Gemma-10M', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M' 
+    },
+    'Mistral-Nemo (Mistral API)': { 
+        displayName: 'Mistral-Nemo (Mistral API)', 
+        category: 'open-source', 
+        url: 'https://mistral.ai/news/mistral-nemo/' 
+    },
+    'Mistral-Large 2 (Mistral API)': { 
+        displayName: 'Mistral-Large 2 (Mistral API)', 
+        category: 'open-source', 
+        url: 'https://mistral.ai/news/mistral-large-2407/'
+    }
 };
 
 // Fetch the JSON data
@@ -98,18 +194,21 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         const data = results[model];
         const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
         const row = document.createElement('tr');
-        const modelLink = modelLinks[model] || '#'; // Default to '#' if no link is defined
+        const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
+        const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
+
         row.innerHTML = `
-            <td><a href="${modelLink}" target="_blank">${model}</a></td>
+            <td><a href="${modelLink}" target="_blank">${displayName}</a></td>
             <td>${accuracy}%</td>
             <td>${data.correct}</td>
             <td>${data.attempted}</td>
         `;
         tbody.appendChild(row);
-    }
+    }    
 
     updateSortingArrows(sortKey, sortDirection);
 }
+
 
 // Update the sorting arrows
 function updateSortingArrows(sortKey, sortDirection) {
@@ -132,7 +231,7 @@ function populateModelSelection() {
     models.forEach(model => {
         const option = document.createElement('option');
         option.value = model;
-        option.text = model;
+        option.text = modelMetadata[model]?.displayName || model; // Use displayName if available
         modelSelection.appendChild(option);
     });
 
@@ -152,6 +251,8 @@ function populateModelSelection() {
         }
     });
 }
+
+
 
 // Filter the results based on selected models
 function filterModels() {
@@ -218,14 +319,16 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
     if (this.checked) {
         document.getElementById('open-source-checkbox').checked = false;
         document.getElementById('all-models-checkbox').checked = false;
-        const closedSourceModels = [
-            'GPT-4o 05/13', 'GPT-4o 08/06', 'GPT-4o-Mini', 'GPT-4-Turbo', 'Claude-3-Opus',
-            'Claude-3.5-Sonnet', 'Gemini Pro 1.5 05/14', 'Gemini Pro 1.5 exp 08/01', 'Gemini Flash 1.5'
-        ];
+
+        // Get closed-source models from metadata
+        const closedSourceModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'closed-source');
         filteredModels = closedSourceModels;
+
+        // Filter questions where all selected models have a prediction
         const filteredQuestions = data.pairs.filter(question =>
             closedSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
         );
+
         const filteredResults = preprocessData(closedSourceModels, filteredQuestions);
 
         isUpdating = true; // Set guard
@@ -238,18 +341,21 @@ document.getElementById('closed-source-checkbox').addEventListener('change', fun
     }
 });
 
+
 document.getElementById('open-source-checkbox').addEventListener('change', function () {
     if (this.checked) {
         document.getElementById('closed-source-checkbox').checked = false;
         document.getElementById('all-models-checkbox').checked = false;
-        const openSourceModels = [
-            'LLaMA 3.1 405B (Fireworks API)', 'LLaMA 3.1 70B (Fireworks API)', 'LLaMA 3.1 8B (Fireworks API)', 'Jamba 1.5 Large (Vertex API)', 'Command R+', 'Command R+ (simple)', 'Command R', 
-            'Command R (simple)', 'LongLLaMA (simple)', 'Phi-3-Mini', 'Phi-3-Mini (simple)', 'Gemma-10M (simple)', 'Gemma-10M', 'Mistral-Nemo (Mistral API)', 'Mistral-Large 2 (Mistral API)'
-        ];
+
+        // Get open-source models from metadata
+        const openSourceModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'open-source');
         filteredModels = openSourceModels;
+
+        // Filter questions where all selected models have a prediction
         const filteredQuestions = data.pairs.filter(question =>
             openSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
         );
+
         const filteredResults = preprocessData(openSourceModels, filteredQuestions);
 
         isUpdating = true; // Set guard
@@ -261,6 +367,7 @@ document.getElementById('open-source-checkbox').addEventListener('change', funct
         clearFilters();
     }
 });
+
 
 document.getElementById('all-models-checkbox').addEventListener('change', function () {
     if (this.checked) {
