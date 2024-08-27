@@ -13,7 +13,7 @@ const modelLinks = {
     'Claude-3-Opus': 'https://www.anthropic.com/news/claude-3-family',
     'Claude-3.5-Sonnet': 'https://www.anthropic.com/news/claude-3-family',
     'Gemini Pro 1.5 05/14': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
-    'Gemini Pro 1.5 08/01': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
+    'Gemini Pro 1.5 exp 08/01': 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
     'Gemini Flash 1.5': 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
     'LLaMA 3.1 405B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct',
     'LLaMA 3.1 70B (Fireworks API)':'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct',
