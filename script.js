@@ -71,6 +71,11 @@ const modelMetadata = {
         category: 'open-source', 
         url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai' 
     },
+    'Jamba 1.5 Mini (Vertex API)': { 
+        displayName: 'Jamba 1.5 Mini (Vertex API)', 
+        category: 'open-source', 
+        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai' 
+    },
     'Command R+': { 
         displayName: 'Command R+ (Cohere API)', 
         category: 'open-source', 
