@@ -44,7 +44,7 @@ const modelMetadata = {
     'Gemini Pro 1.5 08/01': { 
         displayName: 'Gemini 1.5 Pro (2024-08-01-exp)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
     },
     'Gemini Flash 1.5': { 
         displayName: 'Gemini 1.5 Flash (2024-05-14)', 
@@ -53,6 +53,11 @@ const modelMetadata = {
     },
     'Gemini Flash 1.5 08/27': { 
         displayName: 'Gemini 1.5 Flash (2024-08-27-exp)', 
+        category: 'closed-source', 
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+    },
+    'Gemini Flash 1.5 8B 08/27': { 
+        displayName: 'Gemini 1.5 Flash 8B (2024-08-27-exp)', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
     },
