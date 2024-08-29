@@ -51,6 +51,11 @@ const modelMetadata = {
         category: 'closed-source', 
         url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001'
     },
+    'Gemini Flash 1.5 08/27': { 
+        displayName: 'Gemini Flash 1.5 exp (2024-08-27)', 
+        category: 'closed-source', 
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+    },
     'LLaMA 3.1 405B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 405B (Fireworks API)', 
         category: 'open-source', 
