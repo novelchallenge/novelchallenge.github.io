@@ -37,22 +37,22 @@ const modelMetadata = {
         url: 'https://www.anthropic.com/news/claude-3-family'
     },
     'Gemini Pro 1.5 05/14': { 
-        displayName: 'Gemini Pro 1.5 (2024-05-14)', 
+        displayName: 'Gemini 1.5 Pro (2024-05-14)', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
     },
     'Gemini Pro 1.5 08/01': { 
-        displayName: 'Gemini Pro 1.5 exp (2024-08-01)', 
+        displayName: 'Gemini 1.5 Pro (2024-08-01-exp)', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
     },
     'Gemini Flash 1.5': { 
-        displayName: 'Gemini Flash 1.5 (2024-05-14)', 
+        displayName: 'Gemini 1.5 Flash (2024-05-14)', 
         category: 'closed-source', 
         url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001'
     },
     'Gemini Flash 1.5 08/27': { 
-        displayName: 'Gemini Flash 1.5 exp (2024-08-27)', 
+        displayName: 'Gemini 1.5 Flash (2024-08-27-exp)', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
     },
