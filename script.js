@@ -81,6 +81,11 @@ const modelMetadata = {
         category: 'open-source', 
         url: 'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct' 
     },
+    'Llama 3 8B ProLong-512k-Instruct': { 
+        displayName: 'Llama 3 8B ProLong-512k-Instruct', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-512k-Instruct' 
+    },
     'Jamba 1.5 Large (Vertex API)': { 
         displayName: 'Jamba 1.5 Large (Vertex API)', 
         category: 'open-source', 
