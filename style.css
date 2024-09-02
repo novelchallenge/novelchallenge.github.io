@@ -323,6 +323,44 @@ table tr:hover {
 }
 
 
+/* Style for the metadata rows */
+/* Highlight the entire row on hover */
+#leaderboard tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for the triangle toggle icon */
+.toggle-icon {
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 0.9em;
+    color: #6a1b9a;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the icon when expanded */
+.toggle-icon.expanded {
+    transform: rotate(90deg); /* Rotate to indicate expansion */
+}
+
+/* Slight color change on hover to make it more interactive */
+.toggle-icon:hover {
+    color: #b34beb;
+}
+
+/* Style for the metadata row */
+#leaderboard tbody tr td div {
+    margin: 5px 0;
+    font-size: 0.9em; /* Slightly smaller text for metadata */
+}
+
+/* Optional: smoother appearance of metadata row */
+#leaderboard tbody tr {
+    transition: background-color 0.3s ease, height 0.3s ease;
+}
 
 
 

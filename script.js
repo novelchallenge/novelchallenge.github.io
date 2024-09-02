@@ -9,147 +9,292 @@ const modelMetadata = {
     'GPT-4o 05/13': { 
         displayName: 'GPT-4o (2024-05-13)', 
         category: 'closed-source', 
-        url: 'https://platform.openai.com/docs/models/gpt-4o' 
+        url: 'https://platform.openai.com/docs/models/gpt-4o',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API', 
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128K tokens',
+        modelSize: 'unknown'
     },
     'GPT-4o 08/06': { 
         displayName: 'GPT-4o (2024-08-06)', 
         category: 'closed-source', 
-        url: 'https://platform.openai.com/docs/models/gpt-4o' 
+        url: 'https://platform.openai.com/docs/models/gpt-4o',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API', 
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128K tokens',
+        modelSize: 'unknown' 
     },
     'GPT-4o-Mini': { 
         displayName: 'GPT-4o-Mini (2024-07-18)', 
         category: 'closed-source', 
-        url: 'https://platform.openai.com/docs/models/gpt-4o-mini' 
+        url: 'https://platform.openai.com/docs/models/gpt-4o-mini',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API', 
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128K tokens',
+        modelSize: 'unknown' 
     },
     'GPT-4-Turbo': { 
         displayName: 'GPT-4-Turbo (2024-04-09)', 
         category: 'closed-source', 
-        url: 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4' 
+        url: 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API', 
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128K tokens',
+        modelSize: 'unknown' 
     },
     'Claude-3-Opus': { 
         displayName: 'Claude-3-Opus (2024-02-29)', 
         category: 'closed-source', 
-        url: 'https://www.anthropic.com/news/claude-3-family' 
+        url: 'https://www.anthropic.com/news/claude-3-family',
+        precision: 'unknown', 
+        testedEnvironment: 'Anthropic API & VertexAI API', 
+        modelDeveloper: 'Anthropic', 
+        contextSize: '200K tokens',
+        modelSize: 'unknown' 
     },
     'Claude-3.5-Sonnet': { 
         displayName: 'Claude-3.5-Sonnet (2024-06-20)', 
         category: 'closed-source', 
-        url: 'https://www.anthropic.com/news/claude-3-family'
+        url: 'https://www.anthropic.com/news/claude-3-family',
+        precision: 'unknown', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'Anthropic', 
+        contextSize: '200K tokens',
+        modelSize: 'unknown'
     },
     'Gemini Pro 1.5 05/14': { 
         displayName: 'Gemini 1.5 Pro (2024-05-14)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro'
+        url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
+        precision: 'unknown', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '1M tokens',
+        modelSize: 'unknown'
     },
     'Gemini Pro 1.5 08/01': { 
         displayName: 'Gemini 1.5 Pro (2024-08-01-exp)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
+        precision: 'unknown', 
+        testedEnvironment: 'GoogleAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '1M tokens',
+        modelSize: 'unknown'
     },
     'Gemini Pro 1.5 08/27': { 
         displayName: 'Gemini 1.5 Pro (2024-08-27-exp)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
+        precision: 'unknown', 
+        testedEnvironment: 'GoogleAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '2M tokens',
+        modelSize: 'unknown'
     },
     'Gemini Flash 1.5': { 
         displayName: 'Gemini 1.5 Flash (2024-05-14)', 
         category: 'closed-source', 
-        url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001'
+        url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
+        precision: 'unknown', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '1M tokens',
+        modelSize: 'unknown'
     },
     'Gemini Flash 1.5 08/27': { 
         displayName: 'Gemini 1.5 Flash (2024-08-27-exp)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
+        precision: 'unknown', 
+        testedEnvironment: 'GoogleAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '2M tokens',
+        modelSize: 'unknown'
     },
     'Gemini Flash 1.5 8B 08/27': { 
         displayName: 'Gemini 1.5 Flash 8B (2024-08-27-exp)', 
         category: 'closed-source', 
-        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models'
+        url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
+        precision: 'unknown', 
+        testedEnvironment: 'GoogleAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '2M tokens',
+        modelSize: '8B'
     },
     'LLaMA 3.1 405B (Fireworks API)': { 
-        displayName: 'LLaMA 3.1 405B (Fireworks API)', 
+        displayName: 'LLaMA 3.1 405B', 
         category: 'open-source', 
-        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct' 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-405b-instruct',
+        precision: 'fp8', 
+        testedEnvironment: 'Fireworks API', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128k tokens',
+        modelSize: '405B' 
     },
     'LLaMA 3.1 70B (Fireworks API)': { 
-        displayName: 'LLaMA 3.1 70B (Fireworks API)', 
+        displayName: 'LLaMA 3.1 70B', 
         category: 'open-source', 
-        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct' 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-70b-instruct',
+        precision: 'fp8', 
+        testedEnvironment: 'Fireworks API', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128k tokens',
+        modelSize: '70B'  
     },
     'LLaMA 3.1 8B (Fireworks API)': { 
-        displayName: 'LLaMA 3.1 8B (Fireworks API)', 
+        displayName: 'LLaMA 3.1 8B', 
         category: 'open-source', 
-        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct' 
+        url: 'https://fireworks.ai/models/fireworks/llama-v3p1-8b-instruct',
+        precision: 'fp8', 
+        testedEnvironment: 'Fireworks API', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128k tokens',
+        modelSize: '8B' 
     },
     'Llama 3 8B ProLong-512k-Instruct': { 
         displayName: 'Llama 3 8B ProLong-512k-Instruct', 
         category: 'open-source', 
-        url: 'https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-512k-Instruct' 
+        url: 'https://huggingface.co/princeton-nlp/Llama-3-8B-ProLong-512k-Instruct',
+        precision: 'fp16', 
+        testedEnvironment: '4xA100s', 
+        modelDeveloper: 'Princeton (extended LLaMA 3)', 
+        contextSize: '512k tokens',
+        modelSize: '8B' 
     },
     'Jamba 1.5 Large (Vertex API)': { 
-        displayName: 'Jamba 1.5 Large (Vertex API)', 
+        displayName: 'Jamba 1.5 Large', 
         category: 'open-source', 
-        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai' 
+        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai',
+        precision: '...', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'AI21', 
+        contextSize: '256k tokens',
+        modelSize: '94B/398B' 
     },
     'Jamba 1.5 Mini (Vertex API)': { 
-        displayName: 'Jamba 1.5 Mini (Vertex API)', 
+        displayName: 'Jamba 1.5 Mini', 
         category: 'open-source', 
-        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai' 
+        url: 'https://cloud.google.com/blog/products/ai-machine-learning/jamba-1-5-model-family-from-ai21-labs-is-now-available-on-vertex-ai',
+        precision: '...', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'AI21', 
+        contextSize: '256k tokens',
+        modelSize: '12B/52B' 
     },
     'Command R+': { 
-        displayName: 'Command R+ (Cohere API)', 
+        displayName: 'Command R+ (03/2024)', 
         category: 'open-source', 
-        url: 'https://docs.cohere.com/docs/command-r-plus' 
+        url: 'https://docs.cohere.com/docs/command-r-plus',
+        precision: '...', 
+        testedEnvironment: 'Cohere API', 
+        modelDeveloper: 'Cohere', 
+        contextSize: '128k tokens',
+        modelSize: '104B' 
     },
     'Command R+ (simple)': { 
         displayName: 'Command R+ (simple)', 
         category: 'open-source', 
-        url: 'https://docs.cohere.com/docs/command-r-plus' 
+        url: 'https://docs.cohere.com/docs/command-r-plus',
+        precision: '...', 
+        testedEnvironment: 'Cohere API (simplified prompt)', 
+        modelDeveloper: 'Cohere', 
+        contextSize: '128k tokens',
+        modelSize: '104B' 
     },
     'Command R': { 
-        displayName: 'Command R (Cohere API)', 
+        displayName: 'Command R', 
         category: 'open-source', 
-        url: 'https://docs.cohere.com/docs/command-r' 
+        url: 'https://docs.cohere.com/docs/command-r',
+        precision: '...', 
+        testedEnvironment: 'Cohere API', 
+        modelDeveloper: 'Cohere', 
+        contextSize: '128k tokens',
+        modelSize: '35B'  
     },
     'Command R (simple)': { 
         displayName: 'Command R (simple)', 
         category: 'open-source', 
-        url: 'https://docs.cohere.com/docs/command-r' 
+        url: 'https://docs.cohere.com/docs/command-r',
+        precision: '...', 
+        testedEnvironment: 'Cohere API (simplified prompt)', 
+        modelDeveloper: 'Cohere', 
+        contextSize: '128k tokens',
+        modelSize: '35B' 
     },
     'LongLLaMA (simple)': { 
         displayName: 'LongLLaMA (simple)', 
         category: 'open-source', 
-        url: 'https://huggingface.co/syzymon/long_llama_code_7b' 
+        url: 'https://huggingface.co/syzymon/long_llama_code_7b_instruct',
+        precision: '...', 
+        testedEnvironment: '3xA100s', 
+        modelDeveloper: 'Szymon Tworkowski (extended LLaMA)', 
+        contextSize: '128k tokens',
+        modelSize: '7B'  
     },
     'Phi-3-Mini': { 
         displayName: 'Phi-3-Mini', 
         category: 'open-source', 
-        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct' 
+        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
+        precision: '...', 
+        testedEnvironment: '3xA100s', 
+        modelDeveloper: 'Microsoft', 
+        contextSize: '128k tokens',
+        modelSize: '3.8B'  
     },
     'Phi-3-Mini (simple)': { 
         displayName: 'Phi-3-Mini (simple)', 
         category: 'open-source', 
-        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct' 
+        url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
+        precision: '...', 
+        testedEnvironment: '3xA100s (simplified prompt)', 
+        modelDeveloper: 'Microsoft', 
+        contextSize: '128k tokens',
+        modelSize: '3.8B' 
     },
     'Gemma-10M (simple)': { 
         displayName: 'Gemma-10M (simple)', 
         category: 'open-source', 
-        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M' 
+        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
+        precision: '...', 
+        testedEnvironment: '1xA100s (simplified prompt)', 
+        modelDeveloper: 'Mustafa Aljadery, Siddharth Sharma, Aksh Garg (extended Gemma)', 
+        contextSize: '10M tokens',
+        modelSize: '2.51B'  
     },
     'Gemma-10M': { 
         displayName: 'Gemma-10M', 
         category: 'open-source', 
-        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M' 
+        url: 'https://huggingface.co/mustafaaljadery/gemma-2B-10M',
+        precision: '...', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Mustafa Aljadery, Siddharth Sharma, Aksh Garg (extended Gemma)', 
+        contextSize: '10M tokens',
+        modelSize: '2.51B'  
     },
     'Mistral-Nemo (Mistral API)': { 
-        displayName: 'Mistral-Nemo (Mistral API)', 
+        displayName: 'Mistral-Nemo', 
         category: 'open-source', 
-        url: 'https://mistral.ai/news/mistral-nemo/' 
+        url: 'https://mistral.ai/news/mistral-nemo/',
+        precision: '...', 
+        testedEnvironment: 'Mistral API', 
+        modelDeveloper: 'MistralAI', 
+        contextSize: '128k tokens',
+        modelSize: '12B'  
     },
-    'Mistral-Large 2 (Mistral API)': { 
+    'Mistral-Large 2': { 
         displayName: 'Mistral-Large 2 (Mistral API)', 
         category: 'open-source', 
-        url: 'https://mistral.ai/news/mistral-large-2407/'
+        url: 'https://mistral.ai/news/mistral-large-2407/',
+        precision: '...', 
+        testedEnvironment: 'Mistral API', 
+        modelDeveloper: 'MistralAI', 
+        contextSize: '128k tokens',
+        modelSize: '123B'  
     }
 };
 
@@ -217,22 +362,55 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
     for (const model of models) {
         if (!filteredModels.includes(model)) continue; // Skip models not in filteredModels
         const data = results[model];
-        const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
-        const row = document.createElement('tr');
+        const accuracy = data.attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
         const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
 
+        // Table row for the model
+        const row = document.createElement('tr');
         row.innerHTML = `
-            <td><a href="${modelLink}" target="_blank">${displayName}</a></td>
+            <td>
+                <span class="toggle-icon" onclick="toggleMetadata('${model}', this)">&#9654;</span>
+                <a href="${modelLink}" target="_blank" style="margin-left: 5px;">${displayName}</a>
+            </td>
             <td>${accuracy}%</td>
             <td>${data.correct}</td>
             <td>${data.attempted}</td>
         `;
         tbody.appendChild(row);
-    }    
+
+        // Metadata row
+        const metadataRow = document.createElement('tr');
+        metadataRow.id = `metadata-${model}`;
+        metadataRow.style.display = 'none'; // Hidden by default
+        metadataRow.innerHTML = `
+            <td colspan="4">
+                <div><strong>Precision:</strong> ${modelMetadata[model]?.precision || 'N/A'}</div>
+                <div><strong>Tested Environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
+                <div><strong>Model Developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
+                <div><strong>Context Size:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
+                <div><strong>Model Size:</strong> ${modelMetadata[model]?.modelSize || 'N/A'}</div>
+            </td>
+        `;
+        tbody.appendChild(metadataRow);
+    }
 
     updateSortingArrows(sortKey, sortDirection);
 }
+
+// Function to toggle metadata row visibility and the triangle icon direction
+function toggleMetadata(model, iconElement) {
+    const metadataRow = document.getElementById(`metadata-${model}`);
+    if (metadataRow.style.display === 'none') {
+        metadataRow.style.display = 'table-row';
+        iconElement.classList.add('expanded'); // Add the class to rotate the icon
+    } else {
+        metadataRow.style.display = 'none';
+        iconElement.classList.remove('expanded'); // Remove the class to rotate back
+    }
+}
+
+
 
 
 // Update the sorting arrows
