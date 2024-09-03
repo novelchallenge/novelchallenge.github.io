@@ -399,7 +399,8 @@ table tr:hover {
 
     table th, table td {
         padding: 6px;
-        font-size: 0.9em; 
+        font-size: 0.9em;
+        text-align: left !important; 
     }
 
     .clear-button {

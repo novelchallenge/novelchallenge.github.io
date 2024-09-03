@@ -7,7 +7,7 @@ let isUpdating = false; // Guard to prevent infinite loops
 // URL mapping for models, update displayName in order to change naming in the table, please do NOT update keys! The able const you want to update! 
 const modelMetadata = {
     'GPT-4o 05/13': { 
-        displayName: 'GPT-4o (05/13)', 
+        displayName: 'GPT-4o [05/13]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4o',
         precision: 'unknown', 
