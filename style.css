@@ -93,13 +93,15 @@ table {
 table th, table td {
     border: 1px solid #ddd;
     padding: 12px;
-    text-align: center;
+    text-align: left;
     font-size: 1em; /* Match table text size to the body text size */
 }
 
 table th {
     background-color: #6a1b9a;
     color: white;
+    padding: 12px 15px; /* Increase padding for better spacing */
+    text-align: left; /* Align header text to the left */
 }
 
 table tr:nth-child(even) {
@@ -333,7 +335,7 @@ table tr:hover {
 /* Style for the triangle toggle icon */
 .toggle-icon {
     cursor: pointer;
-    margin-right: 8px;
+    margin-right: 12px; /* Add more space between icon and text */
     font-size: 0.9em;
     color: #6a1b9a;
     display: inline-block;

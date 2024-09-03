@@ -7,124 +7,136 @@ let isUpdating = false; // Guard to prevent infinite loops
 // URL mapping for models, update displayName in order to change naming in the table, please do NOT update keys! The able const you want to update! 
 const modelMetadata = {
     'GPT-4o 05/13': { 
-        displayName: 'GPT-4o (2024-05-13)', 
+        displayName: 'GPT-4o (05/13)', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4o',
         precision: 'unknown', 
         testedEnvironment: 'OpenAI API', 
         modelDeveloper: 'OpenAI', 
-        contextSize: '128K tokens',
-        modelSize: 'unknown'
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-4o-2024-05-13'
     },
     'GPT-4o 08/06': { 
-        displayName: 'GPT-4o (2024-08-06)', 
+        displayName: 'GPT-4o [08/06]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4o',
         precision: 'unknown', 
         testedEnvironment: 'OpenAI API', 
         modelDeveloper: 'OpenAI', 
-        contextSize: '128K tokens',
-        modelSize: 'unknown' 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-4o-2024-08-06' 
     },
     'GPT-4o-Mini': { 
-        displayName: 'GPT-4o-Mini (2024-07-18)', 
+        displayName: 'GPT-4o-Mini [07/18]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4o-mini',
         precision: 'unknown', 
         testedEnvironment: 'OpenAI API', 
         modelDeveloper: 'OpenAI', 
-        contextSize: '128K tokens',
-        modelSize: 'unknown' 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-4o-mini-2024-07-18' 
     },
     'GPT-4-Turbo': { 
-        displayName: 'GPT-4-Turbo (2024-04-09)', 
+        displayName: 'GPT-4-Turbo [04/09]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4',
         precision: 'unknown', 
         testedEnvironment: 'OpenAI API', 
         modelDeveloper: 'OpenAI', 
-        contextSize: '128K tokens',
-        modelSize: 'unknown' 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-4-turbo-2024-04-09' 
     },
     'Claude-3-Opus': { 
-        displayName: 'Claude-3-Opus (2024-02-29)', 
+        displayName: 'Claude-3-Opus [02/29]', 
         category: 'closed-source', 
         url: 'https://www.anthropic.com/news/claude-3-family',
         precision: 'unknown', 
         testedEnvironment: 'Anthropic API & VertexAI API', 
         modelDeveloper: 'Anthropic', 
-        contextSize: '200K tokens',
-        modelSize: 'unknown' 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'claude-3-opus@20240229' 
     },
     'Claude-3.5-Sonnet': { 
-        displayName: 'Claude-3.5-Sonnet (2024-06-20)', 
+        displayName: 'Claude-3.5-Sonnet [06/20]', 
         category: 'closed-source', 
         url: 'https://www.anthropic.com/news/claude-3-family',
         precision: 'unknown', 
         testedEnvironment: 'VertexAI API', 
         modelDeveloper: 'Anthropic', 
-        contextSize: '200K tokens',
-        modelSize: 'unknown'
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'claude-3-5-sonnet@20240620'
     },
     'Gemini Pro 1.5 05/14': { 
-        displayName: 'Gemini 1.5 Pro (2024-05-14)', 
+        displayName: 'Gemini 1.5 Pro [05/14]', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/gemini#gemini-1.5-pro',
         precision: 'unknown', 
         testedEnvironment: 'VertexAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '1M tokens',
-        modelSize: 'unknown'
+        contextSize: '1m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-1.5-pro-preview-0514'
     },
     'Gemini Pro 1.5 08/01': { 
-        displayName: 'Gemini 1.5 Pro (2024-08-01-exp)', 
+        displayName: 'Gemini 1.5 Pro [08/01-exp]', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
         precision: 'unknown', 
         testedEnvironment: 'GoogleAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '1M tokens',
-        modelSize: 'unknown'
+        contextSize: '1m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-1.5-pro-exp-0801'
     },
     'Gemini Pro 1.5 08/27': { 
-        displayName: 'Gemini 1.5 Pro (2024-08-27-exp)', 
+        displayName: 'Gemini 1.5 Pro [08/27-exp]', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
         precision: 'unknown', 
         testedEnvironment: 'GoogleAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '2M tokens',
-        modelSize: 'unknown'
+        contextSize: '2m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-1.5-pro-exp-0827'
     },
     'Gemini Flash 1.5': { 
-        displayName: 'Gemini 1.5 Flash (2024-05-14)', 
+        displayName: 'Gemini 1.5 Flash [05/14]', 
         category: 'closed-source', 
         url: 'https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-1.5-flash-001',
         precision: 'unknown', 
         testedEnvironment: 'VertexAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '1M tokens',
-        modelSize: 'unknown'
+        contextSize: '1m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-1.5-flash-preview-0514'
     },
     'Gemini Flash 1.5 08/27': { 
-        displayName: 'Gemini 1.5 Flash (2024-08-27-exp)', 
+        displayName: 'Gemini 1.5 Flash [08/27-exp]', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
         precision: 'unknown', 
         testedEnvironment: 'GoogleAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '2M tokens',
-        modelSize: 'unknown'
+        contextSize: '2m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-1.5-flash-exp-0827'
     },
     'Gemini Flash 1.5 8B 08/27': { 
-        displayName: 'Gemini 1.5 Flash 8B (2024-08-27-exp)', 
+        displayName: 'Gemini 1.5 Flash 8B [08/27-exp]', 
         category: 'closed-source', 
         url: 'https://ai.google.dev/gemini-api/docs/models/experimental-models',
         precision: 'unknown', 
         testedEnvironment: 'GoogleAI API', 
         modelDeveloper: 'Google', 
-        contextSize: '2M tokens',
-        modelSize: '8B'
+        contextSize: '2m',
+        modelSize: '8B',
+        modelCheckpoints: 'gemini-1.5-flash-8b-exp-0827'
     },
     'LLaMA 3.1 405B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 405B', 
@@ -133,8 +145,9 @@ const modelMetadata = {
         precision: 'fp8', 
         testedEnvironment: 'Fireworks API', 
         modelDeveloper: 'Meta', 
-        contextSize: '128k tokens',
-        modelSize: '405B' 
+        contextSize: '128k',
+        modelSize: '405B',
+        modelCheckpoints: 'llama-v3p1-405b-instruct' 
     },
     'LLaMA 3.1 70B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 70B', 
@@ -143,8 +156,9 @@ const modelMetadata = {
         precision: 'fp8', 
         testedEnvironment: 'Fireworks API', 
         modelDeveloper: 'Meta', 
-        contextSize: '128k tokens',
-        modelSize: '70B'  
+        contextSize: '128k',
+        modelSize: '70B',
+        modelCheckpoints: 'llama-v3p1-70b-instruct'  
     },
     'LLaMA 3.1 8B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 8B', 
@@ -153,8 +167,9 @@ const modelMetadata = {
         precision: 'fp8', 
         testedEnvironment: 'Fireworks API', 
         modelDeveloper: 'Meta', 
-        contextSize: '128k tokens',
-        modelSize: '8B' 
+        contextSize: '128k',
+        modelSize: '8B',
+        modelCheckpoints: 'llama-v3p1-8b-instruct' 
     },
     'Llama 3 8B ProLong-512k-Instruct': { 
         displayName: 'Llama 3 8B ProLong-512k-Instruct', 
@@ -163,8 +178,9 @@ const modelMetadata = {
         precision: 'fp16', 
         testedEnvironment: '4xA100s', 
         modelDeveloper: 'Princeton (extended LLaMA 3)', 
-        contextSize: '512k tokens',
-        modelSize: '8B' 
+        contextSize: '512k',
+        modelSize: '8B',
+        modelCheckpoints: 'princeton-nlp/Llama-3-8B-ProLong-512k-Instruct' 
     },
     'Jamba 1.5 Large (Vertex API)': { 
         displayName: 'Jamba 1.5 Large', 
@@ -173,8 +189,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'VertexAI API', 
         modelDeveloper: 'AI21', 
-        contextSize: '256k tokens',
-        modelSize: '94B/398B' 
+        contextSize: '256k',
+        modelSize: '94B/398B',
+        modelCheckpoints: 'jamba-1.5-large@001' 
     },
     'Jamba 1.5 Mini (Vertex API)': { 
         displayName: 'Jamba 1.5 Mini', 
@@ -183,18 +200,20 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'VertexAI API', 
         modelDeveloper: 'AI21', 
-        contextSize: '256k tokens',
-        modelSize: '12B/52B' 
+        contextSize: '256k',
+        modelSize: '12B/52B',
+        modelCheckpoints: 'jamba-1.5-mini@001' 
     },
     'Command R+': { 
-        displayName: 'Command R+ (03/2024)', 
+        displayName: 'Command R+', 
         category: 'open-source', 
         url: 'https://docs.cohere.com/docs/command-r-plus',
         precision: '...', 
         testedEnvironment: 'Cohere API', 
         modelDeveloper: 'Cohere', 
-        contextSize: '128k tokens',
-        modelSize: '104B' 
+        contextSize: '128k',
+        modelSize: '104B',
+        modelCheckpoints: 'command-r-plus-04-2024' 
     },
     'Command R+ (simple)': { 
         displayName: 'Command R+ (simple)', 
@@ -203,8 +222,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'Cohere API (simplified prompt)', 
         modelDeveloper: 'Cohere', 
-        contextSize: '128k tokens',
-        modelSize: '104B' 
+        contextSize: '128k',
+        modelSize: '104B',
+        modelCheckpoints: 'command-r-plus-04-2024' 
     },
     'Command R': { 
         displayName: 'Command R', 
@@ -213,8 +233,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'Cohere API', 
         modelDeveloper: 'Cohere', 
-        contextSize: '128k tokens',
-        modelSize: '35B'  
+        contextSize: '128k',
+        modelSize: '35B',
+        modelCheckpoints: 'command-r-03-2024'  
     },
     'Command R (simple)': { 
         displayName: 'Command R (simple)', 
@@ -223,18 +244,20 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'Cohere API (simplified prompt)', 
         modelDeveloper: 'Cohere', 
-        contextSize: '128k tokens',
-        modelSize: '35B' 
+        contextSize: '128k',
+        modelSize: '35B',
+        modelCheckpoints: 'command-r-03-2024' 
     },
     'LongLLaMA (simple)': { 
         displayName: 'LongLLaMA (simple)', 
         category: 'open-source', 
-        url: 'https://huggingface.co/syzymon/long_llama_code_7b_instruct',
+        url: 'https://huggingface.co/syzymon/long_llama_3b_instruct',
         precision: '...', 
-        testedEnvironment: '3xA100s', 
+        testedEnvironment: '2xA100s', 
         modelDeveloper: 'Szymon Tworkowski (extended LLaMA)', 
-        contextSize: '128k tokens',
-        modelSize: '7B'  
+        contextSize: '128k',
+        modelSize: '3B',
+        modelCheckpoints: 'syzymon/long_llama_3b_instruct'  
     },
     'Phi-3-Mini': { 
         displayName: 'Phi-3-Mini', 
@@ -243,8 +266,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: '3xA100s', 
         modelDeveloper: 'Microsoft', 
-        contextSize: '128k tokens',
-        modelSize: '3.8B'  
+        contextSize: '128k',
+        modelSize: '3.8B',
+        modelCheckpoints: 'microsoft/Phi-3-mini-128k-instruct'  
     },
     'Phi-3-Mini (simple)': { 
         displayName: 'Phi-3-Mini (simple)', 
@@ -253,8 +277,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: '3xA100s (simplified prompt)', 
         modelDeveloper: 'Microsoft', 
-        contextSize: '128k tokens',
-        modelSize: '3.8B' 
+        contextSize: '128k',
+        modelSize: '3.8B',
+        modelCheckpoints: 'microsoft/Phi-3-mini-128k-instruct' 
     },
     'Gemma-10M (simple)': { 
         displayName: 'Gemma-10M (simple)', 
@@ -263,8 +288,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: '1xA100s (simplified prompt)', 
         modelDeveloper: 'Mustafa Aljadery, Siddharth Sharma, Aksh Garg (extended Gemma)', 
-        contextSize: '10M tokens',
-        modelSize: '2.51B'  
+        contextSize: '10M',
+        modelSize: '2.51B',
+        modelCheckpoints: 'mustafaaljadery/gemma-2B-10M'  
     },
     'Gemma-10M': { 
         displayName: 'Gemma-10M', 
@@ -273,8 +299,9 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: '1xA100s', 
         modelDeveloper: 'Mustafa Aljadery, Siddharth Sharma, Aksh Garg (extended Gemma)', 
-        contextSize: '10M tokens',
-        modelSize: '2.51B'  
+        contextSize: '10M',
+        modelSize: '2.51B',
+        modelCheckpoints: 'mustafaaljadery/gemma-2B-10M'  
     },
     'Mistral-Nemo (Mistral API)': { 
         displayName: 'Mistral-Nemo', 
@@ -283,18 +310,20 @@ const modelMetadata = {
         precision: '...', 
         testedEnvironment: 'Mistral API', 
         modelDeveloper: 'MistralAI', 
-        contextSize: '128k tokens',
-        modelSize: '12B'  
+        contextSize: '128k',
+        modelSize: '12B',
+        modelCheckpoints: 'open-mistral-nemo-2407 (via open-mistral-nemo)'  
     },
-    'Mistral-Large 2': { 
-        displayName: 'Mistral-Large 2 (Mistral API)', 
+    'Mistral-Large 2 (Mistral API)': { 
+        displayName: 'Mistral-Large 2', 
         category: 'open-source', 
         url: 'https://mistral.ai/news/mistral-large-2407/',
         precision: '...', 
         testedEnvironment: 'Mistral API', 
         modelDeveloper: 'MistralAI', 
-        contextSize: '128k tokens',
-        modelSize: '123B'  
+        contextSize: '128k',
+        modelSize: '123B',
+        modelCheckpoints: 'mistral-large-2407 (via mistral-large-latest)'  
     }
 };
 
@@ -385,11 +414,13 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         metadataRow.style.display = 'none'; // Hidden by default
         metadataRow.innerHTML = `
             <td colspan="4">
-                <div><strong>Precision:</strong> ${modelMetadata[model]?.precision || 'N/A'}</div>
-                <div><strong>Tested Environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
-                <div><strong>Model Developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
-                <div><strong>Context Size:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
-                <div><strong>Model Size:</strong> ${modelMetadata[model]?.modelSize || 'N/A'}</div>
+                
+                <div><strong>developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
+                <div><strong>tested environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
+                <div><strong>context length:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
+                <div><strong>model size:</strong> ${modelMetadata[model]?.modelSize || 'N/A'}</div>
+                <div><strong>precision:</strong> ${modelMetadata[model]?.precision || 'N/A'}</div>
+                <div><strong>checkpoints:</strong> ${modelMetadata[model]?.modelCheckpoints || 'N/A'}</div>
             </td>
         `;
         tbody.appendChild(metadataRow);
