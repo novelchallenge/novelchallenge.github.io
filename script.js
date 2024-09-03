@@ -254,7 +254,7 @@ const modelMetadata = {
         url: 'https://huggingface.co/syzymon/long_llama_3b_instruct',
         precision: '...', 
         testedEnvironment: '2xA100s', 
-        modelDeveloper: 'Szymon Tworkowski (extended LLaMA)', 
+        modelDeveloper: 'Szymon Tworkowski, Konrad Staniszewski, Mikołaj Pacek, Yuhuai Wu, Henryk Michalewski, Piotr Miłoś (extended LLaMA)', 
         contextSize: '128k',
         modelSize: '3B',
         modelCheckpoints: 'syzymon/long_llama_3b_instruct'  
