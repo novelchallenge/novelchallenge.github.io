@@ -324,6 +324,17 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '123B',
         modelCheckpoints: 'mistral-large-2407 (via mistral-large-latest)'  
+    },
+    'MegaBeam-Mistral-7B-512k': { 
+        displayName: 'MegaBeam-Mistral-7B-512k', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/aws-prototyping/MegaBeam-Mistral-7B-512k',
+        precision: '...', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'AWS', 
+        contextSize: '512k (tested up to 200k)',
+        modelSize: '7B',
+        modelCheckpoints: 'aws-prototyping/MegaBeam-Mistral-7B-512k'  
     }
 };
 
