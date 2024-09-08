@@ -32,7 +32,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -188,7 +188,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -227,7 +227,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -461,7 +461,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -1631,7 +1631,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -1826,7 +1826,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -2372,7 +2372,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -2489,7 +2489,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -2567,7 +2567,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -3152,7 +3152,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "historical",
@@ -4244,7 +4244,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -4595,7 +4595,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -4673,7 +4673,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -4907,7 +4907,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -5102,7 +5102,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -5180,7 +5180,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -5570,7 +5570,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -6740,7 +6740,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -7208,7 +7208,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -7676,7 +7676,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -8027,7 +8027,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -8378,7 +8378,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -8573,7 +8573,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -9197,7 +9197,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -10523,7 +10523,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -10562,7 +10562,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -11849,7 +11849,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -12395,7 +12395,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -12512,7 +12512,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -12980,7 +12980,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "historical",
@@ -14189,7 +14189,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -14501,7 +14501,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -14813,7 +14813,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -15281,7 +15281,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -15515,7 +15515,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -16919,7 +16919,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -17504,7 +17504,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -18986,7 +18986,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -19649,7 +19649,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -19844,7 +19844,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -20507,7 +20507,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -20585,7 +20585,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -20819,7 +20819,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -20936,7 +20936,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -21248,7 +21248,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -22223,7 +22223,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -22808,7 +22808,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -23042,7 +23042,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -23939,7 +23939,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -24329,7 +24329,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -25343,7 +25343,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -26201,7 +26201,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -26279,7 +26279,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -27644,7 +27644,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -27956,7 +27956,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -28229,7 +28229,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -29048,7 +29048,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -29243,7 +29243,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -29438,7 +29438,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -30530,7 +30530,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -30842,7 +30842,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "correct"
       },
       "scope": null,
       "genre": "speculative",
@@ -31037,7 +31037,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -31076,7 +31076,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -31154,7 +31154,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -31778,7 +31778,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -32714,7 +32714,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -32831,7 +32831,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -33572,7 +33572,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -34898,7 +34898,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -36926,7 +36926,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -37355,7 +37355,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -37511,7 +37511,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",
@@ -38018,7 +38018,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "historical",
@@ -39032,7 +39032,7 @@
         "Gemma-10M": "incorrect",
         "Mistral-Nemo (Mistral API)": "no_prediction",
         "Mistral-Large 2 (Mistral API)": "no_prediction",
-        "MegaBeam-Mistral-7B-512k": "no_prediction"
+        "MegaBeam-Mistral-7B-512k": "incorrect"
       },
       "scope": null,
       "genre": "speculative",

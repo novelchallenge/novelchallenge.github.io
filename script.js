@@ -330,9 +330,9 @@ const modelMetadata = {
         category: 'open-source', 
         url: 'https://huggingface.co/aws-prototyping/MegaBeam-Mistral-7B-512k',
         precision: '...', 
-        testedEnvironment: '2xA100s', 
+        testedEnvironment: '3xA100s', 
         modelDeveloper: 'AWS', 
-        contextSize: '512k (tested up to 200k)',
+        contextSize: '512k (currently tested up to 300k)',
         modelSize: '7B',
         modelCheckpoints: 'aws-prototyping/MegaBeam-Mistral-7B-512k'  
     }
