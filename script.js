@@ -28,6 +28,28 @@ const modelMetadata = {
         modelSize: 'unknown',
         modelCheckpoints: 'gpt-4o-2024-08-06' 
     },
+    'o1-preview 09/12': { 
+        displayName: 'o1-preview 09/12', 
+        category: 'closed-source', 
+        url: 'https://openai.com/o1/',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API (API enforces top-p=1.0, temperature=1.0, some calls don\'t pass due to "server error", others due to "too many tokens" even though the request should have passed as per tiktoken counts, some calls return more than 6k "reason_tokens" (requested max_completion_tokens) resulting in empty responses (these were omitted from accuracy analysis). Overall, the model is hard to work with for lengths of 115k or more ultimately excluding longests books from the analysis.)',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'o1-preview-2024-09-12' 
+    },
+    'o1-mini 09/12': { 
+        displayName: 'o1-mini 09/12', 
+        category: 'closed-source', 
+        url: 'https://openai.com/o1/',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API (API enforces top-p=1.0, temperature=1.0, some calls don\'t pass due to "server error", others due to "too many tokens" even though the request should have passed as per tiktoken counts, some calls return more than 6k "reason_tokens" (requested max_completion_tokens) resulting in empty responses (these were omitted from accuracy analysis). Overall, the model is hard to work with for lengths of 115k or more ultimately excluding longests books from the analysis. Note that since o1-mini returned less "reason_tokens" than o1-preview, we were able to rerun some examples with max_completion_tokens=3k resulting in more example being tested.)',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'o1-mini-2024-09-12' 
+    },
     'GPT-4o-Mini': { 
         displayName: 'GPT-4o-Mini [07/18]', 
         category: 'closed-source', 
