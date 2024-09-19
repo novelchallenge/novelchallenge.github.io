@@ -433,7 +433,6 @@ table tr:hover {
     }
 }
 
-
 /* Responsive Design for Tablets */
 @media (max-width: 768px) {
     body {
@@ -454,17 +453,17 @@ table tr:hover {
     }
 
     .prompt h2,
-    .example-header  {
-        font-size: 1.2em; 
+    .example-header {
+        font-size: 1.2em;
     }
 
-    .intro p, 
-    .filter-container, 
-    .checkbox-container, 
-    .robotic-text, 
-    .caution-flag, 
+    .intro p,
+    .filter-container,
+    .checkbox-container,
+    .robotic-text,
+    .caution-flag,
     .example-content {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .select2-container--default .select2-search--inline .select2-search__field {
@@ -472,29 +471,58 @@ table tr:hover {
         border: none;
         outline: 0;
         box-shadow: none;
-        /* -webkit-appearance: textfield; */
-        width: calc(100% - 110px); 
-        box-sizing: border-box; 
+        width: calc(100% - 110px);
+        box-sizing: border-box;
+    }
+
+    /* Table adjustments */
+    table {
+        width: 100%;
+        table-layout: fixed; /* Ensures table respects set widths */
+        border-collapse: collapse; /* Optional, for better appearance */
     }
 
     table th, table td {
         padding: 8px;
-        font-size: 1em; 
+        font-size: 1em;
+        text-align: left !important;
+        overflow: hidden;          /* Hide overflowed content */
+        text-overflow: ellipsis;    /* Add ellipsis for overflowed text */
+        white-space: nowrap;        /* Prevent text from wrapping */
+    }
+
+    /* Limit the width of the first column */
+    table th:first-child,
+    table td:first-child {
+        width: 50%;                /* Adjust percentage as needed */
+    }
+
+    /* Set width for the second column */
+    table th:nth-child(2),
+    table td:nth-child(2) {
+        width: 30%;                /* Adjust percentage as needed */
+    }
+
+    /* Allow text wrapping in the first column if needed */
+    table th:first-child,
+    table td:first-child {
+        white-space: normal;       /* Allow text to wrap */
+        word-wrap: break-word;     /* Break long words */
     }
 
     .filter-container {
-        font-size: 0.8em; 
-        padding: 4px 4px; 
+        font-size: 0.8em;
+        padding: 4px 4px;
     }
 
     .clear-button {
-        font-size: 0.8em; 
-        padding: 4px 5px; 
+        font-size: 0.8em;
+        padding: 4px 5px;
     }
 
-    .filter-label, 
+    .filter-label,
     .filter-label i {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .model-selection {
@@ -502,13 +530,13 @@ table tr:hover {
     }
 
     .team-member {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
     }
 
     #leaderboard {
         display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        overflow-x: auto;          /* Allow horizontal scrolling */
+        /* white-space: nowrap; */  /* Remove to allow table to adjust */
         -webkit-overflow-scrolling: touch;
     }
 
@@ -517,10 +545,10 @@ table tr:hover {
     }
 }
 
-
+/* Responsive Design for Medium Screens */
 @media (max-width: 1380px) {
     body {
-        font-size: 15px; 
+        font-size: 15px;
     }
 
     .container {
@@ -533,21 +561,21 @@ table tr:hover {
     }
 
     h2 {
-        font-size: 1.2em; 
+        font-size: 1.2em;
     }
 
     .prompt h2,
-    .example-header  {
-        font-size: 1.2em; 
+    .example-header {
+        font-size: 1.2em;
     }
 
-    .intro p, 
-    .filter-container, 
-    .checkbox-container, 
-    .robotic-text, 
-    .caution-flag, 
+    .intro p,
+    .filter-container,
+    .checkbox-container,
+    .robotic-text,
+    .caution-flag,
     .example-content {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .select2-container--default .select2-search--inline .select2-search__field {
@@ -555,46 +583,74 @@ table tr:hover {
         border: none;
         outline: 0;
         box-shadow: none;
-        /* -webkit-appearance: textfield; */
-        width: calc(100% - 110px); 
-        box-sizing: border-box; 
+        width: calc(100% - 110px);
+        box-sizing: border-box;
     }
 
+    /* Table adjustments */
+    table {
+        width: 100%;
+        table-layout: fixed;       /* Ensures table respects set widths */
+        border-collapse: collapse; /* Optional, for better appearance */
+    }
 
     table th, table td {
         padding: 8px;
-        font-size: 1em; 
+        font-size: 1em;
+        text-align: left !important;
+        overflow: hidden;          /* Hide overflowed content */
+        text-overflow: ellipsis;    /* Add ellipsis for overflowed text */
+        white-space: nowrap;        /* Prevent text from wrapping */
+    }
+
+    /* Limit the width of the first column */
+    table th:first-child,
+    table td:first-child {
+        width: 40%;                /* Adjust percentage as needed */
+    }
+
+    /* Set width for the second column */
+    table th:nth-child(2),
+    table td:nth-child(2) {
+        width: 30%;                /* Adjust percentage as needed */
+    }
+
+    /* Allow text wrapping in the first column if needed */
+    table th:first-child,
+    table td:first-child {
+        white-space: normal;       /* Allow text to wrap */
+        word-wrap: break-word;     /* Break long words */
     }
 
     .filter-container {
-        font-size: 0.8em; 
-        padding: 4px 4px; 
+        font-size: 0.8em;
+        padding: 4px 4px;
     }
 
     .clear-button {
-        font-size: 0.8em; 
-        padding: 4px 5px; 
+        font-size: 0.8em;
+        padding: 4px 5px;
     }
 
-    .filter-label, 
+    .filter-label,
     .filter-label i {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .model-selection {
-        font-size: 1em; 
+        font-size: 1em;
     }
 
     .team-member {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
     }
 
     #leaderboard {
         display: block;
-        overflow-x: auto;
-        white-space: nowrap;
+        overflow-x: auto;          /* Allow horizontal scrolling */
+        /* white-space: nowrap; */  /* Remove to allow table to adjust */
         -webkit-overflow-scrolling: touch;
-        width: 100%; 
+        width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
     }
@@ -603,6 +659,3 @@ table tr:hover {
         margin: 10px 0;
     }
 }
-
-
-
