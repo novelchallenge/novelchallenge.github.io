@@ -388,6 +388,54 @@ const modelMetadata = {
         modelSize: '7B',
         modelCheckpoints: 'aws-prototyping/MegaBeam-Mistral-7B-512k',
         notes: ''  
+    },
+    'Qwen 2.5 7B': { 
+        displayName: 'Qwen 2.5 7B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2-7B-Instruct',
+        precision: '...', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '7B',
+        modelCheckpoints: 'Qwen/Qwen2-7B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
+    'Qwen 2.5 72B': { 
+        displayName: 'Qwen 2.5 72B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2-72B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '4xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '7B',
+        modelCheckpoints: 'Qwen/Qwen2-72B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
+    'GLM4 9B 1M': { 
+        displayName: 'GLM4 9B 1M', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/THUDM/glm-4-9b-chat-1m',
+        precision: '16-bit', 
+        testedEnvironment: '3xA100s', 
+        modelDeveloper: 'Tsinghua University', 
+        contextSize: '1M',
+        modelSize: '9B',
+        modelCheckpoints: 'THUDM/glm-4-9b-chat-1m',
+        notes: 'run with vllms'  
+    },
+    'LLaMA 3 8B (GradientAI)': { 
+        displayName: 'LLaMA-3 8B 1M (GradientAI)', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/gradientai/Llama-3-8B-Instruct-Gradient-1048k',
+        precision: '...', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'GradientAI', 
+        contextSize: '1M',
+        modelSize: '8B',
+        modelCheckpoints: 'gradientai/Llama-3-8B-Instruct-Gradient-1048k',
+        notes: 'run with vllms'  
     }
 };
 
