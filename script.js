@@ -31,7 +31,7 @@ const modelMetadata = {
         notes: '' 
     },
     'o1-preview 09/12': { 
-        displayName: 'o1-preview 09/12', 
+        displayName: 'o1-preview [09/12]', 
         category: 'closed-source', 
         url: 'https://openai.com/o1/',
         precision: 'unknown', 
@@ -43,7 +43,7 @@ const modelMetadata = {
         notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.'
     },
     'o1-mini 09/12': { 
-        displayName: 'o1-mini 09/12', 
+        displayName: 'o1-mini [09/12]', 
         category: 'closed-source', 
         url: 'https://openai.com/o1/',
         precision: 'unknown', 
@@ -435,6 +435,18 @@ const modelMetadata = {
         contextSize: '1M',
         modelSize: '8B',
         modelCheckpoints: 'gradientai/Llama-3-8B-Instruct-Gradient-1048k',
+        notes: 'run with vllms'  
+    },
+    'LLaMA 3 70B (GradientAI)': { 
+        displayName: 'LLaMA-3 70B 1M (GradientAI)', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/gradientai/Llama-3-70B-Instruct-Gradient-1048k',
+        precision: '...', 
+        testedEnvironment: '4xA100s', 
+        modelDeveloper: 'GradientAI', 
+        contextSize: '1M',
+        modelSize: '70B',
+        modelCheckpoints: 'gradientai/Llama-3-70B-Instruct-Gradient-1048k',
         notes: 'run with vllms'  
     }
 };
