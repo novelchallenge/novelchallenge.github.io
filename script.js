@@ -448,6 +448,42 @@ const modelMetadata = {
         modelSize: '70B',
         modelCheckpoints: 'gradientai/Llama-3-70B-Instruct-Gradient-1048k',
         notes: 'run with vllms'  
+    },
+    'LLaMA 3.2 3B': { 
+        displayName: 'LLaMA 3.2 3B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct',
+        precision: '16-bits', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128K',
+        modelSize: '3B',
+        modelCheckpoints: 'meta-llama/Llama-3.2-3B-Instruct',
+        notes: 'run with vllms'  
+    },
+    'Qwen 2.5 14B': { 
+        displayName: 'Qwen 2.5 14B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2.5-14B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '14B',
+        modelCheckpoints: 'Qwen/Qwen2.5-14B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
+    'Qwen 2 72B': { 
+        displayName: 'Qwen 2 72B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2-72B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '4xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '72B',
+        modelCheckpoints: 'Qwen/Qwen2-72B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
     }
 };
 
