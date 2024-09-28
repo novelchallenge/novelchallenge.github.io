@@ -306,7 +306,7 @@ const modelMetadata = {
         notes: ''  
     },
     'Phi-3-Mini': { 
-        displayName: 'Phi-3-Mini', 
+        displayName: 'Phi 3 Mini', 
         category: 'open-source', 
         url: 'https://huggingface.co/microsoft/Phi-3-mini-128k-instruct',
         precision: '...', 
@@ -484,6 +484,42 @@ const modelMetadata = {
         modelSize: '72B',
         modelCheckpoints: 'Qwen/Qwen2-72B-Instruct',
         notes: 'run with vllms (context extended with yarn)'  
+    },
+    'LLaMA 3.2 1B': { 
+        displayName: 'LLaMA 3.2 1B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct',
+        precision: '16-bits', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128K',
+        modelSize: '1B',
+        modelCheckpoints: 'meta-llama/Llama-3.2-1B-Instruct',
+        notes: 'run with vllms'  
+    },
+    'Phi 3.5 Mini': { 
+        displayName: 'Phi 3.5 Mini', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/microsoft/Phi-3.5-mini-instruct',
+        precision: '...', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Microsoft', 
+        contextSize: '128k',
+        modelSize: '3.8B',
+        modelCheckpoints: 'microsoft/Phi-3.5-mini-instruct',
+        notes: 'run with vllms'  
+    },
+    'Phi 3 Medium': { 
+        displayName: 'Phi 3 Medium', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/microsoft/Phi-3-medium-128k-instruct',
+        precision: '...', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'Microsoft', 
+        contextSize: '128k',
+        modelSize: '14B',
+        modelCheckpoints: 'microsoft/Phi-3-medium-128k-instruct',
+        notes: 'run with vllms'  
     }
 };
 
