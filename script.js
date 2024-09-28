@@ -520,7 +520,43 @@ const modelMetadata = {
         modelSize: '14B',
         modelCheckpoints: 'microsoft/Phi-3-medium-128k-instruct',
         notes: 'run with vllms'  
-    }
+    },
+    'Qwen 2.5 3B': { 
+        displayName: 'Qwen 2.5 3B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2.5-3B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '3B',
+        modelCheckpoints: 'Qwen/Qwen2.5-3B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
+    'Qwen 2.5 1.5B': { 
+        displayName: 'Qwen 2.5 1.5B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '1.5B',
+        modelCheckpoints: 'Qwen/Qwen2.5-1.5B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
+    'Qwen 2.5 0.5B': { 
+        displayName: 'Qwen 2.5 0.5B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct',
+        precision: '16-bit', 
+        testedEnvironment: '1xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '0.5B',
+        modelCheckpoints: 'Qwen/Qwen2.5-0.5B-Instruct',
+        notes: 'run with vllms (context extended with yarn)'  
+    },
 };
 
 // Fetch the JSON data
