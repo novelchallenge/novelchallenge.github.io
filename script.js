@@ -563,7 +563,101 @@ function preprocessData(models, filteredQuestions = null) {
 }
 
 // Populate the leaderboard table
+// function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirection = 'desc') {
+//     models.sort((a, b) => {
+//         let valueA, valueB;
+//         if (sortKey === 'accuracy') {
+//             valueA = results[a].attempted ? (results[a].correct / results[a].attempted) : 0;
+//             valueB = results[b].attempted ? (results[b].correct / results[b].attempted) : 0;
+//         } else if (sortKey === 'model') {
+//             valueA = a.toLowerCase();
+//             valueB = b.toLowerCase();
+//         } else {
+//             valueA = results[a][sortKey];
+//             valueB = results[b][sortKey];
+//         }
+//         if (valueA < valueB) return sortDirection === 'asc' ? -1 : 1;
+//         if (valueA > valueB) return sortDirection === 'asc' ? 1 : -1;
+//         return 0;
+//     });
+
+//     const tbody = document.getElementById('leaderboard').getElementsByTagName('tbody')[0];
+//     tbody.innerHTML = ''; // Clear previous rows
+
+//     for (const model of models) {
+//         if (!filteredModels.includes(model)) continue; // Skip models not in filteredModels
+//         const data = results[model];
+//         const accuracy = data.attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
+//         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
+//         const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
+
+//         // Table row for the model
+//         const row = document.createElement('tr');
+//         row.innerHTML = `
+//             <td>
+//                 <span class="toggle-icon" onclick="toggleMetadata('${model}', this)">&#9654;</span>
+//                 <a href="${modelLink}" target="_blank" style="margin-left: 5px;">${displayName}</a>
+//             </td>
+//             <td>${accuracy}%</td>
+//             <td>${data.correct}</td>
+//             <td>${data.attempted}</td>
+//         `;
+//         tbody.appendChild(row);
+
+//         // Metadata row
+//         const metadataRow = document.createElement('tr');
+//         metadataRow.id = `metadata-${model}`;
+//         metadataRow.style.display = 'none'; // Hidden by default
+//         metadataRow.innerHTML = `
+//             <td colspan="4">
+                
+//                 <div><strong>developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
+//                 <div><strong>tested environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
+//                 <div><strong>context length:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
+//                 <div><strong>model size:</strong> ${modelMetadata[model]?.modelSize || 'N/A'}</div>
+//                 <div><strong>precision:</strong> ${modelMetadata[model]?.precision || 'N/A'}</div>
+//                 <div><strong>checkpoints:</strong> ${modelMetadata[model]?.modelCheckpoints || 'N/A'}</div>
+//                 <div><strong>notes:</strong> ${modelMetadata[model]?.notes || 'N/A'}</div>
+//             </td>
+//         `;
+//         tbody.appendChild(metadataRow);
+//     }
+
+//     updateSortingArrows(sortKey, sortDirection);
+// }
+let globalRankings = {}; // To store the global rank of each model
+
+// Initialize the leaderboard with the default view
+function initializeLeaderboard() {
+    const models = Object.keys(data.pairs[0].results);
+    filteredModels = models; // Initialize filteredModels with all models
+    const results = preprocessData(models);
+
+    // Compute global rankings based on accuracy
+    calculateGlobalRankings(results, models);
+
+    // Populate the leaderboard
+    populateLeaderboard(results, models);
+}
+
+// Compute global rankings based on accuracy
+function calculateGlobalRankings(results, models) {
+    // Sort models by accuracy (this will be used to assign global ranks)
+    const sortedModels = [...models].sort((a, b) => {
+        const accuracyA = results[a].attempted ? (results[a].correct / results[a].attempted) : 0;
+        const accuracyB = results[b].attempted ? (results[b].correct / results[b].attempted) : 0;
+        return accuracyB - accuracyA; // Sort in descending order of accuracy
+    });
+
+    // Assign global rank to each model
+    sortedModels.forEach((model, index) => {
+        globalRankings[model] = index + 1; // Global rank starts from 1
+    });
+}
+
+// Populate the leaderboard table
 function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirection = 'desc') {
+    // Sort the models based on the current sort key (accuracy, correct, attempted, etc.)
     models.sort((a, b) => {
         let valueA, valueB;
         if (sortKey === 'accuracy') {
@@ -584,16 +678,20 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
     const tbody = document.getElementById('leaderboard').getElementsByTagName('tbody')[0];
     tbody.innerHTML = ''; // Clear previous rows
 
-    for (const model of models) {
-        if (!filteredModels.includes(model)) continue; // Skip models not in filteredModels
+    // Loop through the sorted models and generate the rows
+    models.forEach(model => {
+        if (!filteredModels.includes(model)) return; // Skip models not in filteredModels
+
         const data = results[model];
         const accuracy = data.attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
         const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
+        const globalRank = globalRankings[model]; // Get the global rank
 
         // Table row for the model
         const row = document.createElement('tr');
         row.innerHTML = `
+            <td>${globalRank}</td> <!-- Global Rank -->
             <td>
                 <span class="toggle-icon" onclick="toggleMetadata('${model}', this)">&#9654;</span>
                 <a href="${modelLink}" target="_blank" style="margin-left: 5px;">${displayName}</a>
@@ -609,8 +707,7 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         metadataRow.id = `metadata-${model}`;
         metadataRow.style.display = 'none'; // Hidden by default
         metadataRow.innerHTML = `
-            <td colspan="4">
-                
+            <td colspan="5"> <!-- Adjusted colspan to 5 for the new rank column -->
                 <div><strong>developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
                 <div><strong>tested environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
                 <div><strong>context length:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
@@ -621,10 +718,12 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
             </td>
         `;
         tbody.appendChild(metadataRow);
-    }
+    });
 
     updateSortingArrows(sortKey, sortDirection);
 }
+
+
 
 // Function to toggle metadata row visibility and the triangle icon direction
 function toggleMetadata(model, iconElement) {
