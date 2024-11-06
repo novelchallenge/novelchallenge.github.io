@@ -54,7 +54,7 @@ const modelMetadata = {
         modelCheckpoints: 'o1-mini-2024-09-12',
         notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.' 
     },
-    'GPT-4o-Mini': { 
+    'GPT-4o-Mini 7/18': { 
         displayName: 'GPT-4o-Mini [07/18]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models/gpt-4o-mini',
@@ -78,7 +78,7 @@ const modelMetadata = {
         modelCheckpoints: 'gpt-4-turbo-2024-04-09',
         notes: '' 
     },
-    'Claude-3-Opus': { 
+    'Claude-3-Opus 2/29': { 
         displayName: 'Claude-3-Opus [02/29]', 
         category: 'closed-source', 
         url: 'https://www.anthropic.com/news/claude-3-family',
@@ -90,7 +90,7 @@ const modelMetadata = {
         modelCheckpoints: 'claude-3-opus@20240229',
         notes: '' 
     },
-    'Claude-3.5-Sonnet': { 
+    'Claude-3.5-Sonnet 6/22': { 
         displayName: 'Claude-3.5-Sonnet [06/20]', 
         category: 'closed-source', 
         url: 'https://www.anthropic.com/news/claude-3-family',
@@ -100,6 +100,30 @@ const modelMetadata = {
         contextSize: '200k',
         modelSize: 'unknown',
         modelCheckpoints: 'claude-3-5-sonnet@20240620',
+        notes: ''
+    },
+    'Claude-3.5-Sonnet (v2) 10/22': { 
+        displayName: 'Claude-3.5-Sonnet v2 [10/22]', 
+        category: 'closed-source', 
+        url: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
+        precision: 'unknown', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'Anthropic', 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'claude-3-5-sonnet-v2@20241022',
+        notes: ''
+    },
+    'Claude-3.5-Haiku 10/22': { 
+        displayName: 'Claude-3.5-Haiku [10/22]', 
+        category: 'closed-source', 
+        url: 'https://www.anthropic.com/news/3-5-models-and-computer-use',
+        precision: 'unknown', 
+        testedEnvironment: 'VertexAI API', 
+        modelDeveloper: 'Anthropic', 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'claude-3-5-sonnet-v2@20241022',
         notes: ''
     },
     'Gemini Pro 1.5 05/14': { 
