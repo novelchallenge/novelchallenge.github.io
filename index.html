@@ -35,18 +35,22 @@
         
 
         <div class="filter-container">
-                The default leaderboard view ranks models by their accuracy on pairs that they attempted. Each model can only attempt pairs if the book (1) fits within the model's context window and (2) does not trigger content guardrails. The controls below allow you to fairly compare selected models on the <i>common set</i> of pairs that all selected models attempted.<br><br> 
+            The default leaderboard view ranks models by their accuracy on pairs that they attempted. Each model can only attempt pairs if the book (1) fits within the model's context window and (2) does not trigger content guardrails. The controls below allow you to fairly compare selected models on the <i>common set</i> of pairs that all selected models attempted.<br><br> 
             <div class="checkbox-container">
-                <label class="filter-label">
-                    <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common set (all)
-                </label>
-                <label class="filter-label">
-                    <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Common set (closed LLMs)
-                </label>
-                <label class="filter-label">
-                    <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weight)
-                </label>
-            </div>
+                    <label class="filter-label">
+                        <input type="checkbox" id="all-models-checkbox"> <i class="fas fa-globe"></i> Common set (all)
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" id="closed-source-checkbox"> <i class="fas fa-lock"></i> Common set (closed LLMs)
+                    </label>
+                    <label class="filter-label">
+                        <input type="checkbox" id="open-source-checkbox"> <i class="fas fa-lock-open"></i> Common set (open-weight)
+                    </label>
+                  <!-- Hard/Easy Problem Checkboxes -->
+                    <label><input type="checkbox" id="hard-set-checkbox"> Hard Problems</label>
+                    <label><input type="checkbox" id="easy-set-checkbox"> Easy Problems</label>
+
+            </div>           
             <div class="filter-controls">
                 <select id="model-selection" class="model-selection" multiple="multiple">
                     <!-- Options will be populated by JavaScript -->

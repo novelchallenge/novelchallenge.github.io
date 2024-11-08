@@ -1,8 +1,3 @@
-let data;
-let currentSortKey = 'accuracy';
-let currentSortDirection = 'desc';
-let filteredModels = []; // New variable to track filtered models
-let isUpdating = false; // Guard to prevent infinite loops
 
 // URL mapping for models, update displayName in order to change naming in the table, please do NOT update keys! The able const you want to update! 
 const modelMetadata = {
@@ -583,6 +578,17 @@ const modelMetadata = {
     },
 };
 
+
+let data;
+let currentSortKey = 'accuracy';
+let currentSortDirection = 'desc';
+let filteredModels = []; // Variable to track filtered models
+let filteredQuestions = []; // Variable to track filtered questions
+let isUpdating = false; // Guard to prevent infinite loops
+let globalRankings = {}; // To store the global rank of each model
+
+// [Your existing modelMetadata as before]
+
 // Fetch the JSON data
 fetch('data.json')
     .then(response => response.json())
@@ -594,20 +600,20 @@ fetch('data.json')
 
 // Initialize the leaderboard with the default view
 function initializeLeaderboard() {
-    const models = Object.keys(data.pairs[0].results);
+    const models = Object.keys(data.pairs[0].results).filter(model => model !== 'bm25-gpt4o-top25');
     filteredModels = models; // Initialize filteredModels with all models
-    const results = preprocessData(models);
+    filteredQuestions = data.pairs.slice(); // Initialize with all questions
+    const results = preprocessData(models, filteredQuestions);
+    calculateGlobalRankings(results, models);
     populateLeaderboard(results, models);
 }
 
 // Preprocess the data to calculate correct and attempted counts
-function preprocessData(models, filteredQuestions = null) {
+function preprocessData(models, questions) {
     const results = {};
     for (const model of models) {
         results[model] = { correct: 0, attempted: 0 };
     }
-
-    const questions = filteredQuestions || data.pairs;
 
     for (const question of questions) {
         for (const model of models) {
@@ -620,84 +626,6 @@ function preprocessData(models, filteredQuestions = null) {
         }
     }
     return results;
-}
-
-// Populate the leaderboard table
-// function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirection = 'desc') {
-//     models.sort((a, b) => {
-//         let valueA, valueB;
-//         if (sortKey === 'accuracy') {
-//             valueA = results[a].attempted ? (results[a].correct / results[a].attempted) : 0;
-//             valueB = results[b].attempted ? (results[b].correct / results[b].attempted) : 0;
-//         } else if (sortKey === 'model') {
-//             valueA = a.toLowerCase();
-//             valueB = b.toLowerCase();
-//         } else {
-//             valueA = results[a][sortKey];
-//             valueB = results[b][sortKey];
-//         }
-//         if (valueA < valueB) return sortDirection === 'asc' ? -1 : 1;
-//         if (valueA > valueB) return sortDirection === 'asc' ? 1 : -1;
-//         return 0;
-//     });
-
-//     const tbody = document.getElementById('leaderboard').getElementsByTagName('tbody')[0];
-//     tbody.innerHTML = ''; // Clear previous rows
-
-//     for (const model of models) {
-//         if (!filteredModels.includes(model)) continue; // Skip models not in filteredModels
-//         const data = results[model];
-//         const accuracy = data.attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
-//         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
-//         const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
-
-//         // Table row for the model
-//         const row = document.createElement('tr');
-//         row.innerHTML = `
-//             <td>
-//                 <span class="toggle-icon" onclick="toggleMetadata('${model}', this)">&#9654;</span>
-//                 <a href="${modelLink}" target="_blank" style="margin-left: 5px;">${displayName}</a>
-//             </td>
-//             <td>${accuracy}%</td>
-//             <td>${data.correct}</td>
-//             <td>${data.attempted}</td>
-//         `;
-//         tbody.appendChild(row);
-
-//         // Metadata row
-//         const metadataRow = document.createElement('tr');
-//         metadataRow.id = `metadata-${model}`;
-//         metadataRow.style.display = 'none'; // Hidden by default
-//         metadataRow.innerHTML = `
-//             <td colspan="4">
-                
-//                 <div><strong>developer:</strong> ${modelMetadata[model]?.modelDeveloper || 'N/A'}</div>
-//                 <div><strong>tested environment:</strong> ${modelMetadata[model]?.testedEnvironment || 'N/A'}</div>
-//                 <div><strong>context length:</strong> ${modelMetadata[model]?.contextSize || 'N/A'}</div>
-//                 <div><strong>model size:</strong> ${modelMetadata[model]?.modelSize || 'N/A'}</div>
-//                 <div><strong>precision:</strong> ${modelMetadata[model]?.precision || 'N/A'}</div>
-//                 <div><strong>checkpoints:</strong> ${modelMetadata[model]?.modelCheckpoints || 'N/A'}</div>
-//                 <div><strong>notes:</strong> ${modelMetadata[model]?.notes || 'N/A'}</div>
-//             </td>
-//         `;
-//         tbody.appendChild(metadataRow);
-//     }
-
-//     updateSortingArrows(sortKey, sortDirection);
-// }
-let globalRankings = {}; // To store the global rank of each model
-
-// Initialize the leaderboard with the default view
-function initializeLeaderboard() {
-    const models = Object.keys(data.pairs[0].results);
-    filteredModels = models; // Initialize filteredModels with all models
-    const results = preprocessData(models);
-
-    // Compute global rankings based on accuracy
-    calculateGlobalRankings(results, models);
-
-    // Populate the leaderboard
-    populateLeaderboard(results, models);
 }
 
 // Compute global rankings based on accuracy
@@ -717,7 +645,7 @@ function calculateGlobalRankings(results, models) {
 
 // Populate the leaderboard table
 function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirection = 'desc') {
-    // Sort the models based on the current sort key (accuracy, correct, attempted, etc.)
+    // Sort the models based on the current sort key
     models.sort((a, b) => {
         let valueA, valueB;
         if (sortKey === 'accuracy') {
@@ -743,7 +671,7 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         if (!filteredModels.includes(model)) return; // Skip models not in filteredModels
 
         const data = results[model];
-        const accuracy = data.attempted ? (results[model].correct / results[model].attempted * 100).toFixed(2) : 0;
+        const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
         const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
         const globalRank = globalRankings[model]; // Get the global rank
@@ -783,8 +711,6 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
     updateSortingArrows(sortKey, sortDirection);
 }
 
-
-
 // Function to toggle metadata row visibility and the triangle icon direction
 function toggleMetadata(model, iconElement) {
     const metadataRow = document.getElementById(`metadata-${model}`);
@@ -796,9 +722,6 @@ function toggleMetadata(model, iconElement) {
         iconElement.classList.remove('expanded'); // Remove the class to rotate back
     }
 }
-
-
-
 
 // Update the sorting arrows
 function updateSortingArrows(sortKey, sortDirection) {
@@ -816,7 +739,7 @@ function updateSortingArrows(sortKey, sortDirection) {
 // Populate the model selection dropdown
 function populateModelSelection() {
     const modelSelection = document.getElementById('model-selection');
-    const models = Object.keys(data.pairs[0].results);
+    const models = Object.keys(data.pairs[0].results).filter(model => model !== 'bm25-gpt4o-top25');
 
     models.forEach(model => {
         const option = document.createElement('option');
@@ -828,146 +751,216 @@ function populateModelSelection() {
     $('#model-selection').select2({
         placeholder: 'Select models to see their performance on common set of claims for comparison',
         allowClear: true
-    }).on('select2:unselecting', function() {
+    }).on('select2:unselecting', function () {
         $(this).data('unselecting', true);
-    }).on('select2:opening', function(e) {
+    }).on('select2:opening', function (e) {
         if ($(this).data('unselecting')) {
             $(this).removeData('unselecting');
             e.preventDefault();
         }
     }).on('change', function () {
         if (!isUpdating) {
-            filterModels();
+            applyFilters();
         }
     });
 }
 
+// Centralized function to apply all filters
+function applyFilters() {
+    const allModels = Object.keys(data.pairs[0].results).filter(model => model !== 'bm25-gpt4o-top25');
 
+    // Start with all questions
+    let questions = data.pairs.slice(); // Copy of all questions
 
-// Filter the results based on selected models
-function filterModels() {
+    // Apply difficulty filter
+    const hardChecked = document.getElementById('hard-set-checkbox').checked;
+    const easyChecked = document.getElementById('easy-set-checkbox').checked;
+
+    if (hardChecked || easyChecked) {
+        questions = questions.filter(question => {
+            const bm25Result = question.results['bm25-gpt4o-top25'];
+            if (bm25Result === undefined || bm25Result === 'no_prediction') {
+                return false; // Exclude if bm25-gpt4o-top25 has no result
+            }
+            if (hardChecked) {
+                return bm25Result !== 'correct';
+            }
+            if (easyChecked) {
+                return bm25Result === 'correct';
+            }
+            return true;
+        });
+    }
+
+    // Apply model selection filter
     const selectedModels = $('#model-selection').val();
-
-    if (!selectedModels || selectedModels.length === 0) {
-        clearFilters();
+    if (selectedModels && selectedModels.length > 0) {
+        filteredModels = selectedModels.filter(model => model !== 'bm25-gpt4o-top25');
     } else {
-        filteredModels = selectedModels; // Update the filteredModels
-
-        let filteredQuestions = data.pairs;
-
-        if (selectedModels.length > 1) {
-            filteredQuestions = data.pairs.filter(question =>
-                selectedModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
-            );
-        }
-
-        const filteredResults = preprocessData(selectedModels, filteredQuestions);
-        populateLeaderboard(filteredResults, selectedModels);
-
-        // Uncheck checkboxes if manual filtering is applied
-        if (!isUpdating) {
-            document.getElementById('all-models-checkbox').checked = false;
-            document.getElementById('closed-source-checkbox').checked = false;
-            document.getElementById('open-source-checkbox').checked = false;
-        }
+        filteredModels = allModels;
     }
-}
 
-// Clear all filters and show raw accuracy
-function clearFilters() {
-    if (!isUpdating) {
+    // Apply category filters
+    const closedSourceChecked = document.getElementById('closed-source-checkbox').checked;
+    const openSourceChecked = document.getElementById('open-source-checkbox').checked;
+    const allModelsChecked = document.getElementById('all-models-checkbox').checked;
+
+    if (closedSourceChecked || openSourceChecked || allModelsChecked) {
+        let categoryModels = [];
+        if (closedSourceChecked) {
+            categoryModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'closed-source');
+        } else if (openSourceChecked) {
+            categoryModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'open-source');
+        } else if (allModelsChecked) {
+            categoryModels = Object.keys(modelMetadata);
+        }
+
+        filteredModels = categoryModels.filter(model => model !== 'bm25-gpt4o-top25');
+
+        // Update the model selection dropdown
         isUpdating = true; // Set guard
-        $('#model-selection').val(null).trigger('change');
-        document.getElementById('all-models-checkbox').checked = false;
-        document.getElementById('closed-source-checkbox').checked = false;
-        document.getElementById('open-source-checkbox').checked = false;
+        $('#model-selection').val(filteredModels).trigger('change'); // Populate model selection
         isUpdating = false; // Unset guard
-        initializeLeaderboard();
+    } else {
+        // No category filters are checked
+        // If no models are selected in the model selection dropdown, reset filteredModels to allModels
+        if (!selectedModels || selectedModels.length === 0) {
+            filteredModels = allModels;
+
+            // Clear the model selection dropdown
+            isUpdating = true;
+            $('#model-selection').val(null).trigger('change');
+            isUpdating = false;
+        }
     }
-}
 
-// Show all models based on common set
-function showAllModels() {
-    const allModels = Object.keys(data.pairs[0].results);
-    filteredModels = allModels;
-
-    let filteredQuestions = data.pairs.filter(question =>
-        allModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
-    );
-
-    const filteredResults = preprocessData(allModels, filteredQuestions);
-
-    isUpdating = true; // Set guard
-    $('#model-selection').val(allModels).trigger('change'); // Populate model selection
-    isUpdating = false; // Unset guard
-
-    populateLeaderboard(filteredResults, allModels);
-}
-
-// Handle checkboxes
-document.getElementById('closed-source-checkbox').addEventListener('change', function () {
-    if (this.checked) {
-        document.getElementById('open-source-checkbox').checked = false;
-        document.getElementById('all-models-checkbox').checked = false;
-
-        // Get closed-source models from metadata
-        const closedSourceModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'closed-source');
-        filteredModels = closedSourceModels;
-
-        // Filter questions where all selected models have a prediction
-        const filteredQuestions = data.pairs.filter(question =>
-            closedSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+    // Apply common set filter if applicable
+    if (filteredModels.length > 1 && (closedSourceChecked || openSourceChecked || allModelsChecked || (selectedModels && selectedModels.length > 0))) {
+        questions = questions.filter(question =>
+            filteredModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
         );
+    }
 
-        const filteredResults = preprocessData(closedSourceModels, filteredQuestions);
+    // Update filteredQuestions
+    filteredQuestions = questions;
 
-        isUpdating = true; // Set guard
-        $('#model-selection').val(closedSourceModels).trigger('change'); // Populate model selection
-        isUpdating = false; // Unset guard
+    // Proceed to calculate results and populate leaderboard
+    const results = preprocessData(filteredModels, filteredQuestions);
+    calculateGlobalRankings(results, filteredModels);
+    populateLeaderboard(results, filteredModels, currentSortKey, currentSortDirection);
+}
 
-        populateLeaderboard(filteredResults, closedSourceModels);
-    } else {
-        clearFilters();
+// Event Listeners for Filters
+
+// Model selection change
+$('#model-selection').on('change', function () {
+    if (!isUpdating) {
+        isUpdating = true;
+        applyFilters();
+        isUpdating = false;
     }
 });
 
+// Difficulty filters
+document.getElementById('hard-set-checkbox').addEventListener('change', function () {
+    if (!isUpdating) {
+        isUpdating = true;
+        if (this.checked) {
+            document.getElementById('easy-set-checkbox').checked = false;
+        }
+        applyFilters();
+        isUpdating = false;
+    }
+});
+
+document.getElementById('easy-set-checkbox').addEventListener('change', function () {
+    if (!isUpdating) {
+        isUpdating = true;
+        if (this.checked) {
+            document.getElementById('hard-set-checkbox').checked = false;
+        }
+        applyFilters();
+        isUpdating = false;
+    }
+});
+
+// Category filters
+document.getElementById('closed-source-checkbox').addEventListener('change', function () {
+    if (!isUpdating) {
+        isUpdating = true;
+        if (this.checked) {
+            document.getElementById('open-source-checkbox').checked = false;
+            document.getElementById('all-models-checkbox').checked = false;
+        } else {
+            // If unchecked and no other common set checkbox is checked, clear model selection
+            if (!document.getElementById('open-source-checkbox').checked && !document.getElementById('all-models-checkbox').checked) {
+                isUpdating = true;
+                $('#model-selection').val(null).trigger('change');
+                isUpdating = false;
+            }
+        }
+        applyFilters();
+        isUpdating = false;
+    }
+});
 
 document.getElementById('open-source-checkbox').addEventListener('change', function () {
-    if (this.checked) {
-        document.getElementById('closed-source-checkbox').checked = false;
-        document.getElementById('all-models-checkbox').checked = false;
-
-        // Get open-source models from metadata
-        const openSourceModels = Object.keys(modelMetadata).filter(model => modelMetadata[model].category === 'open-source');
-        filteredModels = openSourceModels;
-
-        // Filter questions where all selected models have a prediction
-        const filteredQuestions = data.pairs.filter(question =>
-            openSourceModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
-        );
-
-        const filteredResults = preprocessData(openSourceModels, filteredQuestions);
-
-        isUpdating = true; // Set guard
-        $('#model-selection').val(openSourceModels).trigger('change'); // Populate model selection
-        isUpdating = false; // Unset guard
-
-        populateLeaderboard(filteredResults, openSourceModels);
-    } else {
-        clearFilters();
+    if (!isUpdating) {
+        isUpdating = true;
+        if (this.checked) {
+            document.getElementById('closed-source-checkbox').checked = false;
+            document.getElementById('all-models-checkbox').checked = false;
+        } else {
+            // If unchecked and no other common set checkbox is checked, clear model selection
+            if (!document.getElementById('closed-source-checkbox').checked && !document.getElementById('all-models-checkbox').checked) {
+                isUpdating = true;
+                $('#model-selection').val(null).trigger('change');
+                isUpdating = false;
+            }
+        }
+        applyFilters();
+        isUpdating = false;
     }
 });
-
 
 document.getElementById('all-models-checkbox').addEventListener('change', function () {
-    if (this.checked) {
-        document.getElementById('closed-source-checkbox').checked = false;
-        document.getElementById('open-source-checkbox').checked = false;
-        showAllModels();
-    } else {
-        clearFilters();
+    if (!isUpdating) {
+        isUpdating = true;
+        if (this.checked) {
+            document.getElementById('closed-source-checkbox').checked = false;
+            document.getElementById('open-source-checkbox').checked = false;
+        } else {
+            // If unchecked, clear model selection
+            isUpdating = true;
+            $('#model-selection').val(null).trigger('change');
+            isUpdating = false;
+        }
+        applyFilters();
+        isUpdating = false;
     }
 });
+
+// Clear all filters and reset leaderboard
+function clearFilters() {
+    if (!isUpdating) {
+        isUpdating = true; // Set guard to prevent loop
+        $('#model-selection').val(null).trigger('change'); // Clear selection in dropdown
+        clearCheckboxFilters(); // Clear all checkboxes
+        filteredModels = Object.keys(data.pairs[0].results).filter(model => model !== 'bm25-gpt4o-top25');
+        filteredQuestions = data.pairs.slice(); // Reset to all questions
+        applyFilters();
+        isUpdating = false; // Unset guard
+    }
+}
+
+// Function to clear all checkbox filters
+function clearCheckboxFilters() {
+    document.getElementById('all-models-checkbox').checked = false;
+    document.getElementById('closed-source-checkbox').checked = false;
+    document.getElementById('open-source-checkbox').checked = false;
+    document.getElementById('hard-set-checkbox').checked = false;
+    document.getElementById('easy-set-checkbox').checked = false;
+}
 
 // Sort table by column
 function sortTable(key) {
@@ -977,6 +970,7 @@ function sortTable(key) {
         currentSortKey = key;
         currentSortDirection = 'desc';
     }
-    const results = preprocessData(filteredModels); // Use filteredModels for sorting
+    const results = preprocessData(filteredModels, filteredQuestions); // Use filteredModels and filteredQuestions
+    calculateGlobalRankings(results, filteredModels); // Update global rankings
     populateLeaderboard(results, filteredModels, currentSortKey, currentSortDirection);
 }
