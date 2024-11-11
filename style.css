@@ -367,10 +367,10 @@ table tr:hover {
 
 
 
-/* Responsive Design for Mobile Phones */
+/* mobile devices */
 @media (max-width: 480px) {
     body {
-        font-size: 14px; 
+        font-size: 9px; 
     }
 
     .container {
@@ -436,8 +436,7 @@ table tr:hover {
 /* Responsive Design for Tablets */
 @media (max-width: 768px) {
     body {
-        font-size: 15px; /* Adjust base font size for tablets */
-    }
+        font-size: 9px; 
 
     .container {
         margin: 20px;
@@ -548,7 +547,7 @@ table tr:hover {
 /* Responsive Design for Medium Screens */
 @media (max-width: 1380px) {
     body {
-        font-size: 15px;
+        font-size: 9px;
     }
 
     .container {
