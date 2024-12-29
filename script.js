@@ -11,7 +11,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'gpt-4o-2024-05-13',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: false
     },
     'GPT-4o 08/06': { 
         displayName: 'GPT-4o [08/06]', 
@@ -23,7 +24,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'gpt-4o-2024-08-06',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true 
     },
     'o1-preview 09/12': { 
         displayName: 'o1-preview [09/12]', 
@@ -35,7 +37,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'o1-preview-2024-09-12',
-        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.'
+        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.',
+        testedOnNewClaims: true
     },
     'o1-mini 09/12': { 
         displayName: 'o1-mini [09/12]', 
@@ -47,7 +50,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'o1-mini-2024-09-12',
-        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.' 
+        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.',
+        testedOnNewClaims: true 
     },
     'GPT-4o-Mini 7/18': { 
         displayName: 'GPT-4o-Mini [07/18]', 
@@ -59,7 +63,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'gpt-4o-mini-2024-07-18',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true  
     },
     'GPT-4-Turbo': { 
         displayName: 'GPT-4-Turbo [04/09]', 
@@ -71,7 +76,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: 'unknown',
         modelCheckpoints: 'gpt-4-turbo-2024-04-09',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true 
     },
     'Claude-3-Opus 2/29': { 
         displayName: 'Claude-3-Opus [02/29]', 
@@ -83,7 +89,8 @@ const modelMetadata = {
         contextSize: '200k',
         modelSize: 'unknown',
         modelCheckpoints: 'claude-3-opus@20240229',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true  
     },
     'Claude-3.5-Sonnet 6/22': { 
         displayName: 'Claude-3.5-Sonnet [06/20]', 
@@ -95,7 +102,8 @@ const modelMetadata = {
         contextSize: '200k',
         modelSize: 'unknown',
         modelCheckpoints: 'claude-3-5-sonnet@20240620',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: true 
     },
     'Claude-3.5-Sonnet (v2) 10/22': { 
         displayName: 'Claude-3.5-Sonnet v2 [10/22]', 
@@ -107,7 +115,8 @@ const modelMetadata = {
         contextSize: '200k',
         modelSize: 'unknown',
         modelCheckpoints: 'claude-3-5-sonnet-v2@20241022',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: true
     },
     'Claude-3.5-Haiku 10/22': { 
         displayName: 'Claude-3.5-Haiku [10/22]', 
@@ -118,8 +127,9 @@ const modelMetadata = {
         modelDeveloper: 'Anthropic', 
         contextSize: '200k',
         modelSize: 'unknown',
-        modelCheckpoints: 'claude-3-5-sonnet-v2@20241022',
-        notes: ''
+        modelCheckpoints: 'claude-3-5-haiku@20241022',
+        notes: '',
+        testedOnNewClaims: false
     },
     'Gemini Pro 1.5 05/14': { 
         displayName: 'Gemini 1.5 Pro [05/14]', 
@@ -131,7 +141,8 @@ const modelMetadata = {
         contextSize: '1m',
         modelSize: 'unknown',
         modelCheckpoints: 'gemini-1.5-pro-preview-0514',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: false
     },
     'Gemini Pro 1.5 08/01': { 
         displayName: 'Gemini 1.5 Pro [08/01-exp]', 
@@ -143,7 +154,8 @@ const modelMetadata = {
         contextSize: '1m',
         modelSize: 'unknown',
         modelCheckpoints: 'gemini-1.5-pro-exp-0801',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: false
     },
     'Gemini Pro 1.5 08/27': { 
         displayName: 'Gemini 1.5 Pro [08/27-exp]', 
@@ -155,7 +167,8 @@ const modelMetadata = {
         contextSize: '2m',
         modelSize: 'unknown',
         modelCheckpoints: 'gemini-1.5-pro-exp-0827',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: true
     },
     'Gemini Flash 1.5': { 
         displayName: 'Gemini 1.5 Flash [05/14]', 
@@ -167,7 +180,8 @@ const modelMetadata = {
         contextSize: '1m',
         modelSize: 'unknown',
         modelCheckpoints: 'gemini-1.5-flash-preview-0514',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: false
     },
     'Gemini Flash 1.5 08/27': { 
         displayName: 'Gemini 1.5 Flash [08/27-exp]', 
@@ -179,7 +193,8 @@ const modelMetadata = {
         contextSize: '2m',
         modelSize: 'unknown',
         modelCheckpoints: 'gemini-1.5-flash-exp-0827',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: true
     },
     'Gemini Flash 1.5 8B 08/27': { 
         displayName: 'Gemini 1.5 Flash 8B [08/27-exp]', 
@@ -191,7 +206,8 @@ const modelMetadata = {
         contextSize: '2m',
         modelSize: '8B',
         modelCheckpoints: 'gemini-1.5-flash-8b-exp-0827',
-        notes: ''
+        notes: '',
+        testedOnNewClaims: true
     },
     'LLaMA 3.1 405B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 405B', 
@@ -203,7 +219,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '405B',
         modelCheckpoints: 'llama-v3p1-405b-instruct',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true 
     },
     'LLaMA 3.1 70B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 70B', 
@@ -215,7 +232,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '70B',
         modelCheckpoints: 'llama-v3p1-70b-instruct',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: true  
     },
     'LLaMA 3.1 8B (Fireworks API)': { 
         displayName: 'LLaMA 3.1 8B', 
@@ -227,7 +245,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '8B',
         modelCheckpoints: 'llama-v3p1-8b-instruct',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'Llama 3 8B ProLong-512k-Instruct': { 
         displayName: 'Llama 3 8B ProLong-512k-Instruct', 
@@ -239,7 +258,8 @@ const modelMetadata = {
         contextSize: '512k',
         modelSize: '8B',
         modelCheckpoints: 'princeton-nlp/Llama-3-8B-ProLong-512k-Instruct',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'Jamba 1.5 Large (Vertex API)': { 
         displayName: 'Jamba 1.5 Large', 
@@ -251,7 +271,8 @@ const modelMetadata = {
         contextSize: '256k',
         modelSize: '94B/398B',
         modelCheckpoints: 'jamba-1.5-large@001',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true 
     },
     'Jamba 1.5 Mini (Vertex API)': { 
         displayName: 'Jamba 1.5 Mini', 
@@ -263,7 +284,8 @@ const modelMetadata = {
         contextSize: '256k',
         modelSize: '12B/52B',
         modelCheckpoints: 'jamba-1.5-mini@001',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: true 
     },
     'Command R+': { 
         displayName: 'Command R+', 
@@ -275,7 +297,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '104B',
         modelCheckpoints: 'command-r-plus-04-2024',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'Command R+ (simple)': { 
         displayName: 'Command R+ (simple)', 
@@ -287,7 +310,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '104B',
         modelCheckpoints: 'command-r-plus-04-2024',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'Command R': { 
         displayName: 'Command R', 
@@ -298,7 +322,9 @@ const modelMetadata = {
         modelDeveloper: 'Cohere', 
         contextSize: '128k',
         modelSize: '35B',
-        modelCheckpoints: 'command-r-03-2024'  
+        modelCheckpoints: 'command-r-03-2024',
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Command R (simple)': { 
         displayName: 'Command R (simple)', 
@@ -310,7 +336,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '35B',
         modelCheckpoints: 'command-r-03-2024',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'LongLLaMA (simple)': { 
         displayName: 'LongLLaMA (simple)', 
@@ -322,7 +349,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '3B',
         modelCheckpoints: 'syzymon/long_llama_3b_instruct',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Phi-3-Mini': { 
         displayName: 'Phi 3 Mini', 
@@ -334,7 +362,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '3.8B',
         modelCheckpoints: 'microsoft/Phi-3-mini-128k-instruct',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Phi-3-Mini (simple)': { 
         displayName: 'Phi-3-Mini (simple)', 
@@ -346,7 +375,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '3.8B',
         modelCheckpoints: 'microsoft/Phi-3-mini-128k-instruct',
-        notes: '' 
+        notes: '',
+        testedOnNewClaims: false 
     },
     'Gemma-10M (simple)': { 
         displayName: 'Gemma-10M (simple)', 
@@ -358,7 +388,8 @@ const modelMetadata = {
         contextSize: '10M',
         modelSize: '2.51B',
         modelCheckpoints: 'mustafaaljadery/gemma-2B-10M',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Gemma-10M': { 
         displayName: 'Gemma-10M', 
@@ -370,7 +401,8 @@ const modelMetadata = {
         contextSize: '10M',
         modelSize: '2.51B',
         modelCheckpoints: 'mustafaaljadery/gemma-2B-10M',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Mistral-Nemo (Mistral API)': { 
         displayName: 'Mistral-Nemo', 
@@ -382,7 +414,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '12B',
         modelCheckpoints: 'open-mistral-nemo-2407 (via open-mistral-nemo)',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Mistral-Large 2 (Mistral API)': { 
         displayName: 'Mistral-Large 2', 
@@ -394,7 +427,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '123B',
         modelCheckpoints: 'mistral-large-2407 (via mistral-large-latest)',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'MegaBeam-Mistral-7B-512k': { 
         displayName: 'MegaBeam-Mistral-7B-512k', 
@@ -406,7 +440,8 @@ const modelMetadata = {
         contextSize: '512k (currently tested up to 300k)',
         modelSize: '7B',
         modelCheckpoints: 'aws-prototyping/MegaBeam-Mistral-7B-512k',
-        notes: ''  
+        notes: '',
+        testedOnNewClaims: false  
     },
     'Qwen 2.5 7B': { 
         displayName: 'Qwen 2.5 7B', 
@@ -418,7 +453,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '7B',
         modelCheckpoints: 'Qwen/Qwen2-7B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false
     },
     'Qwen 2.5 72B': { 
         displayName: 'Qwen 2.5 72B', 
@@ -430,7 +466,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '7B',
         modelCheckpoints: 'Qwen/Qwen2-72B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
     'GLM4 9B 1M': { 
         displayName: 'GLM4 9B 1M', 
@@ -442,7 +479,8 @@ const modelMetadata = {
         contextSize: '1M',
         modelSize: '9B',
         modelCheckpoints: 'THUDM/glm-4-9b-chat-1m',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'LLaMA 3 8B (GradientAI)': { 
         displayName: 'LLaMA-3 8B 1M (GradientAI)', 
@@ -454,7 +492,8 @@ const modelMetadata = {
         contextSize: '1M',
         modelSize: '8B',
         modelCheckpoints: 'gradientai/Llama-3-8B-Instruct-Gradient-1048k',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'LLaMA 3 70B (GradientAI)': { 
         displayName: 'LLaMA-3 70B 1M (GradientAI)', 
@@ -466,7 +505,8 @@ const modelMetadata = {
         contextSize: '1M',
         modelSize: '70B',
         modelCheckpoints: 'gradientai/Llama-3-70B-Instruct-Gradient-1048k',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'LLaMA 3.2 3B': { 
         displayName: 'LLaMA 3.2 3B', 
@@ -478,7 +518,8 @@ const modelMetadata = {
         contextSize: '128K',
         modelSize: '3B',
         modelCheckpoints: 'meta-llama/Llama-3.2-3B-Instruct',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'Qwen 2.5 14B': { 
         displayName: 'Qwen 2.5 14B', 
@@ -490,7 +531,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '14B',
         modelCheckpoints: 'Qwen/Qwen2.5-14B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
     'Qwen 2 72B': { 
         displayName: 'Qwen 2 72B', 
@@ -502,7 +544,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '72B',
         modelCheckpoints: 'Qwen/Qwen2-72B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
     'LLaMA 3.2 1B': { 
         displayName: 'LLaMA 3.2 1B', 
@@ -514,7 +557,8 @@ const modelMetadata = {
         contextSize: '128K',
         modelSize: '1B',
         modelCheckpoints: 'meta-llama/Llama-3.2-1B-Instruct',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'Phi 3.5 Mini': { 
         displayName: 'Phi 3.5 Mini', 
@@ -526,7 +570,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '3.8B',
         modelCheckpoints: 'microsoft/Phi-3.5-mini-instruct',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'Phi 3 Medium': { 
         displayName: 'Phi 3 Medium', 
@@ -538,7 +583,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '14B',
         modelCheckpoints: 'microsoft/Phi-3-medium-128k-instruct',
-        notes: 'run with vllms'  
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
     },
     'Qwen 2.5 3B': { 
         displayName: 'Qwen 2.5 3B', 
@@ -550,7 +596,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '3B',
         modelCheckpoints: 'Qwen/Qwen2.5-3B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
     'Qwen 2.5 1.5B': { 
         displayName: 'Qwen 2.5 1.5B', 
@@ -562,7 +609,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '1.5B',
         modelCheckpoints: 'Qwen/Qwen2.5-1.5B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
     'Qwen 2.5 0.5B': { 
         displayName: 'Qwen 2.5 0.5B', 
@@ -574,7 +622,8 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '0.5B',
         modelCheckpoints: 'Qwen/Qwen2.5-0.5B-Instruct',
-        notes: 'run with vllms (context extended with yarn)'  
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
     },
 };
 
@@ -673,13 +722,20 @@ function populateLeaderboard(results, models, sortKey = 'accuracy', sortDirectio
         const data = results[model];
         const accuracy = data.attempted ? (data.correct / data.attempted * 100).toFixed(2) : 0;
         const modelLink = modelMetadata[model]?.url || '#'; // Default to '#' if no link is defined
-        const displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
+        let displayName = modelMetadata[model]?.displayName || model; // Use displayName if available
+
+            // If this model was tested on new claims, add a diamond mark
+        if (modelMetadata[model]?.testedOnNewClaims) {
+            displayName = '<span style="color:#ba53ff;">&#x2605;</span> ' + displayName;
+
+        }
+
         const globalRank = globalRankings[model]; // Get the global rank
 
         // Table row for the model
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${globalRank}</td> <!-- Global Rank -->
+            <td>${globalRank}</td>
             <td>
                 <span class="toggle-icon" onclick="toggleMetadata('${model}', this)">&#9654;</span>
                 <a href="${modelLink}" target="_blank" style="margin-left: 5px;">${displayName}</a>
