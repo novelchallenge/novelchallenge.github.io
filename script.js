@@ -41,7 +41,7 @@ const modelMetadata = {
         testedOnNewClaims: true
     },
     'o1 12/17': { 
-        displayName: 'o1-high [09/12]', 
+        displayName: 'o1-high [12/17]', 
         category: 'closed-source', 
         url: 'https://openai.com/o1/',
         precision: 'unknown', 
