@@ -40,6 +40,19 @@ const modelMetadata = {
         notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. Some calls didn\'t pass due to "server errors", while others failed due to "too many tokens" even though they should have passed as per tiktoken counts. Additionally, some calls returned more tokens than our specified threshold of max_completion_tokens=6K, resulting in empty responses that were omitted from the reported accuracy. Overall, this model is hard to work with for lengths of 115K-117K or more, which ultimately excluded NoCha\'s longest books from the analysis.',
         testedOnNewClaims: true
     },
+    'o1 12/17': { 
+        displayName: 'o1-high [09/12]', 
+        category: 'closed-source', 
+        url: 'https://openai.com/o1/',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'o1-2024-12-17',
+        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. The model was run with reasoning_effort set to "high." We also had to adjust the prompt wording as the API was returning as "invalid prompt" error. More specifically, we changed the "provide an explanation of your decision-making process" to "provide an explanation of your answer". This reduced the refusal rate but a few calls still resulted in an error, likely due to the book/claim content.',
+        testedOnNewClaims: true
+    },
     'o1-mini 09/12': { 
         displayName: 'o1-mini [09/12]', 
         category: 'closed-source', 
