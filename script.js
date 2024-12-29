@@ -261,6 +261,19 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: false 
     },
+    'Llama-3.3-70B-Instruct': { 
+        displayName: 'LLaMA 3.3 70B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct',
+        precision: 'fp16', 
+        testedEnvironment: '4xA100', 
+        modelDeveloper: 'Meta', 
+        contextSize: '128k',
+        modelSize: '70B',
+        modelCheckpoints: 'meta-llama/Llama-3.3-70B-Instruct',
+        notes: '',
+        testedOnNewClaims: true 
+    },
     'Llama 3 8B ProLong-512k-Instruct': { 
         displayName: 'Llama 3 8B ProLong-512k-Instruct', 
         category: 'open-source', 
