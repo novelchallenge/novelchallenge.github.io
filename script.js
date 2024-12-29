@@ -271,7 +271,7 @@ const modelMetadata = {
         contextSize: '128k',
         modelSize: '70B',
         modelCheckpoints: 'meta-llama/Llama-3.3-70B-Instruct',
-        notes: '',
+        notes: 'run with vllms',
         testedOnNewClaims: true 
     },
     'Llama 3 8B ProLong-512k-Instruct': { 
