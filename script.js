@@ -209,6 +209,19 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true
     },
+    'Gemini Flash 2.0 exp (Dec 2024)': { 
+        displayName: 'Gemini Flash 2.0 exp', 
+        category: 'closed-source', 
+        url: 'https://ai.google.dev/gemini-api/docs/models/gemini?_gl=1*qqom7t*_up*MQ..&gclid=Cj0KCQiA7NO7BhDsARIsADg_hIZT2iOmE2GKW82m_Fi6oTU2WfDBXDc1goycd5DR6KZZjv19CrMAqwEaAg0CEALw_wcB#gemini-2.0-flash',
+        precision: 'unknown', 
+        testedEnvironment: 'GoogleAI API', 
+        modelDeveloper: 'Google', 
+        contextSize: '1m',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-2.0-flash-exp',
+        notes: 'December version (2024) of Gemini Flash',
+        testedOnNewClaims: true
+    },
     'Gemini Flash 1.5 8B 08/27': { 
         displayName: 'Gemini 1.5 Flash 8B [08/27-exp]', 
         category: 'closed-source', 
