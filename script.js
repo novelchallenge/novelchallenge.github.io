@@ -667,15 +667,15 @@ const modelMetadata = {
     'MiniMax-Text-01': { 
         displayName: 'MiniMax-Text-01', 
         category: 'open-source', 
-        url: '',
-        precision: 'unclear', 
+        url: 'https://github.com/MiniMax-AI/MiniMax-01',
+        precision: 'unclear, likely 8-bit', 
         testedEnvironment: 'Official API', 
         modelDeveloper: '', 
         contextSize: '4M',
         modelSize: '',
         modelCheckpoints: 'MiniMax-Text-01',
         notes: 'two claims resulted in error messages',
-        testedOnNewClaims: false  
+        testedOnNewClaims: true  
     },
 };
 
