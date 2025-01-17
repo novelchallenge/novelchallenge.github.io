@@ -664,6 +664,19 @@ const modelMetadata = {
         notes: 'run with vllms (context extended with yarn)',
         testedOnNewClaims: false  
     },
+    'MiniMax-Text-01': { 
+        displayName: 'MiniMax-Text-01', 
+        category: 'open-source', 
+        url: '',
+        precision: 'unclear', 
+        testedEnvironment: 'Official API', 
+        modelDeveloper: '', 
+        contextSize: '4M',
+        modelSize: '',
+        modelCheckpoints: 'MiniMax-Text-01',
+        notes: 'two claims resulted in error messages',
+        testedOnNewClaims: false  
+    },
 };
 
 
