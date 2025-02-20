@@ -677,6 +677,58 @@ const modelMetadata = {
         notes: 'two claims resulted in error messages',
         testedOnNewClaims: true  
     },
+    'DeepSeek-R1-Distill-Qwen-14B': { 
+        displayName: 'DeepSeek-R1-Distill-Qwen-14B', 
+        category: 'open-source', 
+        url: '',
+        precision: '', 
+        testedEnvironment: '2xA100', 
+        modelDeveloper: '', 
+        contextSize: '',
+        modelSize: '',
+        modelCheckpoints: 'deepseek-ai/DeepSeek-R1-Distill-Qwen-14B',
+        notes: '',
+        testedOnNewClaims: true  
+    },
+    'DeepSeek-R1-Distill-Qwen-32B': { 
+        displayName: 'DeepSeek-R1-Distill-Qwen-32B', 
+        category: 'open-source', 
+        url: '',
+        precision: '', 
+        testedEnvironment: '2xA100', 
+        modelDeveloper: '', 
+        contextSize: '',
+        modelSize: '',
+        modelCheckpoints: 'deepseek-ai/DeepSeek-R1-Distill-Qwen-32B',
+        notes: '',
+        testedOnNewClaims: true  
+    },
+    'Qwen2.5-7B-Instruct-1M': { 
+        displayName: 'Qwen2.5-7B-Instruct-1M', 
+        category: 'open-source', 
+        url: '',
+        precision: '', 
+        testedEnvironment: 'A100', 
+        modelDeveloper: '', 
+        contextSize: '',
+        modelSize: '',
+        modelCheckpoints: 'Qwen/Qwen2.5-7B-Instruct-1M',
+        notes: '',
+        testedOnNewClaims: true  
+    },
+    'Qwen2.5-14B-Instruct-1M': { 
+        displayName: 'Qwen2.5-14B-Instruct-1M', 
+        category: 'open-source', 
+        url: '',
+        precision: '', 
+        testedEnvironment: '2xA100', 
+        modelDeveloper: '', 
+        contextSize: '',
+        modelSize: '',
+        modelCheckpoints: 'Qwen/Qwen2.5-14B-Instruct-1M',
+        notes: '',
+        testedOnNewClaims: true  
+    },
 };
 
 
