@@ -729,6 +729,19 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true  
     },
+    'gemini-2.5-pro-exp-03-25': { 
+        displayName: 'Gemini 2.5 Pro [03/25-exp]', 
+        category: 'closed-source', 
+        url: 'https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/',
+        precision: 'unknown', 
+        testedEnvironment: '2xA100', 
+        modelDeveloper: 'Google', 
+        contextSize: '1M',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gemini-2.5-pro-exp-03-25',
+        notes: 'Model run with 6k tokens set for generation and temp=0.0. While most entires have been processed, three claims errored likely due to the content.',
+        testedOnNewClaims: true  
+    },
 };
 
 
