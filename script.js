@@ -755,6 +755,19 @@ const modelMetadata = {
         notes: 'Even though the model\'s context window is 10M, TogetherAI API limits the context legth to 300k. This led to some books being omitted from the evaluation as they exceeded 300k.',
         testedOnNewClaims: true  
     },
+    'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8': { 
+        displayName: 'Llama 4 Maverick 400B MoE', 
+        category: 'open-source', 
+        url: 'https://ai.meta.com/blog/llama-4-multimodal-intelligence/',
+        precision: 'fp8', 
+        testedEnvironment: 'TogetherAI API', 
+        modelDeveloper: 'META', 
+        contextSize: '1M',
+        modelSize: '400B (17B active)',
+        modelCheckpoints: 'meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8',
+        notes: '',
+        testedOnNewClaims: true  
+    },
 };
 
 
