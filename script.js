@@ -742,6 +742,19 @@ const modelMetadata = {
         notes: 'Model run with 6k tokens set for generation and temp=0.0. While most entires have been processed, three claims errored likely due to the content.',
         testedOnNewClaims: true  
     },
+    'meta-llama/Llama-4-Scout-17B-16E-Instruct': { 
+        displayName: 'Llama 4 Scout 17B MoE', 
+        category: 'open-source', 
+        url: 'https://ai.meta.com/blog/llama-4-multimodal-intelligence/',
+        precision: 'bf16', 
+        testedEnvironment: 'TogetherAI API', 
+        modelDeveloper: 'META', 
+        contextSize: '10M',
+        modelSize: '17B x 16E',
+        modelCheckpoints: 'meta-llama/Llama-4-Scout-17B-16E-Instruct',
+        notes: 'Even though the model\'s context window is 10M, TogetherAI API limits the context legth to 300k. This led to some books being omitted from the evaluation as they exceeded 300k.',
+        testedOnNewClaims: true  
+    },
 };
 
 
