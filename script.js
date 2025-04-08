@@ -703,8 +703,8 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true  
     },
-    'Qwen2.5-7B-Instruct-1M': { 
-        displayName: 'Qwen2.5-7B-Instruct-1M', 
+    'Qwen/Qwen2.5-7B-Instruct-1M': { 
+        displayName: 'Qwen2.5 7B Instruct 1M', 
         category: 'open-source', 
         url: '',
         precision: '', 
@@ -716,8 +716,8 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true  
     },
-    'Qwen2.5-14B-Instruct-1M': { 
-        displayName: 'Qwen2.5-14B-Instruct-1M', 
+    'Qwen/Qwen2.5-14B-Instruct-1M': { 
+        displayName: 'Qwen2.5 14B Instruct 1M', 
         category: 'open-source', 
         url: '',
         precision: '', 
@@ -769,6 +769,7 @@ const modelMetadata = {
         testedOnNewClaims: true  
     },
 };
+
 
 
 let data;
