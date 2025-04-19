@@ -1,4 +1,3 @@
-
 // URL mapping for models, update displayName in order to change naming in the table, please do NOT update keys! The able const you want to update! 
 const modelMetadata = {
     'GPT-4o 05/13': { 
@@ -1036,9 +1035,224 @@ function applyFilters() {
 
     // Apply common set filter if applicable
     if (filteredModels.length > 1 && (closedSourceChecked || openSourceChecked || allModelsChecked || (selectedModels && selectedModels.length > 0))) {
-        questions = questions.filter(question =>
-            filteredModels.every(model => question.results[model] !== undefined && question.results[model] !== "no_prediction")
+        
+        // Simple approach: Find questions all selected models have predictions for
+        let commonQuestions = questions.filter(question =>
+            filteredModels.every(model => 
+                question.results[model] !== undefined && 
+                question.results[model] !== "no_prediction"
+            )
         );
+        
+        // If we're dealing with open source models or all models and got 0 common questions, provide diagnostics
+        if ((openSourceChecked || allModelsChecked) && commonQuestions.length === 0) {
+            console.log(`Debugging ${openSourceChecked ? 'open source' : 'all'} models common set:`);
+            console.log("Number of filtered models:", filteredModels.length);
+            
+            // Find which models are causing the issue
+            // For each question, count how many models have predictions
+            const questionCoverage = {};
+            questions.forEach((question, idx) => {
+                const modelsWithPredictions = filteredModels.filter(model => 
+                    question.results[model] !== undefined && 
+                    question.results[model] !== "no_prediction"
+                );
+                questionCoverage[idx] = modelsWithPredictions.length;
+            });
+            
+            // Find the maximum coverage (how many models at best)
+            const maxCoverage = Math.max(...Object.values(questionCoverage));
+            console.log("Maximum models with predictions for any question:", maxCoverage);
+            console.log("Total models selected:", filteredModels.length);
+            
+            // Find the best questions (with max coverage)
+            const bestQuestions = Object.keys(questionCoverage)
+                .filter(idx => questionCoverage[idx] === maxCoverage)
+                .map(idx => parseInt(idx));
+            
+            if (bestQuestions.length > 0) {
+                // For the first best question, which models DON'T have predictions?
+                const exampleQuestion = questions[bestQuestions[0]];
+                const missingModels = filteredModels.filter(model => 
+                    exampleQuestion.results[model] === undefined || 
+                    exampleQuestion.results[model] === "no_prediction"
+                );
+                
+                console.log("Models missing predictions for best question:", missingModels);
+                console.log("Missing models count:", missingModels.length);
+                console.log("Number of questions with maximum coverage:", bestQuestions.length);
+                
+                // Check if any models are consistently missing predictions
+                const consistentlyMissing = filteredModels.filter(model => {
+                    return bestQuestions.every(idx => {
+                        const question = questions[idx];
+                        return question.results[model] === undefined || 
+                               question.results[model] === "no_prediction";
+                    });
+                });
+                
+                console.log("Models consistently missing predictions:", consistentlyMissing);
+                console.log("Consistently missing count:", consistentlyMissing.length);
+                
+                // AUTOMATIC FIX: If we have consistent offenders, exclude them from the filtered models
+                // Only do this if we would still have at least 3 models left, or 50% of the original set
+                const minModelsToKeep = Math.max(3, Math.floor(filteredModels.length * 0.5));
+                
+                if (consistentlyMissing.length > 0 && 
+                    (filteredModels.length - consistentlyMissing.length) >= minModelsToKeep) {
+                    
+                    // Create a message to show which models are being excluded
+                    const missingModelNames = consistentlyMissing.map(model => 
+                        modelMetadata[model]?.displayName || model
+                    );
+                    
+                    // Create a notification element if it doesn't exist
+                    let notificationEl = document.getElementById('common-set-notification');
+                    if (!notificationEl) {
+                        notificationEl = document.createElement('div');
+                        notificationEl.id = 'common-set-notification';
+                        notificationEl.className = 'notification';
+                        notificationEl.style.margin = '10px 0';
+                        notificationEl.style.padding = '8px';
+                        notificationEl.style.backgroundColor = '#fffacd';
+                        notificationEl.style.border = '1px solid #e5d68a';
+                        notificationEl.style.borderRadius = '4px';
+                        
+                        // Insert after the filter controls
+                        const filterControls = document.querySelector('.filter-controls');
+                        if (filterControls) {
+                            filterControls.parentNode.insertBefore(notificationEl, filterControls.nextSibling);
+                        } else {
+                            document.getElementById('leaderboard').parentNode.insertBefore(
+                                notificationEl, 
+                                document.getElementById('leaderboard')
+                            );
+                        }
+                    }
+                    
+                    // Update the notification with current information
+                    notificationEl.innerHTML = `
+                        <strong>Note:</strong> ${missingModelNames.length} ${openSourceChecked ? 'open source' : ''} models 
+                        were excluded because they lack predictions for the common set. 
+                        <a href="#" onclick="return showExcludedModels();">View excluded models</a>
+                    `;
+                    
+                    // Add a global function to show the excluded models
+                    window.excludedModels = missingModelNames;
+                    window.showExcludedModels = function() {
+                        alert('Excluded models:\n\n' + missingModelNames.join('\n'));
+                        return false;
+                    };
+                    
+                    // Remove the consistently missing models
+                    filteredModels = filteredModels.filter(model => !consistentlyMissing.includes(model));
+                    console.log("Adjusted filteredModels to exclude consistently missing models");
+                    console.log("New filteredModels count:", filteredModels.length);
+                    
+                    // Try again to find common questions
+                    commonQuestions = questions.filter(question =>
+                        filteredModels.every(model => 
+                            question.results[model] !== undefined && 
+                            question.results[model] !== "no_prediction"
+                        )
+                    );
+                    
+                    console.log("New common questions count:", commonQuestions.length);
+                } else if (consistentlyMissing.length > 0) {
+                    // If we can't remove models (would leave too few), show a notification
+                    let notificationEl = document.getElementById('common-set-notification');
+                    if (!notificationEl) {
+                        notificationEl = document.createElement('div');
+                        notificationEl.id = 'common-set-notification';
+                        notificationEl.className = 'notification';
+                        notificationEl.style.margin = '10px 0';
+                        notificationEl.style.padding = '8px';
+                        notificationEl.style.backgroundColor = '#f8d7da';
+                        notificationEl.style.border = '1px solid #f5c6cb';
+                        notificationEl.style.borderRadius = '4px';
+                        
+                        // Insert after the filter controls
+                        const filterControls = document.querySelector('.filter-controls');
+                        if (filterControls) {
+                            filterControls.parentNode.insertBefore(notificationEl, filterControls.nextSibling);
+                        } else {
+                            document.getElementById('leaderboard').parentNode.insertBefore(
+                                notificationEl, 
+                                document.getElementById('leaderboard')
+                            );
+                        }
+                    }
+                    
+                    notificationEl.innerHTML = `
+                        <strong>No Common Pairs Found:</strong> No book/claim pairs were found where all 
+                        selected models have predictions. Try removing one or more models or using a different filter.
+                    `;
+                }
+            }
+        } else if (commonQuestions.length > 0) {
+            // If we have common questions, hide any previous notification
+            const notificationEl = document.getElementById('common-set-notification');
+            if (notificationEl) {
+                notificationEl.style.display = 'none';
+            }
+        }
+        
+        // Use the common questions
+        questions = commonQuestions;
+        
+        // For common sets, modify preprocessData to ensure consistent counting
+        const originalPreprocessData = preprocessData;
+        preprocessData = function(models, commonSetQuestions) {
+            const results = {};
+            for (const model of models) {
+                results[model] = { correct: 0, attempted: 0 };
+            }
+
+            // For models in filteredModels, set a consistent attempted count
+            // Equal to the number of questions in the common set
+            filteredModels.forEach(model => {
+                if (models.includes(model)) {
+                    results[model].attempted = commonSetQuestions.length;
+                }
+            });
+            
+            // Only count correct answers
+            for (const question of commonSetQuestions) {
+                for (const model of filteredModels) {
+                    if (models.includes(model) && question.results[model] === "correct") {
+                        results[model].correct += 1;
+                    }
+                }
+            }
+            
+            return results;
+        };
+    } else {
+        // If no common set filter is active, hide any previous notification
+        const notificationEl = document.getElementById('common-set-notification');
+        if (notificationEl) {
+            notificationEl.style.display = 'none';
+        }
+        
+        // Restore original preprocessData function for non-common set cases
+        preprocessData = function(models, questions) {
+            const results = {};
+            for (const model of models) {
+                results[model] = { correct: 0, attempted: 0 };
+            }
+
+            for (const question of questions) {
+                for (const model of models) {
+                    if (question.results[model] !== undefined && question.results[model] !== "no_prediction") {
+                        results[model].attempted += 1;
+                        if (question.results[model] === "correct") {
+                            results[model].correct += 1;
+                        }
+                    }
+                }
+            }
+            return results;
+        };
     }
 
     // Update filteredQuestions
@@ -1056,6 +1270,42 @@ function applyFilters() {
 $('#model-selection').on('change', function () {
     if (!isUpdating) {
         isUpdating = true;
+        
+        // Get current selection
+        const selectedModels = $(this).val() || [];
+        
+        // Check if any category checkbox is checked, and if the selection doesn't match that category
+        const closedSourceModels = Object.keys(modelMetadata)
+            .filter(model => modelMetadata[model]?.category === 'closed-source' && model !== 'bm25-gpt4o-top25');
+        const openSourceModels = Object.keys(modelMetadata)
+            .filter(model => modelMetadata[model]?.category === 'open-source' && model !== 'bm25-gpt4o-top25');
+        const allModels = Object.keys(modelMetadata)
+            .filter(model => model !== 'bm25-gpt4o-top25');
+            
+        // Function to check if arrays contain the same elements (order doesn't matter)
+        const sameContent = (arr1, arr2) => {
+            if (arr1.length !== arr2.length) return false;
+            const sorted1 = [...arr1].sort();
+            const sorted2 = [...arr2].sort();
+            return sorted1.every((val, idx) => val === sorted2[idx]);
+        };
+        
+        // Uncheck category boxes if selection doesn't match
+        if (document.getElementById('closed-source-checkbox').checked && 
+            !sameContent(selectedModels, closedSourceModels)) {
+            document.getElementById('closed-source-checkbox').checked = false;
+        }
+        
+        if (document.getElementById('open-source-checkbox').checked && 
+            !sameContent(selectedModels, openSourceModels)) {
+            document.getElementById('open-source-checkbox').checked = false;
+        }
+        
+        if (document.getElementById('all-models-checkbox').checked && 
+            !sameContent(selectedModels, allModels)) {
+            document.getElementById('all-models-checkbox').checked = false;
+        }
+        
         applyFilters();
         isUpdating = false;
     }
