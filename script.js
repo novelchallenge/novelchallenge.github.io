@@ -767,6 +767,19 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true  
     },
+    'Deepseek R1': { 
+        displayName: 'DeepSeek R1 MoE', 
+        category: 'open-source', 
+        url: 'https://github.com/deepseek-ai/DeepSeek-R1',
+        precision: 'fp8', 
+        testedEnvironment: 'OpenRouter API', 
+        modelDeveloper: 'DeepSeek', 
+        contextSize: '163k',
+        modelSize: '671B (37B active)',
+        modelCheckpoints: 'deepseek/deepseek-r1',
+        notes: 'A small numbers of claims resulted in empty output (likely to running out of the <think> tokens) and were discarged from the analysis.',
+        testedOnNewClaims: true  
+    },
 };
 
 
