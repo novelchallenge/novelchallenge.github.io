@@ -780,6 +780,58 @@ const modelMetadata = {
         notes: 'A small numbers of claims resulted in empty output (likely to running out of the <think> tokens) and were discarged from the analysis.',
         testedOnNewClaims: true  
     },
+    'o4-mini 04/16': { 
+        displayName: 'o4-mini [04/16]', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models/o4-mini',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'o4-mini-2025-04-16',
+        notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. The model was run with reasoning_effort set to "high." We also had to adjust the prompt wording as the API was returning as "invalid prompt" error. More specifically, we changed the "provide an explanation of your decision-making process" to "provide an explanation of your answer". This reduced the refusal rate but a few calls still resulted in an error, likely due to the book/claim content.',
+        testedOnNewClaims: true
+    },
+    'Qwen 3 32B': { 
+        displayName: 'Qwen 3.0 32B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen3-32B',
+        precision: '16-bit', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '32B',
+        modelCheckpoints: 'Qwen/Qwen3-32B',
+        notes: 'run with vllms (context extended with yarn)',
+        testedOnNewClaims: false  
+    },
+    'Qwen 3 32B thinking': { 
+        displayName: 'Qwen 3.0 32B thinking', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/Qwen/Qwen3-32B',
+        precision: '16-bit', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'Alibaba Cloud', 
+        contextSize: '128k',
+        modelSize: '32B',
+        modelCheckpoints: 'Qwen/Qwen3-32B',
+        notes: 'run with vllms (context extended with yarn) with enable_thinking set to True',
+        testedOnNewClaims: false  
+    },
+    'Gemma 3 23B': { 
+        displayName: 'Gemma 3.0 27B', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/google/gemma-3-27b-it',
+        precision: '16-bit', 
+        testedEnvironment: '2xA100s', 
+        modelDeveloper: 'Google', 
+        contextSize: '128k',
+        modelSize: '27B',
+        modelCheckpoints: 'google/gemma-3-27b-it',
+        notes: 'run with vllms',
+        testedOnNewClaims: false  
+    },
 };
 
 
