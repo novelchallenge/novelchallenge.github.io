@@ -53,7 +53,7 @@ const modelMetadata = {
         testedOnNewClaims: true
     },
     'o3': { 
-        displayName: 'o3', 
+        displayName: 'o3-high [04/16]', 
         category: 'closed-source', 
         url: 'https://openai.com/o3/',
         precision: 'unknown', 
@@ -66,7 +66,7 @@ const modelMetadata = {
         testedOnNewClaims: true
     },
     'gpt-4.1': { 
-        displayName: 'GPT-4.1', 
+        displayName: 'GPT-4.1 [04/14]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models',
         precision: 'unknown', 
@@ -79,7 +79,7 @@ const modelMetadata = {
         testedOnNewClaims: true
     },
     'Kimi': { 
-        displayName: 'Kimi', 
+        displayName: 'Kimi K2', 
         category: 'open-source', 
         url: 'https://huggingface.co/moonshotai/Kimi-K2-Instruct',
         precision: 'unknown', 
