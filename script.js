@@ -52,7 +52,7 @@ const modelMetadata = {
         notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. The model was run with reasoning_effort set to "high." We also had to adjust the prompt wording as the API was returning as "invalid prompt" error. More specifically, we changed the "provide an explanation of your decision-making process" to "provide an explanation of your answer". This reduced the refusal rate but a few calls still resulted in an error, likely due to the book/claim content.',
         testedOnNewClaims: true
     },
-    'o3': { 
+    'o3 04/16': { 
         displayName: 'o3-high [04/16]', 
         category: 'closed-source', 
         url: 'https://openai.com/o3/',
@@ -65,7 +65,7 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true
     },
-    'gpt-4.1': { 
+    'GPT-4.1 04/14': { 
         displayName: 'GPT-4.1 [04/14]', 
         category: 'closed-source', 
         url: 'https://platform.openai.com/docs/models',
@@ -78,7 +78,7 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true
     },
-    'Kimi': { 
+    'Kimi K2': { 
         displayName: 'Kimi K2', 
         category: 'open-source', 
         url: 'https://huggingface.co/moonshotai/Kimi-K2-Instruct',
