@@ -52,6 +52,45 @@ const modelMetadata = {
         notes: 'OpenAI\'s API enforces top-p=1.0 and temperature=1.0 for this checkpoint. The model was run with reasoning_effort set to "high." We also had to adjust the prompt wording as the API was returning as "invalid prompt" error. More specifically, we changed the "provide an explanation of your decision-making process" to "provide an explanation of your answer". This reduced the refusal rate but a few calls still resulted in an error, likely due to the book/claim content.',
         testedOnNewClaims: true
     },
+    'o3': { 
+        displayName: 'o3', 
+        category: 'closed-source', 
+        url: 'https://openai.com/o3/',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '200k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'o3-2025-04-16',
+        notes: '',
+        testedOnNewClaims: true
+    },
+    'gpt-4.1': { 
+        displayName: 'GPT-4.1', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '1M',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-4.1-2025-04-14',
+        notes: '',
+        testedOnNewClaims: true
+    },
+    'Kimi': { 
+        displayName: 'Kimi', 
+        category: 'open-source', 
+        url: 'https://huggingface.co/moonshotai/Kimi-K2-Instruct',
+        precision: 'unknown', 
+        testedEnvironment: 'Open Router API',
+        modelDeveloper: 'Moonshot AI', 
+        contextSize: '128k',
+        modelSize: 'unknown',
+        modelCheckpoints: 'moonshotai/Kimi-K2-Instruct',
+        notes: 'Since the model\'s tokenizer is less efficient than other models we were unable to run some longer books, which still are below 128K as per tiktoken.',
+        testedOnNewClaims: true
+    },
     'o1-mini 09/12': { 
         displayName: 'o1-mini [09/12]', 
         category: 'closed-source', 
