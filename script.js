@@ -78,6 +78,19 @@ const modelMetadata = {
         notes: '',
         testedOnNewClaims: true
     },
+    'gpt-5': { 
+        displayName: 'GPT-5-high [08/07]', 
+        category: 'closed-source', 
+        url: 'https://platform.openai.com/docs/models',
+        precision: 'unknown', 
+        testedEnvironment: 'OpenAI API',
+        modelDeveloper: 'OpenAI', 
+        contextSize: '272K (input)',
+        modelSize: 'unknown',
+        modelCheckpoints: 'gpt-5-2025-08-07',
+        notes: 'Run with temperature=1.0 as per OpenAI\'s API documentation. The model was run with reasoning_effort set to "high."',
+        testedOnNewClaims: true
+    },
     'Kimi K2': { 
         displayName: 'Kimi K2', 
         category: 'open-source', 
